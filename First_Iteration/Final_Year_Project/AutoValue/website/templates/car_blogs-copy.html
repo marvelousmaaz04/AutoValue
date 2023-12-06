@@ -1,0 +1,148 @@
+{% extends "home.html" %}
+{% block link %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+{% endblock %}
+{% block content %}
+<div class="container mt-3">
+    <div class="row justify-content-end">
+        <div class="col-md-3">
+
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" aria-label="Search" id="search-input">
+                <button class="btn btn-outline-secondary" type="button" id="searchButton">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+    {% for blog in all_blogs %}
+    {% if loop.index % 2 == 1 %}
+    <div class="row">
+        {% endif %}
+        <div class="col-md-6 mb-4" id="blogs-container">
+            <div
+                class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 position-relative align-items-center">
+                <div class="col-md-8 d-flex flex-column">
+
+                    <div class="p-4 flex-fill">
+                        <a href="{{ blog.blog_url }}" target="_blank" style="text-decoration: none; color: black;">
+                            <strong class="d-inline-block mb-2 text-primary">{{ blog.blog_website }}</strong>
+                            <h4 class="mb-0">{{ blog.title }}</h4>
+                            <div class="mb-1 text-muted">{{ blog.published_date }}</div>
+                            <p class="card-text mb-auto">{{ blog.description }}</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 d-inline-block">
+                    <a href="{{ blog.blog_url }}" target="_blank" style="text-decoration: none;">
+                        <img src="{{ blog.image_url }}" alt="{{ blog.title }}" class="img-fluid">
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% if loop.index % 2 == 0 or loop.last %}
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const blogsContainer = document.getElementById("blogs-container");
+    // blogsContainer.innerHTML = ""
+    // Replace the URL with the actual endpoint URL of your backend
+    const apiUrl = "http://127.0.0.1:12000/blogs";
+
+    // Fetch blogs from the server
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Handle the fetched blogs data
+            console.log(data);
+
+            // Assuming data is an array of blogs
+            data = data.blogs
+            data.forEach(blog => {
+                const blogElement = document.createElement("div");
+                blogElement.classList.add("col-md-6", "mb-4");
+                blogElement.innerHTML = `
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 position-relative align-items-center">
+                        <div class="col-md-8 p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">${blog.blog_website}</strong>
+                            <h3 class="mb-0">${blog.title}</h3>
+                            <div class="mb-1 text-muted">${blog.published_date}</div>
+                            <p class="card-text mb-auto">${blog.description}</p>
+                        </div>
+                        <div class="col-md-4 d-inline-block">
+                            <img src="${blog.image_url}" alt="${blog.title}" class="img-fluid" width="260px" height="170px">
+                        </div>
+                    </div>
+                `;
+                blogsContainer.appendChild(blogElement);
+            });
+        })
+        .catch(error => {
+            console.error("Fetch error:", error);
+        });
+});
+
+// Add an event listener for the search button
+const searchButton = document.getElementById("searchButton");
+searchButton.addEventListener("click", () => {
+    // Implement the search functionality here
+    // You can fetch the filtered blogs based on the search input
+    // Update the blogsContainer with the filtered results
+    console.log("Search button clicked");
+    const blogsContainer = document.getElementById("blogs-container");
+    blogsContainer.innerHTML = ""
+    // Replace the URL with the actual endpoint URL of your backend
+    const apiUrl = "http://127.0.0.1:12000/blogs/search?keyword=bmw";
+
+    // Fetch blogs from the server
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Handle the fetched blogs data
+            console.log(data);
+
+            // Assuming data is an array of blogs
+            data.blogs.forEach(blog => {
+                const blogElement = document.createElement("div");
+                blogElement.classList.add("col-md-6", "mb-4");
+                blogElement.innerHTML = `
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 position-relative align-items-center">
+                        <div class="col-md-8 p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">${blog.blog_website}</strong>
+                            <h3 class="mb-0">${blog.title}</h3>
+                            <div class="mb-1 text-muted">${blog.published_date}</div>
+                            <p class="card-text mb-auto">${blog.description}</p>
+                        </div>
+                        <div class="col-md-4 d-inline-block">
+                            <img src="${blog.image_url}" alt="${blog.title}" class="img-fluid" width="260px" height="170px">
+                        </div>
+                    </div>
+                `;
+                blogsContainer.appendChild(blogElement);
+            });
+        })
+        .catch(error => {
+            console.error("Fetch error:", error);
+        });
+});
+</script>
+
+{% endblock %}
+{% block search %}
+
+{% endblock %}

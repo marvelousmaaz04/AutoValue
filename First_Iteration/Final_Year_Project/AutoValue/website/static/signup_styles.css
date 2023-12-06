@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style for the entire body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Style for the sign-up form container */
+.signup-form {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Style for the form fields and button */
+.form-input {
+    margin: 10px 0;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+.form-button {
+    background-color: #009688;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.form-button:hover {
+    background-color: #00796b;
+}
+
+.logo {
+    margin: 20px 0; /* Adjust margin as needed */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px; /* Adjust margin as needed */
+}
+

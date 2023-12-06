@@ -1,0 +1,62 @@
+{% extends "home.html" %}
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="card" style="text-align: center; height: 100%; width: 100%;">
+            <div class="card-title mt-5">
+                <h3>AutoValue Used Car Price Prediction</h3>
+            </div>
+            <div class="card-body mt-3" style="text-align: left;">
+                <form id="prediction-form">
+                    <label for="company">Car Company</label>
+                    <select class="form-select" aria-label="Default select example" id="company" name="company" onchange="loadCarModelsPredictionPage(this.id,'model')">
+                        <option>Select Car Company</option>
+                        {% for company in company_names %}
+                        <option value="{{ company }}">{{ company }}</option>
+                        {% endfor %}
+                    </select>
+                    <br>
+                    <label for="model">Car Model</label>
+                    <select class="form-select" aria-label="Default select example" id="model" name="model">
+                        <option>Select Car Model</option>
+                    </select>
+                    <br>
+                    <label for="kms-driven">Car Kilometers Driven</label>
+                    <input type="number" class="form-control" id="kms-driven" name="kms-driven"
+                        placeholder="Enter Kilometers Driven">
+                    
+                    <br>
+                    <!-- remember that ids should be unique throughout the website since we have only one index.js -->
+                    <label for="years">Car Year</label>
+                    <input type="number" class="form-control" id="year" name="year"
+                        placeholder="Enter Year">
+                    <br>
+                    <label for="fuel-type">Car Fuel Type</label>
+                    <select class="form-select" aria-label="Default select example" id="fuel-type" name="fuel-type">
+                        <option>Select Car Fuel Type</option>
+                        {% for fuel_type in fuel_types %}
+                        <option value="{{ company }}">{{ fuel_type }}</option>
+                        {% endfor %}
+                    </select>
+                    <br>
+                    <label for="Location">Car Location</label>
+                    <select class="form-select" aria-label="Default select example" id="location" name="location">
+                        <option value="Select Car Location">Select Car Location</option>
+                        {% for location in locations %}
+                        <option value="{{ location }}">{{ location }}</option>
+                        {% endfor %}
+                    </select>
+                    
+                    <br>
+                    <button class="btn btn-primary mt-3 form-control btn-lg" onclick="getCarPrice()">Predict Price</button>
+                    
+                </form>
+                
+                <br>
+                <h3><span id="price"></span></h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

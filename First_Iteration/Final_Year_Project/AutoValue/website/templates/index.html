@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block link %}<link rel="stylesheet" href="{{url_for('static',filename='index_styles.css')}}">{% endblock %}
+{% block content %}
+
+<div class="left-side">
+    <h1>Welcome to AutoValue</h1>
+    <p>Discover the best deals on cars from top dealerships.</p>
+    <p>Find your dream car today!</p>
+    <p>Search, compare, and buy with confidence.</p>
+    <!-- You can generate random text dynamically using JavaScript -->
+</div>
+
+<!-- Right side with login and signup buttons -->
+<div class="right-side">
+    <div class="button-container">
+        <button class="button" id="login" name="login" onclick="loginButton()">Login</button>
+        <button class="button" id="signUp" name="signUp" onclick="signUpButton()">Sign Up</button>
+    </div>
+</div>
+
+{% endblock %}

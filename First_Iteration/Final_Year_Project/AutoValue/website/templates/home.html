@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+{% block link %}
+<link rel="stylesheet" href="{{url_for('static',filename='home_styles.css')}}">
+{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/home"><img src="logo.png" alt="AutoValue"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/home/predict-price">Predict Price</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/home/car-blogs">Car Blogs</a>
+                </li>
+
+            </ul>
+            <form class="d-flex">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    {% block search %}
+                    <li class="nav-item">
+                        <div class="input-group">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </div>
+                    </li>
+                    {% endblock %}
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/home/logout">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home/profile">My Profile</a>
+                    </li>
+
+                </ul>
+            </form>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+{% block content %}
+
+
+<div class="d-flex container-fluid justify-content-center align-items-center custom-background1 rounded-3">
+    <div class="container-fluid text-white">
+        <div class="row justify-content-center custom-text">
+            <div class="col-6 d-flex justify-content-center">
+                <h2>All the cars. One search.</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-6 d-flex justify-content-center">
+                <h4>Browser listings from all the major used car sites including:</h4>
+            </div>
+
+        </div>
+        <div class="row justify-content-center mt-3">
+            <div class="col d-flex justify-content-center">
+                <img src="../static/cars24logo.webp" alt="Cars24" height="39px" width="80px" class="me-5">
+                <img src="../static/olxlogo-removebg-preview.png" alt="OLX" height="45px" width="66px" class="me-5">
+                <img src="../static/spinnylogo-removebg-preview.png" alt="Spinny" height="45px" width="144px">
+            </div>
+
+        </div>
+        <form action="/home/get-car-listings" method="POST">
+            <div class="row mt-5 pt-5 justify-content-center">
+                <div class="col-3">
+                    <label for="select-make" class="form-label">Company</label>
+                    <select class="form-select" id="select-make" name="select-make" aria-label="Default select example"
+                        onchange="loadCarModels(this.id,'select-model')">
+                        <option>Select Car Company</option>
+                        {% for company in companies %}
+                        <option value="{{ company }}">{{ company }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-3">
+                    <label for="select-model" class="form-label">Model</label>
+                    <select class="form-select" id="select-model" name="select-model"
+                        aria-label="Default select example">
+                        <option>Select Car Model</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="row mt-3 justify-content-center">
+                <div class="col-3">
+                    <label for="kmsdriven" class="form-label">Kilometers Driven</label>
+                    <input type="number" class="form-control" id="kms-driven" name="kms-driven"
+                        placeholder="Enter Kilometers Driven">
+                </div>
+                <div class="col-3">
+                    <label for="select-location" class="form-label">Location</label>
+                    <select class="form-select" id="select-location" name="select-location"
+                        aria-label="Default select example">
+                        <option>Select Car Location</option>
+                        {% for location in locations %}
+                        <option value="{{ location }}">{{ location }}</option>
+                        {% endfor %}
+                    </select>
+
+                </div>
+            </div>
+            <div class="row mt-3 justify-content-center">
+                <div class="col-3">
+                    <label for="year" class="form-label">Year</label>
+                    <input type="number" class="form-control" id="year" name="year" placeholder="Enter Year">
+                </div>
+                <div class="col-3">
+                    <label for="select-fuel-type" class="form-label">Fuel Type</label>
+                    <select class="form-select" id="select-fuel-type" name="select-fuel-type"
+                        aria-placeholder="Select Fuel Type">
+                        <option>Select Fuel Type</option>
+                        {% for type in fuel_types %}
+                        <option value="{{ type }}">{{ type }}</option>
+                        {% endfor %}
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col text-center">
+                    <button type="submit" class="btn btn-primary mt-3">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="d-flex container-fluid justify-content-center align-items-center mt-5 rounded-3">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <!-- d-flex is imp -->
+            <div class="col-6 d-flex justify-content-center">
+                <h1>How AutoValue Works</h1>
+            </div>
+        </div>
+        <div class="row mt-3 justify-content-center">
+            <div class="col-6 d-flex justify-content-center text-center">
+                <p>We aggregate multiple listings from different used car selling websites, showing all the results for
+                    your
+                    search from each of the listings' websites. Our goal is to capture all the results in single search,
+                    to
+                    save you time and help you find your ideal next car. </p>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col text-center">
+                <div style="height: 300px; width: 150px; background-color: aqua;"></div><img src="" alt="Image 1"
+                    height="200px" width="100px">
+                <h4>Just the Cars You Want</h4>
+                <p>AutoValue supports extensive search filtering for attributes from fuel type to interior color. Cast
+                    your net locally or across the country. </p>
+            </div>
+            <div class="col text-center">
+                <div style="height: 300px; width: 150px; background-color: aqua;"></div><img src="" alt="Image 2"
+                    height="200px" width="100px">
+                <h4>Browse Results</h4>
+                <p>AutoValue provides hundreds of listings from a variety of sources. Browse them by source, or all in a
+                    single list, with all the sorting options you'd expect. </p>
+            </div>
+            <div class="col text-center">
+                <div style="height: 300px; width: 150px; background-color: aqua;"></div><img src="" alt="Image 3"
+                    height="200px" width="100px">
+                <h4>Search on any device</h4>
+                <p>AutoValue works well in your browser - on any device, or as an app for iOS or Android. This means you
+                    get the full power of AutoTempest on your phone, tablet, laptop or desktop. </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock%}
+{% block footer %}
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">AutoValue. All Rights Reserved &copy; 2023</p>
+    </div>
+    <!-- /.container -->
+</footer>
+{% endblock %}

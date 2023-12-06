@@ -1,0 +1,113 @@
+{% extends "home.html" %}
+{% block link %}
+<link rel="stylesheet" href="{{url_for('static',filename='car_listings_styles.css')}}">
+{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h1>Spinny</h1>
+    {% set listings_per_row = 3 %}
+    <div class="row justify-content-center">
+
+        {% for car in spinny_data %}
+            {% if loop.index % listings_per_row == 1 %}
+                </div><div class="row justify-content-center">
+            {% endif %}
+
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 w-25">
+                <a href="{{ car.listingurl }}" class="card-link" style="text-decoration: none;" target="_blank">
+                    <div class="card" style="width: 100%;">
+                        <img src="{{ car.imageurl }}" class="card-img-top" alt="Car Image">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ car.carname }}</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{{ car.location }}</li>
+                            <li class="list-group-item">{{ car.price }}</li>
+                            <li class="list-group-item">{{ car.fueltype }}</li>
+                            <li class="list-group-item">{{ car.kilometersdriven }}</li>
+                            <li class="list-group-item">{{ car.year}}</li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
+
+            {% if loop.index == spinny_data|length %}
+                </div>
+            {% endif %}
+        {% endfor %}
+
+    </div>
+    
+</div>
+<div class="container mt-5">
+    <h1>OLX</h1>
+    <div class="row justify-content-center">
+
+        {% for car in olx_data %}
+            {% if loop.index % listings_per_row == 1 %}
+                </div><div class="row justify-content-center">
+            {% endif %}
+
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 w-25">
+                <a href="{{ car.listingurl }}" class="card-link" style="text-decoration: none;" target="_blank">
+                    <div class="card" style="width: 100%;">
+                        <img src="{{ car.imageurl }}" class="card-img-top" alt="Car Image">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ car.carname }}</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{{ car.location }}</li>
+                            <li class="list-group-item">{{ car.price }}</li>
+                            <li class="list-group-item">{{ car.fueltype }}</li>
+                            <li class="list-group-item">{{ car.kilometersdriven }}</li>
+                            <li class="list-group-item">{{ car.year}}</li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
+
+            {% if loop.index == olx_data|length %}
+                </div>
+            {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
+<div class="container mt-5">
+    <h1>Cars24</h1>
+    {% set listings_per_row = 3 %}
+    <div class="row justify-content-center">
+
+        {% for car in cars24_data %}
+            {% if loop.index % listings_per_row == 1 %}
+                </div><div class="row justify-content-center">
+            {% endif %}
+
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 w-25">
+                <a href="{{ car.listingurl }}" class="card-link" style="text-decoration: none;" target="_blank">
+                    <div class="card" style="width: 100%;">
+                        <img src="{{ car.imageurl }}" class="card-img-top" alt="Car Image" >
+                        <div class="card-body">
+                            <h5 class="card-title">{{ car.carname }}</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{{ car.location }}</li>
+                            <li class="list-group-item">{{ car.price }}</li>
+                            <li class="list-group-item">{{ car.fueltype }}</li>
+                            <li class="list-group-item">{{ car.kilometersdriven }}</li>
+                            <li class="list-group-item">{{ car.year}}</li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
+            {% if loop.index == cars24_data|length %}
+                </div>
+            {% endif %}
+        {% endfor %}
+
+    </div>
+   
+</div>
+
+
+{% endblock %}
