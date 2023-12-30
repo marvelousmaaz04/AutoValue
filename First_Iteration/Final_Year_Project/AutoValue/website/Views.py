@@ -19,9 +19,6 @@ def index():
 @views.route("/home",methods=["GET","POST"])
 @login_required
 def home():
-    
-    # print(companies)
-    # print(company_model_dict)
 
     all_cars = pd.read_csv("combined_unique_entries.csv")
 
@@ -36,9 +33,6 @@ def home():
     fuel_types = sorted(cleaned_car_data["Fuel Type"].unique())
 
     print(companies)
-    print()
-    print()
-    print()
     print(models)
 
     return render_template('home.html', companies=companies,locations=car_locations,fuel_types=fuel_types)
@@ -97,8 +91,6 @@ def get_car_price_prediction():
     fuel_type = request.form.get("fuel-type")
     year = int(request.form.get("year"))
     location = request.form.get("location")
-
-    
 
     print(company, model, kms_driven, fuel_type, location)
 
@@ -196,51 +188,18 @@ def get_car_listings():
         if response_spinny.status_code == 200:
             spinny_data = response_spinny.json()
             print("Received spinny response")
-            # print("API response:", spinny_data)
-            # print(len(data))
-            # for car in data:
-            #     CarName = car['CarName']
-            #     FuelType = car['FuelType']
-            #     ImageUrl = car['ImageUrl']
-            #     KilometersDriven = car['KilometersDriven']
-            #     ListingID = car['ListingID']
-            #     ListingUrl = car['ListingUrl']
-            #     Location = car['Location']
-            #     Price = car['Price']
-            #     Year = car['Year']
+        
         
         if response_olx.status_code == 200:
             olx_data = response_olx.json()
             print("Received olx response")
-            # print("API response:", olx_data)
-            # print(len(data))
-            # for car in data:
-            #     CarName = car['CarName']
-            #     FuelType = car['FuelType']
-            #     ImageUrl = car['ImageUrl']
-            #     KilometersDriven = car['KilometersDriven']
-            #     ListingID = car['ListingID']
-            #     ListingUrl = car['ListingUrl']
-            #     Location = car['Location']
-            #     Price = car['Price']
-            #     Year = car['Year']
+        
         
         
         if response_cars24.status_code == 200:
             cars24_data = response_cars24.json()
             print("Received cars24 response")
-            # print("API response:", cars24_data)
-            print(len(cars24_data))
-            # for car in data:
-            #     CarName = car['CarName']
-            #     FuelType = car['FuelType']
-            #     ImageUrl = car['ImageUrl']
-            #     KilometersDriven = car['KilometersDriven']
-            #     ListingID = car['ListingID']
-            #     ListingUrl = car['ListingUrl']
-            #     Location = car['Location']
-            #     Price = car['Price']
-            #     Year = car['Year']
+            
         return render_template("car_listings-copy.html",spinny_data=spinny_data,olx_data=olx_data,cars24_data=cars24_data)
     return render_template("car_listings.html")
 

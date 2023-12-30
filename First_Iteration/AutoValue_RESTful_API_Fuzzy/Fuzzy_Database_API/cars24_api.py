@@ -5,15 +5,6 @@ from sqlalchemy import or_,func,and_,text
 from unidecode import unidecode
 import string
 
-# def normalize(text):
-#     tokens = word_tokenize(text)
-#     lemmatizer = WordNetLemmatizer()
-
-#     normalized = []
-#     for word in tokens:
-#         word = lemmatizer.lemmatize(word) 
-#         normalized.append(word)
-#     return " ".join(normalized)
 
 
 def preprocess_query(query):
@@ -31,15 +22,6 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///all_cars24_car_listings_fuzzy.db'  # Replace with your database name
 db = SQLAlchemy(app)
 
-def model_to_dict(model_instance):
-    """
-    Convert an SQLAlchemy model instance to a Python dictionary.
-    """
-    result = {}
-    for key, value in model_instance.__dict__.items():
-        if not key.startswith("_"):
-            result[key] = value
-    return result
 
 # Define data models as SQLAlchemy classes for each of the five tables
 class cars24_mumbai_fts(db.Model):
@@ -191,8 +173,6 @@ def get_table1():
     car_listings = results
 
     
-    # car_listings_dict = [model_to_dict(car) for car in car_listings]
-    # return jsonify(car_listings_dict)
     car_listings_dict = [dict(car) for car in car_listings]
     print(car_listings_dict)
     car_listings_dict = [{key.lower(): value for key, value in dictionary.items()} for dictionary in car_listings_dict]
@@ -278,8 +258,6 @@ def get_table2():
     car_listings = results
 
     
-    # car_listings_dict = [model_to_dict(car) for car in car_listings]
-    # return jsonify(car_listings_dict)
     car_listings_dict = [dict(car) for car in car_listings]
     print(car_listings_dict)
     car_listings_dict = [{key.lower(): value for key, value in dictionary.items()} for dictionary in car_listings_dict]
@@ -364,8 +342,6 @@ def get_table3():
     car_listings = results
 
     
-    # car_listings_dict = [model_to_dict(car) for car in car_listings]
-    # return jsonify(car_listings_dict)
     car_listings_dict = [dict(car) for car in car_listings]
     print(car_listings_dict)
     car_listings_dict = [{key.lower(): value for key, value in dictionary.items()} for dictionary in car_listings_dict]
@@ -450,8 +426,6 @@ def get_table4():
     car_listings = results
 
     
-    # car_listings_dict = [model_to_dict(car) for car in car_listings]
-    # return jsonify(car_listings_dict)
     car_listings_dict = [dict(car) for car in car_listings]
     print(car_listings_dict)
     car_listings_dict = [{key.lower(): value for key, value in dictionary.items()} for dictionary in car_listings_dict]
@@ -536,8 +510,6 @@ def get_table5():
     car_listings = results
 
     
-    # car_listings_dict = [model_to_dict(car) for car in car_listings]
-    # return jsonify(car_listings_dict)
     car_listings_dict = [dict(car) for car in car_listings]
     print(car_listings_dict)
     car_listings_dict = [{key.lower(): value for key, value in dictionary.items()} for dictionary in car_listings_dict]
