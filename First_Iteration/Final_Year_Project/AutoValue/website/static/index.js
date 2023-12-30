@@ -92,30 +92,7 @@ function loadCarModelsPredictionPage(id, car_model_id) {
     
 }
 
-function form_handler(event){
-    event.preventDefault();
-}
 
-function getCarPrice(){
-    document.getElementById("prediction-form").addEventListener("submit",form_handler)
-
-    var fd = new FormData(document.getElementById("prediction-form"))
-
-    var xhr = new XMLHttpRequest;
-
-    xhr.open("POST","/home/get-price-prediction", true);
-
-    document.getElementById("price").innerHTML = "Wait! Predicting Price...";
-
-    xhr.onreadystatechange = function(){
-        if(xhr.readyState == XMLHttpRequest.DONE){
-            document.getElementById("price").innerHTML = "Predicted Price: Rs." + xhr.responseText;
-        }
-    }
-
-    xhr.onload = function(){}
-    xhr.send(fd);
-}
 
 // function searchBlogs(id) {
 //     var keyword = document.getElementById("search-input").value;

@@ -5,6 +5,7 @@ import pandas as pd
 import json
 import pickle
 import numpy as np
+from flask_login import login_required,current_user
 
 views = Blueprint("views",__name__)
 
@@ -16,6 +17,7 @@ def index():
     return render_template("index.html")
 
 @views.route("/home",methods=["GET","POST"])
+@login_required
 def home():
     
     # print(companies)
@@ -239,7 +241,7 @@ def get_car_listings():
             #     Location = car['Location']
             #     Price = car['Price']
             #     Year = car['Year']
-        return render_template("car_listings.html",spinny_data=spinny_data,olx_data=olx_data,cars24_data=cars24_data)
+        return render_template("car_listings-copy.html",spinny_data=spinny_data,olx_data=olx_data,cars24_data=cars24_data)
     return render_template("car_listings.html")
 
 

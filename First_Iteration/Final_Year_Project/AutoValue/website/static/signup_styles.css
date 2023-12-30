@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Raleway&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +7,11 @@
 
 /* Style for the entire body */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #f3f3f3;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     height: 100vh;
     margin: 0;
@@ -27,17 +29,21 @@ body {
     text-align: center;
 }
 
+.signup-form h1{
+    font-size: x-large;
+}
+
 /* Style for the form fields and button */
 .form-input {
     margin: 10px 0;
     width: 100%;
     padding: 10px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid silver;
     border-radius: 5px;
 }
 
 .form-button {
-    background-color: #009688;
+    background-color: #1b2069;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -48,15 +54,45 @@ body {
 }
 
 .form-button:hover {
-    background-color: #00796b;
+    background-color: #262c8a;
 }
 
 .logo {
-    margin: 20px 0; /* Adjust margin as needed */
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
     margin-top: 20px; /* Adjust margin as needed */
 }
 
+#email_error, #password_error, #full_name_error, #cpassword_error{
+    background-color: rgba(255, 0, 0, 0.1);
+    color: red;
+    display: none;
+    border: 1px solid red;
+    border-radius: 3px;
+    font-size: small;
+}
+
+#cpassword_error{
+    margin-bottom: 10px;
+}
+
+@media(max-width: 800px){
+    .signup-form{
+        max-width: 300px;
+        max-height: fit-content;
+    }
+    .form-input{
+        font-size: 12px;
+    }
+    .signup-form h1{
+        font-size: large;
+    }
+    .form-button{
+        font-size: 12px;
+    }
+    #email_error, #password_error, #full_name_error, #cpassword_error{
+        font-size: x-small;
+    }
+    
+    *{
+        font-size: 14px;
+    }
+}

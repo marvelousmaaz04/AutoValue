@@ -61,7 +61,7 @@ def execute_query(query, params=(), fetch_one=False):
 def get_all_blogs():
     all_blogs = []
     
-    table_names = ["autocar_india_blogs", "rushlane_blogs", "indian_autos_blogs", "autox_blogs"]
+    table_names = ["rushlane_blogs","autocar_india_blogs", "indian_autos_blogs", "autox_blogs"]
 
     for table_name in table_names:
         query = f"SELECT * FROM {table_name} LIMIT 20"
@@ -87,7 +87,7 @@ def search_blogs():
 
     all_searched_blogs = []
 
-    table_names = ["autocar_india_blogs", "rushlane_blogs", "indian_autos_blogs", "autox_blogs"]
+    table_names = ["rushlane_blogs","autocar_india_blogs", "indian_autos_blogs", "autox_blogs"]
 
     for table_name in table_names:
         query = f"SELECT * FROM {table_name} WHERE title LIKE '%{keyword}%' OR description LIKE '%{keyword}%' LIMIT 10"

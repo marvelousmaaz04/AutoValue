@@ -1,18 +1,18 @@
 {% extends "home.html" %}
 {% block link %}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="{{url_for('static',filename='car_blogs_styles.css')}}">
 {% endblock %}
 {% block content %}
-<div class="container mt-3">
-    <div class="row justify-content-end">
-        <div class="col-md-3">
+<div class="container mt-3 col-md-7 mr-2">
+    <div class="row justify-content-md-end">
+        <div class="col-md-4 col-11">
             <form action="/home/car-blogs" method="POST">
                 <div class="input-group">
 
                     <input type="text" class="form-control" placeholder="Search" aria-label="Search" id="search-input"
                         name="search-input">
-                    <button class="btn btn-outline-secondary" type="submit" id="search-button">
-                        <i class="bi bi-search"></i>
+                    <button class="btn btn-outline-dark" type="submit" id="search-button">
+                        <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
 
                 </div>
@@ -20,15 +20,19 @@
         </div>
     </div>
 </div>
-<div class="container mt-5">
+<div class="container mt-5 col-md-9 col-12 blog-container">
     {% for blog in all_blogs %}
-    {% if loop.index % 2 == 1 %}
-    <div class="row">
-        {% endif %}
-        <div class="col-md-6 mb-4">
+    <div class="row my-4">
+        <div class="col-md-10 col-11 mx-auto">
             <div
-                class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 position-relative align-items-center">
-                <div class="col-md-8 d-flex flex-column">
+                class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 position-relative align-items-center justify-content-evenly">
+                <div class="col-12 col-md-3 d-flex justify-content-center">
+                    <a href="{{ blog.blog_url }}" target="_blank" style="text-decoration: none;" id="blog-link">
+                        <img src="{{ blog.image_url }}" alt="{{ blog.title }}" class="img-fluid" id="blog-img">
+                    </a>
+                </div>
+                
+                <div class="col-md-9 d-flex flex-column">
 
                     <div class="p-4 flex-fill">
                         <a href="{{ blog.blog_url }}" target="_blank" style="text-decoration: none; color: black;">
@@ -39,19 +43,23 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-4 d-inline-block">
-                    <a href="{{ blog.blog_url }}" target="_blank" style="text-decoration: none;">
-                        <img src="{{ blog.image_url }}" alt="{{ blog.title }}" class="img-fluid">
-                    </a>
-                </div>
+                
             </div>
         </div>
-        {% if loop.index % 2 == 0 or loop.last %}
     </div>
+    {% if loop.index % 2 == 0 or loop.last %}
     {% endif %}
     {% endfor %}
 </div>
 
+{% endblock %}
+{% block footer %}
+<footer class="bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">AutoValue. All Rights Reserved &copy; 2023</p>
+    </div>
+    <!-- /.container -->
+</footer>
 {% endblock %}
 {% block search %}
 

@@ -1,8 +1,8 @@
 /* Styles for the alert container */
 .alert-container {
     /* Initially hide the alert */
-   position: fixed;
-   top: 130px;
+   /* position: fixed; */
+   /* top: 130px; */
    display: flex;
    justify-content: space-between;
    width: auto;
