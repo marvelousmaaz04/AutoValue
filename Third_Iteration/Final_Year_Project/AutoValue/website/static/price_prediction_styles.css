@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Raleway&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 800px) {
+    #priceContainer{
+        width: 350px;
+        font-size: small;
+    }
+
+    #priceContainer form{
+        font-size: small;
+    }
+    #priceContainer select, #priceContainer input{
+        font-size: small;
+    }
+
+    #priceContainer button{
+        font-size: small;
+    }
+
+    footer{
+        height: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    span{
+        font-size: medium;
+    }
+}
