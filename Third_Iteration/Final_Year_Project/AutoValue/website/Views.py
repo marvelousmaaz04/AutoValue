@@ -12,13 +12,15 @@ views = Blueprint("views",__name__)
 car_locations = ["Mumbai", "Pune", "Delhi","Hyderabad","Bangalore", 'Any']
 cleaned_car_data = pd.read_csv("Cleaned_Car_Data_model.csv")
 
+
 @views.route("/",methods=["GET","POST"])
 def index():
     return render_template("index.html")
 
-@views.route("/home",methods=["GET","POST"])
+
+@views.route("/landing-page",methods=["GET","POST"])
 @login_required
-def home():
+def landing_page():
 
     all_cars = pd.read_csv("combined_unique_entries.csv")
 
@@ -36,8 +38,65 @@ def home():
 
     print(companies)
     print(models)
+    api_url_spinny = "http://127.0.0.1:8000/api/spinny_any"
+    api_url_olx = "http://127.0.0.1:9000/api/olx_any"
+    api_url_cars24 = "http://127.0.0.1:9500/api/cars24_any"
 
-    return render_template('home.html', companies=companies,locations=car_locations,fuel_types=fuel_types)
+    def landing_page_cars(params_1, params_2=None, params_3=None):
+        all_response = []
+        if params_1:
+            response_spinny = requests.get(api_url_spinny, params=params_1)
+            if response_spinny.status_code == 200:
+                spinny_data = response_spinny.json()
+                print("Received spinny response")
+                for jsonobj in response_spinny.json():
+                    all_response.append(jsonobj)
+        if params_2:
+            response_cars24 = requests.get(api_url_cars24, params=params_2)
+            if response_cars24.status_code == 200:
+                cars24_data = response_cars24.json()
+                print("Received cars24 response")
+            
+                for jsonobj in response_cars24.json():
+                    all_response.append(jsonobj)
+
+        if params_3:
+            response_olx = requests.get(api_url_olx, params=params_3)
+            if response_olx.status_code == 200:
+                olx_data = response_olx.json()
+                print("Received olx response")
+                for jsonobj in response_olx.json():
+                    all_response.append(jsonobj)
+
+        
+        
+        print(all_response)
+        car_listings_dict = [dict(car) for car in all_response]
+        print(car_listings_dict)
+        car_listings_dict = [{key.lower(): value for key, value in dictionary.items()} for dictionary in car_listings_dict]
+        print(car_listings_dict)
+        print(jsonify(car_listings_dict))
+        return car_listings_dict
+        
+    params_1 = {'limit': '2','company':'maruti','model':'suzuki','fuel-type':'any','kms-driven':'1000','year':'2010'}
+    params_2 = {'limit': '2','company':'honda','model':'amaze','fuel-type':'any','kms-driven':'2000','year':'2010'}
+    params_3 = {'limit': '2','company':'tata','model':'harrier','fuel-type':'any','kms-driven':'3000','year':'2010'}
+
+    popular_car_listings_dict = landing_page_cars(params_1,params_2,None)
+
+    params_1 = {'limit': '2','company':'maruti','fuel-type':'any','kms-driven':'1000','year':'2010'}
+    
+
+    spinny_featured_car_listings_dict = landing_page_cars(params_1,None,None)
+
+    # params_2 = {'limit': '2','company':'honda','model':'amaze','fuel-type':'any','kms-driven':'2000','year':'2010'}
+    params_2 = {'limit': '2','company':'honda','fuel-type':'any','kms-driven':'2000','year':'2010'}
+    params_3 = {'limit': '2','company':'tata','model':'harrier','fuel-type':'any','kms-driven':'3000','year':'2010'}
+
+    cars24_featured_car_listings_dict = landing_page_cars(None,params_2,None)
+    
+
+    return render_template('landing_page_copy.html', companies=companies,locations=car_locations,fuel_types=fuel_types,popular_cars=popular_car_listings_dict,spinny_featured_cars=spinny_featured_car_listings_dict,cars24_featured_cars=cars24_featured_car_listings_dict)
     # return render_template("home.html",companies=car_companies,models=car_models,locations=car_locations)
 
 # All Car Blog routes

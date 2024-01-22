@@ -112,12 +112,14 @@ class spinny_pune_fts(db.Model):
 # Define API endpoints to interact with each table
 @app.route('/api/spinny_any', methods=['GET'])
 def get_all_tables():
+    limit = request.args.get('limit')
+    company = request.args.get('company')
     model = request.args.get('model')
     fuel_type = request.args.get('fuel-type')
     location = request.args.get('location')
     year = int(request.args.get('year'))
     kms_driven = float(request.args.get('kms-driven'))
-    params = {'limit': '100','model':model,'fuel-type':fuel_type,'location':location,'year':year,'kms-driven':kms_driven}
+    params = {'limit': limit,'company':company,'model':model,'fuel-type':fuel_type,'location':location,'year':year,'kms-driven':kms_driven}
     print(params)
 
     mumbai_url = "http://127.0.0.1:8000/api/spinny_mumbai"
@@ -165,8 +167,10 @@ def get_table1():
     # data = spinny_mumbai.query.all()
     
     limit = request.args.get('limit', default=10, type=int)
+    company = request.args.get('company')
     model = request.args.get('model')
-    model = preprocess_query(model)
+    if model:
+        model = preprocess_query(model)
     fuel_type = request.args.get('fuel-type')
     location = request.args.get('location')
     year = int(request.args.get('year'))
@@ -175,19 +179,39 @@ def get_table1():
     print(fuel_type, location, year, kms_driven)
     query = 'SELECT * FROM spinny_mumbai_fts WHERE '  # Placeholder condition that is always true
     results = ""
-    params = ""
+    params = {}
+    
+
+    # Step 0 match company
+    if company:
+        search_terms = company.split(" ")
+        # query += ' AND '.join(['CarName MATCH :company_term{}'.format(i) for i in range(len(search_terms))])
+        company_query = 'CarName MATCH :company_term '
+        # Bind all the parameters to the query
+        # company_params = {'company_term{}'.format(i): term for i, term in enumerate(search_terms)}
+        company_params = {'company_term': ' '.join(search_terms)}
+        params.update(company_params)
+        query += company_query
+        print("Step 0 Query:", query)
+        print("Step 0 Params:", params)
+        results = db.session.execute(query, params).fetchall()
+        print("Step 0 Results:", results)
     # Step 1: Match CarName
     if model:
-        search_terms = model.split(" ") # split using space in case of one word only
-        query += ' AND '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
-        
+        search_terms = model.split(" ")
+        model_query = 'AND ' +' AND '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
 
         # Bind all the parameters to the query
-        params = {'term{}'.format(i): search_terms[i] for i in range(len(search_terms))}
+        model_params = {'term{}'.format(i): search_terms[i] for i in range(len(search_terms))}
+        params.update(model_params)
+        query += model_query
         print("Step 1 Query:", query)
         print("Step 1 Params:", params)
         results = db.session.execute(query, params).fetchall()
         print("Step 1 Results:", results)
+        print("*" * 10)
+        print()
+        print()
 
     # Step 2: Filter by FuelType
     if fuel_type:
@@ -246,6 +270,17 @@ def get_table1():
             print("*"*10)
             print()
             print()
+    # Step 4: Filter by Year
+    if year:
+        query += ' AND Year >= :year'
+        print("Step 4 Query:", query)
+
+        # Bind all the parameters to the query
+        year_params = {'year': year}
+        params.update(year_params)
+        results = db.session.execute(query, params).fetchall()
+        print("Step 4 Results:", results)
+
 
     # Step 5: Filter by KilometersDriven
     if kms_driven:
@@ -257,11 +292,23 @@ def get_table1():
         params.update(kms_driven_params)
         results = db.session.execute(query, params).fetchall()
         print("Step 5 Results:", results)
-    car_listings = results
-
     
+
+    # Apply LIMIT to the query based on the 'limit' parameter
+    query += ' LIMIT :limit'
+
+    # Add the 'limit' parameter to the params dictionary
+    limit_param = {'limit': limit}
+    params.update(limit_param)
+
+    # Execute the final query
+    results = db.session.execute(query, params).fetchall()
+    print("Final Query:", query)
+    print("Final Params:", params)
+    print("Final Results:", results)
     # car_listings_dict = [model_to_dict(car) for car in car_listings]
     # return jsonify(car_listings_dict)
+    car_listings = results
     car_listings_dict = [dict(car) for car in car_listings]
     print(car_listings_dict)
     car_listings_dict = [{key.lower(): value for key, value in dictionary.items()} for dictionary in car_listings_dict]
@@ -273,8 +320,10 @@ def get_table2():
     # data = spinny_delhi.query.all()
 
     limit = request.args.get('limit', default=10, type=int)
+    company = request.args.get('company')
     model = request.args.get('model')
-    model = preprocess_query(model)
+    if model:
+        model = preprocess_query(model)
     fuel_type = request.args.get('fuel-type')
     location = request.args.get('location')
     year = int(request.args.get('year'))
@@ -283,19 +332,39 @@ def get_table2():
     print(fuel_type, location, year, kms_driven)
     query = 'SELECT * FROM spinny_delhi_fts WHERE '  # Placeholder condition that is always true
     results = ""
-    params = ""
+    params = {}
+
+    # Step 0 match company
+    if company:
+        search_terms = company.split(" ")
+        # query += ' AND '.join(['CarName MATCH :company_term{}'.format(i) for i in range(len(search_terms))])
+        company_query = 'CarName MATCH :company_term '
+        # Bind all the parameters to the query
+        # company_params = {'company_term{}'.format(i): term for i, term in enumerate(search_terms)}
+        company_params = {'company_term': ' '.join(search_terms)}
+        params.update(company_params)
+        query += company_query
+        print("Step 0 Query:", query)
+        print("Step 0 Params:", params)
+        results = db.session.execute(query, params).fetchall()
+        print("Step 0 Results:", results)
     # Step 1: Match CarName
     if model:
-        search_terms = model.split(" ") # split using space in case of one word only
-        query += ' AND '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
-        
+        search_terms = model.split(" ")
+        model_query = 'AND ' +' AND '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
 
         # Bind all the parameters to the query
-        params = {'term{}'.format(i): search_terms[i] for i in range(len(search_terms))}
+        model_params = {'term{}'.format(i): search_terms[i] for i in range(len(search_terms))}
+        params.update(model_params)
+        query += model_query
         print("Step 1 Query:", query)
         print("Step 1 Params:", params)
         results = db.session.execute(query, params).fetchall()
         print("Step 1 Results:", results)
+        print("*" * 10)
+        print()
+        print()
+
 
     # Step 2: Filter by FuelType
     if fuel_type:
@@ -376,6 +445,18 @@ def get_table2():
         params.update(kms_driven_params)
         results = db.session.execute(query, params).fetchall()
         print("Step 5 Results:", results)
+
+    query += ' LIMIT :limit'
+
+    # Add the 'limit' parameter to the params dictionary
+    limit_param = {'limit': limit}
+    params.update(limit_param)
+
+    # Execute the final query
+    results = db.session.execute(query, params).fetchall()
+    print("Final Query:", query)
+    print("Final Params:", params)
+    print("Final Results:", results)
     car_listings = results
 
     
@@ -392,8 +473,10 @@ def get_table3():
     # data = spinny_delhi.query.all()
 
     limit = request.args.get('limit', default=10, type=int)
+    company = request.args.get('company')
     model = request.args.get('model')
-    model = preprocess_query(model)
+    if model:
+        model = preprocess_query(model)
     fuel_type = request.args.get('fuel-type')
     location = request.args.get('location')
     year = int(request.args.get('year'))
@@ -402,19 +485,38 @@ def get_table3():
     print(fuel_type, location, year, kms_driven)
     query = 'SELECT * FROM spinny_hyderabad_fts WHERE '  # Placeholder condition that is always true
     results = ""
-    params = ""
+    params = {}
+    # Step 0 match company
+    if company:
+        search_terms = company.split(" ")
+        # query += ' AND '.join(['CarName MATCH :company_term{}'.format(i) for i in range(len(search_terms))])
+        company_query = 'CarName MATCH :company_term '
+        # Bind all the parameters to the query
+        # company_params = {'company_term{}'.format(i): term for i, term in enumerate(search_terms)}
+        company_params = {'company_term': ' '.join(search_terms)}
+        params.update(company_params)
+        query += company_query
+        print("Step 0 Query:", query)
+        print("Step 0 Params:", params)
+        results = db.session.execute(query, params).fetchall()
+        print("Step 0 Results:", results)
     # Step 1: Match CarName
     if model:
-        search_terms = model.split(" ") # split using space in case of one word only
-        query += ' AND '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
-        
+        search_terms = model.split(" ")
+        model_query = 'AND ' +' AND '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
 
         # Bind all the parameters to the query
-        params = {'term{}'.format(i): search_terms[i] for i in range(len(search_terms))}
+        model_params = {'term{}'.format(i): search_terms[i] for i in range(len(search_terms))}
+        params.update(model_params)
+        query += model_query
         print("Step 1 Query:", query)
         print("Step 1 Params:", params)
         results = db.session.execute(query, params).fetchall()
         print("Step 1 Results:", results)
+        print("*" * 10)
+        print()
+        print()
+
 
     # Step 2: Filter by FuelType
     if fuel_type:
@@ -495,6 +597,18 @@ def get_table3():
         params.update(kms_driven_params)
         results = db.session.execute(query, params).fetchall()
         print("Step 5 Results:", results)
+    
+    query += ' LIMIT :limit'
+
+    # Add the 'limit' parameter to the params dictionary
+    limit_param = {'limit': limit}
+    params.update(limit_param)
+
+    # Execute the final query
+    results = db.session.execute(query, params).fetchall()
+    print("Final Query:", query)
+    print("Final Params:", params)
+    print("Final Results:", results)
     car_listings = results
 
     
@@ -511,8 +625,11 @@ def get_table4():
     # data = spinny_bangalore.query.all()
 
     limit = request.args.get('limit', default=10, type=int)
+    company = request.args.get('company')
     model = request.args.get('model')
-    model = preprocess_query(model)
+    if model:
+        model = preprocess_query(model)
+   
     fuel_type = request.args.get('fuel-type')
     location = request.args.get('location')
     year = int(request.args.get('year'))
@@ -521,19 +638,38 @@ def get_table4():
     print(fuel_type, location, year, kms_driven)
     query = 'SELECT * FROM spinny_bangalore_fts WHERE '  # Placeholder condition that is always true
     results = ""
-    params = ""
+    params = {}
+    # Step 0 match company
+    if company:
+        search_terms = company.split(" ")
+        # query += ' AND '.join(['CarName MATCH :company_term{}'.format(i) for i in range(len(search_terms))])
+        company_query = 'CarName MATCH :company_term '
+        # Bind all the parameters to the query
+        # company_params = {'company_term{}'.format(i): term for i, term in enumerate(search_terms)}
+        company_params = {'company_term': ' '.join(search_terms)}
+        params.update(company_params)
+        query += company_query
+        print("Step 0 Query:", query)
+        print("Step 0 Params:", params)
+        results = db.session.execute(query, params).fetchall()
+        print("Step 0 Results:", results)
     # Step 1: Match CarName
     if model:
-        search_terms = model.split(" ") # split using space in case of one word only
-        query += ' AND '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
-        
+        search_terms = model.split(" ")
+        model_query = 'AND ' +' AND '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
 
         # Bind all the parameters to the query
-        params = {'term{}'.format(i): search_terms[i] for i in range(len(search_terms))}
+        model_params = {'term{}'.format(i): search_terms[i] for i in range(len(search_terms))}
+        params.update(model_params)
+        query += model_query
         print("Step 1 Query:", query)
         print("Step 1 Params:", params)
         results = db.session.execute(query, params).fetchall()
         print("Step 1 Results:", results)
+        print("*" * 10)
+        print()
+        print()
+
 
     # Step 2: Filter by FuelType
     if fuel_type:
@@ -614,6 +750,18 @@ def get_table4():
         params.update(kms_driven_params)
         results = db.session.execute(query, params).fetchall()
         print("Step 5 Results:", results)
+
+    query += ' LIMIT :limit'
+
+    # Add the 'limit' parameter to the params dictionary
+    limit_param = {'limit': limit}
+    params.update(limit_param)
+
+    # Execute the final query
+    results = db.session.execute(query, params).fetchall()
+    print("Final Query:", query)
+    print("Final Params:", params)
+    print("Final Results:", results)
     car_listings = results
 
     
@@ -630,8 +778,10 @@ def get_table5():
     # data = spinny_pune.query.all()
 
     limit = request.args.get('limit', default=10, type=int)
+    company = request.args.get('company')
     model = request.args.get('model')
-    model = preprocess_query(model)
+    if model:
+        model = preprocess_query(model)
     fuel_type = request.args.get('fuel-type')
     location = request.args.get('location')
     year = int(request.args.get('year'))
@@ -640,19 +790,38 @@ def get_table5():
     print(fuel_type, location, year, kms_driven)
     query = 'SELECT * FROM spinny_pune_fts WHERE '  # Placeholder condition that is always true
     results = ""
-    params = ""
+    params = {}
+    # Step 0 match company
+    if company:
+        search_terms = company.split(" ")
+        # query += ' AND '.join(['CarName MATCH :company_term{}'.format(i) for i in range(len(search_terms))])
+        company_query = 'CarName MATCH :company_term '
+        # Bind all the parameters to the query
+        # company_params = {'company_term{}'.format(i): term for i, term in enumerate(search_terms)}
+        company_params = {'company_term': ' '.join(search_terms)}
+        params.update(company_params)
+        query += company_query
+        print("Step 0 Query:", query)
+        print("Step 0 Params:", params)
+        results = db.session.execute(query, params).fetchall()
+        print("Step 0 Results:", results)
     # Step 1: Match CarName
     if model:
-        search_terms = model.split(" ") # split using space in case of one word only
-        query += ' AND '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
-        
+        search_terms = model.split(" ")
+        model_query = 'AND ' +' AND '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
 
         # Bind all the parameters to the query
-        params = {'term{}'.format(i): search_terms[i] for i in range(len(search_terms))}
+        model_params = {'term{}'.format(i): search_terms[i] for i in range(len(search_terms))}
+        params.update(model_params)
+        query += model_query
         print("Step 1 Query:", query)
         print("Step 1 Params:", params)
         results = db.session.execute(query, params).fetchall()
         print("Step 1 Results:", results)
+        print("*" * 10)
+        print()
+        print()
+
 
     # Step 2: Filter by FuelType
     if fuel_type:
@@ -732,6 +901,18 @@ def get_table5():
         params.update(kms_driven_params)
         results = db.session.execute(query, params).fetchall()
         print("Step 5 Results:", results)
+    
+    query += ' LIMIT :limit'
+
+    # Add the 'limit' parameter to the params dictionary
+    limit_param = {'limit': limit}
+    params.update(limit_param)
+
+    # Execute the final query
+    results = db.session.execute(query, params).fetchall()
+    print("Final Query:", query)
+    print("Final Params:", params)
+    print("Final Results:", results)
     car_listings = results
 
     

@@ -102,12 +102,13 @@ class olx_pune_fts(db.Model):
 # Define API endpoints to interact with each table
 @app.route('/api/olx_any', methods=['GET'])
 def get_all_tables():
+    limit = request.args.get('limit')
     model = request.args.get('model')
     fuel_type = request.args.get('fuel-type')
     location = request.args.get('location')
     year = int(request.args.get('year'))
     kms_driven = float(request.args.get('kms-driven'))
-    params = {'limit': '100','model':model,'fuel-type':fuel_type,'location':location,'year':year,'kms-driven':kms_driven}
+    params = {'limit': limit,'model':model,'fuel-type':fuel_type,'location':location,'year':year,'kms-driven':kms_driven}
     print(params)
 
     mumbai_url = "http://127.0.0.1:9000/api/olx_mumbai"
@@ -259,6 +260,18 @@ def get_table1():
         params.update(kms_driven_params)
         results = db.session.execute(query, params).fetchall()
         print("Step 5 Results:", results)
+    
+    query += ' LIMIT :limit'
+
+    # Add the 'limit' parameter to the params dictionary
+    limit_param = {'limit': limit}
+    params.update(limit_param)
+
+    # Execute the final query
+    results = db.session.execute(query, params).fetchall()
+    print("Final Query:", query)
+    print("Final Params:", params)
+    print("Final Results:", results)
     car_listings = results
 
     
@@ -379,6 +392,18 @@ def get_table2():
         params.update(kms_driven_params)
         results = db.session.execute(query, params).fetchall()
         print("Step 5 Results:", results)
+    
+    query += ' LIMIT :limit'
+
+    # Add the 'limit' parameter to the params dictionary
+    limit_param = {'limit': limit}
+    params.update(limit_param)
+
+    # Execute the final query
+    results = db.session.execute(query, params).fetchall()
+    print("Final Query:", query)
+    print("Final Params:", params)
+    print("Final Results:", results)
     car_listings = results
 
     
@@ -499,6 +524,18 @@ def get_table3():
         params.update(kms_driven_params)
         results = db.session.execute(query, params).fetchall()
         print("Step 5 Results:", results)
+    
+    query += ' LIMIT :limit'
+
+    # Add the 'limit' parameter to the params dictionary
+    limit_param = {'limit': limit}
+    params.update(limit_param)
+
+    # Execute the final query
+    results = db.session.execute(query, params).fetchall()
+    print("Final Query:", query)
+    print("Final Params:", params)
+    print("Final Results:", results)
     car_listings = results
 
     
@@ -619,6 +656,18 @@ def get_table4():
         params.update(kms_driven_params)
         results = db.session.execute(query, params).fetchall()
         print("Step 5 Results:", results)
+    
+    query += ' LIMIT :limit'
+
+    # Add the 'limit' parameter to the params dictionary
+    limit_param = {'limit': limit}
+    params.update(limit_param)
+
+    # Execute the final query
+    results = db.session.execute(query, params).fetchall()
+    print("Final Query:", query)
+    print("Final Params:", params)
+    print("Final Results:", results)
     car_listings = results
 
     
@@ -739,6 +788,18 @@ def get_table5():
         params.update(kms_driven_params)
         results = db.session.execute(query, params).fetchall()
         print("Step 5 Results:", results)
+    
+    query += ' LIMIT :limit'
+
+    # Add the 'limit' parameter to the params dictionary
+    limit_param = {'limit': limit}
+    params.update(limit_param)
+
+    # Execute the final query
+    results = db.session.execute(query, params).fetchall()
+    print("Final Query:", query)
+    print("Final Params:", params)
+    print("Final Results:", results)
     car_listings = results
 
     

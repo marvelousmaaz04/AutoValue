@@ -1,12 +1,87 @@
 /* Reset some default styles */
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root {
+    --green: #24be21;
+    /* --light-green: #8dd48c; */
+    --light-green: #59c957;
+    --black: #130f40;
+    --light-color: #666;
+    --border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    --box-shadow: 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
+}
 
 * {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
 }
+
+.header{
+    margin-top: 20px;
+}
+
+.header .logo {
+    font-size: 1.5rem;
+    color: var(--black);
+    font-weight: bolder;
+    text-decoration: none;
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+    overflow-x: hidden;
+}
+
+span.header .logo span {
+    color: var(--green);
+}
+
+span.header .logo {
+    font-size: 2.5rem;
+    color: var(--black);
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.header .logo span {
+    color: var(--green);
+}
+
+/* Style for the login and signup buttons */
+.button-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.button {
+    background-color: var(--light-green);
+    color: var(--black);
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    text-align: center;
+    width: 140px;
+
+}
+
+.button:hover {
+    background-color: var(--green);
+}
+
+
 
 /* #logo{
     margin-bottom: 350px;
@@ -30,18 +105,14 @@
     }
 }
 
-#myFooter {
-    position: relative;
-    top: 350px;
-    /* top: auto; */
-    /* bottom: 0px; */
-    left: 50%;
-    transform: translateX(-50%);
-    /* transform: translateY(50%); */
-    width: 100%;
-    /* Ensure full width */
+.footer{
+    position: absolute;
+    bottom: 0px;
+    font-size: 1rem;
     text-align: center;
-    /* Center text within the container */
+    width: 100%;
+    background-color: var(--light-green);
+    padding: 1rem 2rem;
 }
 
 #intro {
@@ -54,7 +125,7 @@
 /* Style for the entire body */
 body {
 
-    background-color: #f3f3f3;
+    background-color: #fff;
     /* display: flex;
     justify-content: space-between; */
     /* align-items: center; */
@@ -88,25 +159,10 @@ body {
     padding: 20px;
 }
 
-/* Style for the login and signup buttons */
-.button-container {
-    display: flex;
-    flex-direction: row;
-}
 
-.button {
-    background-color: #1b2069;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s;
 
-}
-
-.button:hover {
-    background-color: #262c8a;
+@media(max-width: 800px) {
+    span.header .logo {
+        font-size: 2rem;
+    }
 }

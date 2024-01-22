@@ -2,23 +2,25 @@
 {% block link %}
 <link rel="stylesheet" href="{{url_for('static',filename='signup_styles.css')}}">{% endblock %}
 {% block content %}
-<div class="logo">
-    <img src="your-logo.png" alt="AutoValue" width="100" height="100">
+<div class="header" style="text-align: center;">
+    <a href="/" class="logo"><span>Auto</span>Value</a>
 </div>
 
-<div class="signup-form">
 
-    <h1>Sign Up</h1>
+<div class="signup-form-container">
+
+
     <form method="POST" onsubmit="return validate()" name="form">
-        <input class="form-input" type="text" placeholder="Full Name" name="fullName" id="fullName">
+        <h3>Sign Up</h3>
+        <input class="box" type="text" placeholder="Full Name" name="fullName" id="fullName">
         <div id="full_name_error">Invalid format.</div>
-        <input class="form-input" type="text" placeholder="Email" name="email" id="email">
-        <div id="email_error">Invalid email address.</div>
-        <input class="form-input" type="password" placeholder="Password" name="password" id="password">
+        <input class="box" type="text" placeholder="Email" name="email" id="email">
+        <div id="email_error"></div>
+        <input class="box" type="password" placeholder="Password" name="password" id="password">
         <div id="password_error">Password should be more than 5 characters.</div>
-        <input class="form-input" type="password" placeholder="Confirm Password" name="cpassword" id="cpassword">
+        <input class="box" type="password" placeholder="Confirm Password" name="cpassword" id="cpassword">
         <div id="cpassword_error">Passwords do not match.</div>
-        <button class="form-button" type="submit">Submit</button>
+        <button class="btn" type="submit">Submit</button>
     </form>
 </div>
 <div id="flash-messages" style="display: none;">
@@ -52,12 +54,10 @@
     {% endfor %}
     {% endwith %}
 </div>
-<div>
-    <div>
-        AutoValue. All Rights Reserved © 2023
-    </div>
-
+<div class="footer">
+    AutoValue. All Rights Reserved © 2023
 </div>
+
 <script>
     var email = document.forms['form']['email']
     var password = document.forms['form']['password']
@@ -119,7 +119,7 @@
             else if (fullName.value.trim().indexOf(' ') === -1) {
                 // No space found in the full name
                 fullName.style.border = '1px solid red';
-                full_name_error.innerText = 'Invalid format.(Separate first name and last name)'
+                full_name_error.innerText = 'Invalid format.(Must contain a space)'
                 full_name_error.style.display = "block";
                 return false;
             }
@@ -135,13 +135,24 @@
 
             // Regular expression for a basic email validation
             var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
             if (!emailRegex.test(email.value)) {
-                // Invalid email format
-                email.style.border = "1px solid red";
-                email_error.style.display = "block";
-                return false;
-            } else {
+                if (email.value.length < 1) {
+                    email.style.border = "1px solid red";
+                    email_error.innerHTML = "Email Address cannot be empty."
+                    email_error.style.display = "block";
+
+                    return false;
+                }
+                else if (!emailRegex.test(email.value)) {
+                    // Invalid email format
+                    email.style.border = "1px solid red";
+                    email_error.innerHTML = "Invalid Email Address."
+                    email_error.style.display = "block";
+                    return false;
+                }
+            }
+
+            else {
                 // Valid email format
                 email.style.border = ""; // Reset border to default
                 email_error.style.display = "none"; // Hide the error message

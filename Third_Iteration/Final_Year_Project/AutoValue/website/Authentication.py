@@ -1,4 +1,4 @@
-from flask import Blueprint, flash,render_template,request,jsonify,redirect,url_for
+from flask import Blueprint, flash,render_template,request,jsonify,redirect,url_for, make_response
 from .Models import User
 from . import db
 from .Views import views
@@ -26,14 +26,22 @@ def login():
             flash("Incorrect Password, try again.",category="error")
         else:
             login_user(user, remember=True)
-            return redirect(url_for("views.home")) # var name.func name
+            return redirect(url_for("views.landing_page")) # var name.func name
     return render_template("login.html")
 
-@auth.route("/logout",methods=["GET"])
+
+@auth.route("/logout",methods=["POST","GET"])
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('auth.login'))
+    # Create a response object
+    response = make_response(redirect(url_for('auth.login')))
+
+    # Set Cache-Control headers to prevent caching
+    response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
+    response.headers['Pragma'] = 'no-cache'
+    response.headers['Expires'] = '0'
+    return response 
 
 @auth.route("/sign-up",methods=["GET","POST"])
 def sign_up():
@@ -65,7 +73,7 @@ def sign_up():
             new_user = User(full_name=full_name,email=email,password=password)
             db.session.add(new_user)
             db.session.commit()
-            flash("Signup successful! You can now log in.", category="signup-success")
+            flash("Successfully Signed Up! You can now Log in.", category="signup-success")
             return redirect(url_for("auth.login"))
     return render_template("signup.html")
 
@@ -105,8 +113,8 @@ def forgot_password():
             with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
                 smtp.login(email_sender, email_password)
                 smtp.sendmail(email_sender, email_receiver, email_message.as_string())
-            flash('Email sent successfully. Check your inbox.', category="email-success")
-    return render_template("forgot_password.html")
+            flash('Email sent successfully. Check your inbox.', category="success")
+    return render_template("forgot_password_copy.html")
 
 @auth.route('/reset-password',methods=['GET','POST'])
 def reset_password():
