@@ -190,7 +190,7 @@ def get_table1():
     # Step 1: Match CarName
     if model:
         search_terms = model.split(" ")
-        model_query = 'AND ' +' AND '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
+        model_query = 'AND ' +' OR '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
 
         # Bind all the parameters to the query
         model_params = {'term{}'.format(i): search_terms[i] for i in range(len(search_terms))}
@@ -353,7 +353,7 @@ def get_table2():
     # Step 1: Match CarName
     if model:
         search_terms = model.split(" ")
-        model_query = 'AND ' +' AND '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
+        model_query = 'AND ' +' OR '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
 
         # Bind all the parameters to the query
         model_params = {'term{}'.format(i): search_terms[i] for i in range(len(search_terms))}
@@ -502,7 +502,7 @@ def get_table3():
     # Step 1: Match CarName
     if model:
         search_terms = model.split(" ")
-        model_query = 'AND ' +' AND '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
+        model_query = 'AND ' +' OR '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
 
         # Bind all the parameters to the query
         model_params = {'term{}'.format(i): search_terms[i] for i in range(len(search_terms))}
@@ -651,7 +651,7 @@ def get_table4():
     # Step 1: Match CarName
     if model:
         search_terms = model.split(" ")
-        model_query = 'AND ' +' AND '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
+        model_query = 'AND ' +' OR '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
 
         # Bind all the parameters to the query
         model_params = {'term{}'.format(i): search_terms[i] for i in range(len(search_terms))}
@@ -801,7 +801,7 @@ def get_table5():
     # Step 1: Match CarName
     if model:
         search_terms = model.split(" ")
-        model_query = 'AND ' +' AND '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
+        model_query = 'AND ' +' OR '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
 
         # Bind all the parameters to the query
         model_params = {'term{}'.format(i): search_terms[i] for i in range(len(search_terms))}

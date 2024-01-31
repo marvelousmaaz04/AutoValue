@@ -1,12 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Raleway&display=swap');
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root {
+    --green: #24be21;
+    --light-green: #59c957;
+    --black: #130f40;
+    --light-color: #666;
+    --border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    --box-shadow: 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    color: black;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
 }
 
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+    overflow-x: hidden;
+}
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    padding: 0.8rem 3rem;
+    background-color: var(--light-green);
+    color: var(--black);
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+.btn:hover {
+    background-color: var(--green);
+}
 .card:hover {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
     transform: translateY(-5px);
@@ -23,24 +59,25 @@ a{
     /* Your styles for list items after the first child go here */
     list-style-type: disc;
 }
-footer{
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    font-size: large;
+
+.card-body{
+    font-size: 1.7rem;
 }
 
+.card-body h5{
+    font-size: 1.7rem;
+}
+
+.card-footer{
+    font-size: 1.2rem;
+}
+h2{
+    font-size: 2.2rem;
+}
 
 @media(max-width: 800px) {
     .car-container{
         width: 350px;
-        font-size: small;
-    }
-    .car-container h5{
-        font-size: medium;
-    }
-    footer{
-        padding-top: 1.0rem;
-        padding-bottom: 1.0rem;
         font-size: small;
     }
 

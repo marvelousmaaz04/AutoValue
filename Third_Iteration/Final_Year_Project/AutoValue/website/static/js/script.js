@@ -134,3 +134,35 @@ var swiper2 = new Swiper(".reviews-slider", {
 });
 
 
+function loadCarModels(id, car_model_id) {
+
+    var company = document.getElementById(id).value;
+    var car_model = document.getElementById(car_model_id);
+    car_model.value = "";
+    car_model.innerHTML = "";
+    // var defaultOption = document.createElement("option");
+    
+    // defaultOption.innerHTML = "Select Car Model";
+    // car_model.appendChild(defaultOption);
+    console.log("function called!");
+    fetch("/home/get-car-models", {
+    method: "POST",
+    body: JSON.stringify({ "company": company }),
+    headers: {
+        'Content-Type': 'application/json'
+    }
+}).then((response) => {
+    console.log("response received success");
+    return response.json(); // return the promise here
+}).then((data) => {
+    console.log(data.models); // access the "models" key
+    for (var i = 0; i < data.models.length; i++) {
+        console.log(data.models[i]);
+        var newOption = document.createElement("option");
+        newOption.value = data.models[i];
+        newOption.innerHTML = data.models[i];
+        car_model.options.add(newOption);
+    }
+});
+    
+}

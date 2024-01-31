@@ -96,7 +96,7 @@ def landing_page():
     cars24_featured_car_listings_dict = landing_page_cars(None,params_2,None)
     
 
-    return render_template('landing_page_copy.html', companies=companies,locations=car_locations,fuel_types=fuel_types,popular_cars=popular_car_listings_dict,spinny_featured_cars=spinny_featured_car_listings_dict,cars24_featured_cars=cars24_featured_car_listings_dict)
+    return render_template('landing_page.html', companies=companies,locations=car_locations,fuel_types=fuel_types,popular_cars=popular_car_listings_dict,spinny_featured_cars=spinny_featured_car_listings_dict,cars24_featured_cars=cars24_featured_car_listings_dict)
     # return render_template("home.html",companies=car_companies,models=car_models,locations=car_locations)
 
 # All Car Blog routes
@@ -184,10 +184,10 @@ def get_car_models():
     return jsonify(filtered_models)
 
 
-@views.route("/home/get-car-listings",methods=["POST"])
+@views.route("/get-car-listings",methods=["POST"])
 def get_car_listings():
     if request.method == "POST":
-        car_company = request.form.get("select-make")
+        car_company = request.form.get("select-company")
         car_model = request.form.get("select-model")
         car_kms_driven = request.form.get("kms-driven")
         car_location = request.form.get("select-location").strip().lower()

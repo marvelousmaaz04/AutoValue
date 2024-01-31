@@ -14,4 +14,4 @@ class User(db.Model,UserMixin):
     def generate_reset_token(self):
         # Generate a secure random token with 32 bytes
         self.reset_token = secrets.token_urlsafe(32)
-        self.reset_token_expiration = datetime.utcnow() + timedelta(minutes=1)
+        self.reset_token_expiration = datetime.utcnow() + timedelta(minutes=5)

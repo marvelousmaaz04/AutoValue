@@ -73,7 +73,7 @@ def sign_up():
             new_user = User(full_name=full_name,email=email,password=password)
             db.session.add(new_user)
             db.session.commit()
-            flash("Successfully Signed Up! You can now Log in.", category="signup-success")
+            flash("Successfully Signed Up! You can now Log in.", category="success")
             return redirect(url_for("auth.login"))
     return render_template("signup.html")
 
