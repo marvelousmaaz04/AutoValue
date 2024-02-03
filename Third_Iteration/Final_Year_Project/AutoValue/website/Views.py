@@ -100,20 +100,20 @@ def landing_page():
     # return render_template("home.html",companies=car_companies,models=car_models,locations=car_locations)
 
 # All Car Blog routes
-@views.route("/home/car-blogs", methods=["GET","POST"])
+@views.route("/car-blogs", methods=["GET","POST"])
 def car_blogs():
     if request.method == "GET":
         response = requests.get("http://127.0.0.1:12000/blogs")
         # print(response.json())
         all_blogs = response.json()
-        return render_template("car_blogs.html",all_blogs=all_blogs)
+        return render_template("car_blogs_copy.html",all_blogs=all_blogs)
     elif request.method == "POST":
         keyword = request.form.get("search-input")
         # params = {'keyword':keyword}
         response = requests.get(f"http://127.0.0.1:12000/blogs/search?keyword={keyword}")
         print(response.json())
         all_blogs = response.json()
-        return render_template("car_blogs.html",all_blogs=all_blogs)
+        return render_template("car_blogs_copy.html",all_blogs=all_blogs)
 
 # All Price Prediction routes
 
