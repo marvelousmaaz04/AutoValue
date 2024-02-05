@@ -1,7 +1,8 @@
 {% extends 'landing_page.html' %}
 {% block link %}
-<link rel="stylesheet" href="../static/car_blogs_copy_style.css">
+
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+<link rel="stylesheet" href="../static/car_blogs_copy_style.css">
 {% endblock %}
 {% block content %}
 
@@ -31,9 +32,9 @@
         </button>
     </form>
 </div>
-    <!-- Posts -->
-    <section class="post container">
-        <!-- <div class="post-box mobile">
+<!-- Posts -->
+<section class="post container">
+    <!-- <div class="post-box mobile">
         <img src="../static/images/post-1.jpg" class="post-img" alt="">
         <h2 class="category">Mobile</h2>
         <a href="post-page.html" class="post-title">
@@ -62,38 +63,38 @@
             <span class="profile-name">Marques Brown</span>
         </div>
     </div> -->
-        {% for blog in all_blogs %}
-        <div class="post-box {{ blog.blog_website }}">
-            <a href="{{ blog.blog_url }}" target="_blank" style="text-decoration: none; color: black;">
-                <img src="{{ blog.image_url }}" class="post-img" alt="">
+    {% for blog in all_blogs %}
+    <div class="post-box {{ blog.blog_website }}">
+        <a href="{{ blog.blog_url }}" target="_blank" style="text-decoration: none; color: black;">
+            <img src="{{ blog.image_url }}" class="post-img" alt="">
 
-                <p class="post-title">
-                    {{ blog.title }}
-                </p>
-                <span class="post-date">{{ blog.published_date }}</span>
-                <p class="post-description">{{ blog.description }}</p>
-                <div class="website-profile">
-                    {% if blog.blog_website=="RushLane" %}
-                    <img src="../static/images/rushlane-logo.png" alt="" class="website-profile-img">
-                    {% elif blog.blog_website=="Autocar" %}
-                    <img src="../static/images/autocar-logo.png" alt="" class="website-profile-img">
-                    {% elif blog.blog_website=="IndianAutosBlog" %}
-                    <img src="../static/images/indian-autos-blogs-logo.png" alt="" class="website-profile-img">
-                    {% else %}
-                    <img src="https://static.autox.com/assets/images/autoX-logo-white.svg" alt=""
-                        class="website-profile-img" style="background-color: black;">
-                    {% endif %}
-                    <h2 class="category">{{ blog.blog_website }}</h2>
-                    <!-- <span class="profile-name">Marques Brown</span> -->
-                </div>
+            <p class="post-title">
+                {{ blog.title }}
+            </p>
+            <span class="post-date">{{ blog.published_date }}</span>
+            <p class="post-description">{{ blog.description }}</p>
+            <div class="website-profile">
+                {% if blog.blog_website=="RushLane" %}
+                <img src="../static/images/rushlane-logo.png" alt="" class="website-profile-img">
+                {% elif blog.blog_website=="Autocar" %}
+                <img src="../static/images/autocar-logo.png" alt="" class="website-profile-img">
+                {% elif blog.blog_website=="IndianAutosBlog" %}
+                <img src="../static/images/indian-autos-blogs-logo.png" alt="" class="website-profile-img">
+                {% else %}
+                <img src="https://static.autox.com/assets/images/autoX-logo-white.svg" alt=""
+                    class="website-profile-img" style="background-color: black;">
+                {% endif %}
+                <h2 class="category">{{ blog.blog_website }}</h2>
+                <!-- <span class="profile-name">Marques Brown</span> -->
+            </div>
 
-            </a>
-        </div>
-        {% endfor %}
+        </a>
+    </div>
+    {% endfor %}
 
 
-    </section>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="../static/js/blogs.js"></script>
-    {% endblock %}
+</section>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+<script src="../static/js/blogs.js"></script>
+{% endblock %}

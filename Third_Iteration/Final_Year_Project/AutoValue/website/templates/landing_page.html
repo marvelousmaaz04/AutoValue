@@ -27,16 +27,17 @@
             <a href="/landing-page#featured">Featured</a>
 
             <a href="/landing-page#reviews">Reviews</a>
-            <a href="/landing-page#contact">Price</a>
+            <a href="/landing-page#price-prediction">Price</a>
             <a href="/car-blogs" target="_blank">Blogs</a>
             <!-- <a href="/landing-page#contact">Contact</a> -->
         </nav>
-        <div id="login-btn">
+        <div id="logout-btn">
+            <!-- <i class="far fa-user" id="profile"></i> -->
             <form action="/logout" method="POST">
                 <button class="btn" type="submit">Logout</button>
             </form>
 
-            <i class="far fa-user"></i>
+            
         </div>
     </header>
 
@@ -141,7 +142,7 @@
 
 
     <section id="search" class="search">
-        <h1 class="heading">Search Best Cars</h1>
+        <h1 class="heading">Search <span>Best Cars</span></h1>
         <form action="/get-car-listings" method="POST" target="_blank">
             <label for="select-company">Company</label>
 
@@ -285,20 +286,62 @@
 
     <!-- featured section ends -->
 
+    <!-- price prediction section starts -->
 
+    <section id="price-prediction" class="price-prediction">
+        <h1 class="heading">Car <span>Price Predictor</span></h1>
+        <form id="price-prediction-form" onsubmit="form_handler(event); getCarPrice()">
+            <label for="select-company-price">Company</label>
 
-    <!-- newsletter section starts -->
+            <select name="select-company-price" id="select-company-price" onchange="loadCarModelsPredictionPage(this.id,'select-model-price')">
+                <option>Select Company</option>
+                {% for company in companies %}
+                <option value="{{ company }}">{{ company }}</option>
+                {% endfor %}
+            </select>
 
-    <div class="newsletter">
-        <h3>Subscribe for Latest Updates</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, consequuntur.</p>
+            <label for="select-model-price" class="form-label">Model</label>
+            <select id="select-model-price" name="select-model-price" aria-label="Default select example">
+                <option>Select Car Model</option>
+            </select>
 
-        <form action="">
-            <input type="email" placeholder="Enter your Email" name="email" id="" class="">
-            <input type="submit" value="Subscribe" class="subscribe">
+            <label for="kms-driven-price" class="form-label">Kilometers Driven</label>
+            <input type="number" class="form-control" id="kms-driven-price" name="kms-driven-price"
+                placeholder="Enter Kilometers Driven" value="0">
+
+            <label for="select-location-price" class="form-label">Location</label>
+            <select class="form-select" id="select-location-price" name="select-location-price" aria-label="Default select example">
+                <option>Select Car Location</option>
+                {% for location in locations %}
+                <option value="{{ location }}">{{ location }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="year-price" class="form-label">Year</label>
+            <input type="number" class="form-control" id="year-price" name="year-price" placeholder="Enter Year" value="2010">
+
+            <label for="select-fuel-type-price" class="form-label">Fuel Type</label>
+            <select class="form-select" id="select-fuel-type-price" name="select-fuel-type-price"
+                aria-placeholder="Select Fuel Type">
+                <option>Select Fuel Type</option>
+                {% for type in fuel_types %}
+                <option value="{{ type }}">{{ type }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit" class="btn">Predict Price</button>
+            <br>
+
+            <h3 id="price-heading"><span id="predicted-price"></span></h3>
         </form>
-    </div>
-    <!-- newsletter section ends -->
+    </section>
+
+
+
+    <!-- price prediction section ends -->
+
+
+    
     <!-- review section starts -->
     <section id="reviews" class="reviews">
         <h1 class="heading">Clients' <span>Reviews</span></h1>
@@ -399,6 +442,18 @@
         </div>
     </section>
     <!-- review section ends -->
+    <!-- newsletter section starts -->
+
+    <div class="newsletter">
+        <h3>Subscribe for Latest Updates</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, consequuntur.</p>
+
+        <form action="">
+            <input type="email" placeholder="Enter your Email" name="email" id="" class="">
+            <input type="submit" value="Subscribe" class="subscribe">
+        </form>
+    </div>
+    <!-- newsletter section ends -->
     <!-- contact section starts -->
 
     <section class="contact" id="contact">

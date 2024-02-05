@@ -81,7 +81,7 @@ section{
     margin-top: 2rem !important;
 }
 .filter-item{
-    font-size: 1.8rem;
+    font-size: 2.1rem;
     font-weight: 500;
     cursor: pointer;
 }
@@ -106,12 +106,18 @@ section{
     margin-bottom: 40px;
 }
 
+
 .post-box{
     background-color: var(--bg-color);
     box-shadow: 0 4px 14px hsl(355deg 25% 15% / 10%);
     padding: 15px;
     border-radius: 0.5rem;
 
+}
+.post-box:hover{
+    box-shadow: 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
 }
 
 .post-img{
@@ -206,4 +212,34 @@ input{
 
 .larger-icon{
     font-size: 20px;
+}
+
+@media(max-width: 960px){
+    .post{
+        
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 830px) {
+    .post-filter {
+        flex-direction: column;
+    }
+
+    #search-form {
+        margin-top: 10px;
+    }
+}
+
+@media(max-width: 450px){
+    .post-box{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .post-img{
+        height: 200px;
+    }
 }

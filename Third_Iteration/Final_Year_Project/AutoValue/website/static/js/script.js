@@ -1,5 +1,9 @@
 let menu = document.querySelector("#menu-btn")
 let navbar = document.querySelector(".navbar")
+// let profile = document.querySelector("#profile")
+// let logoutBtn = document.querySelector("#logout-btn .btn")
+
+
 
 menu.onclick = () => {
     menu.classList.toggle('fa-times')
@@ -25,6 +29,10 @@ window.onload = () => {
     }
 
 }
+
+// profile.addEventListener("click",() =>{
+//     logoutBtn.classList.toggle('active')
+// })
 
 document.querySelector(".home").onmousemove = (e) => {
     document.querySelectorAll('.home-parallax').forEach(elm => {
@@ -165,4 +173,77 @@ function loadCarModels(id, car_model_id) {
     }
 });
     
+}
+
+function loadCarModelsPredictionPage(id, car_model_id) {
+
+    var company = document.getElementById(id).value;
+    var car_model = document.getElementById(car_model_id);
+    console.log(company)
+    console.log(car_model_id)
+    car_model.value = "";
+    car_model.innerHTML = "";
+    // var defaultOption = document.createElement("option");
+    
+    // defaultOption.innerHTML = "Select Car Model";
+    // car_model.appendChild(defaultOption);
+    console.log("function called!");
+    fetch("/home/get-car-models-prediction-page", {
+    method: "POST",
+    body: JSON.stringify({ "select-company": company }),
+    headers: {
+        'Content-Type': 'application/json'
+    }
+}).then((response) => {
+    console.log("response received success");
+    return response.json(); // return the promise here
+}).then((data) => {
+    console.log(data.models); // access the "models" key
+    for (var i = 0; i < data.models.length; i++) {
+        console.log(data.models[i]);
+        var newOption = document.createElement("option");
+        newOption.value = data.models[i];
+        newOption.innerHTML = data.models[i];
+        car_model.options.add(newOption);
+    }
+});
+    
+}
+function form_handler(event) {
+    event.preventDefault();
+}
+// document.getElementById("price-prediction-form").addEventListener("submit", form_handler)
+var predictedPriceSpan = document.getElementById('predicted-price');
+
+    // Add a class to the heading when the text is displayed
+    predictedPriceSpan.addEventListener('transitionend', function () {
+        document.querySelector('h2.heading').classList.add('show-shape');
+    });
+
+
+function getCarPrice() {
+    // document.getElementById("prediction-form").addEventListener("submit",form_handler)
+   
+    document.getElementById("predicted-price").innerHTML = "Wait! Predicting Price...";
+    
+
+    var fd = new FormData(document.getElementById("price-prediction-form"))
+
+    var xhr = new XMLHttpRequest;
+
+    xhr.open("POST", "/home/get-price-prediction", true);
+
+    document.getElementById("predicted-price").innerHTML = "Wait! Predicting Price...";
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            
+            
+            document.getElementById("predicted-price").innerHTML = "Predicted Price: Rs." + xhr.responseText;
+    
+        }
+    }
+
+    xhr.onload = function () { }
+    xhr.send(fd);
 }

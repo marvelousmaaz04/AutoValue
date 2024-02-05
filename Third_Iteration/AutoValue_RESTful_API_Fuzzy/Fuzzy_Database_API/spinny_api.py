@@ -242,34 +242,34 @@ def get_table1():
 
 
     # Step 3: Filter by Location
-    if location:
-        if location == "any":
-            query += '' # no filtering needed
-            print("Step 3 Query:", query)
+    # if location:
+    #     if location == "any":
+    #         query += '' # no filtering needed
+    #         print("Step 3 Query:", query)
 
-            # Bind all the parameters to the query
-            location_params = {'location': location}
-            params.update(location_params)
-            print("Step 3 Params:", params)
-            results = db.session.execute(query, params).fetchall()
-            print("Step 3 Results:", results)
-            print("*"*10)
-            print()
-            print()
-        else:
+    #         # Bind all the parameters to the query
+    #         location_params = {'location': location}
+    #         params.update(location_params)
+    #         print("Step 3 Params:", params)
+    #         results = db.session.execute(query, params).fetchall()
+    #         print("Step 3 Results:", results)
+    #         print("*"*10)
+    #         print()
+    #         print()
+    #     else:
 
-            query += ' AND Location MATCH :location'
-            print("Step 3 Query:", query)
+    #         query += ' AND Location MATCH :location'
+    #         print("Step 3 Query:", query)
 
-            # Bind all the parameters to the query
-            location_params = {'location': location}
-            params.update(location_params)
-            print("Step 3 Params:", params)
-            results = db.session.execute(query, params).fetchall()
-            print("Step 3 Results:", results)
-            print("*"*10)
-            print()
-            print()
+    #         # Bind all the parameters to the query
+    #         location_params = {'location': location}
+    #         params.update(location_params)
+    #         print("Step 3 Params:", params)
+    #         results = db.session.execute(query, params).fetchall()
+    #         print("Step 3 Results:", results)
+    #         print("*"*10)
+    #         print()
+    #         print()
     # Step 4: Filter by Year
     if year:
         query += ' AND Year >= :year'

@@ -132,7 +132,7 @@ def get_car_models_for_prediction_page():
     cleaned_car_data = pd.read_csv("Cleaned_Car_Data_model.csv")
 
     data = json.loads(request.data)
-    selected_company = data["company"]
+    selected_company = data["select-company"]
 
     print(selected_company)
     # Filter models based on the selected company
@@ -146,12 +146,12 @@ def get_car_models_for_prediction_page():
 
 @views.route("/home/get-price-prediction",methods=["POST"])
 def get_car_price_prediction():
-    company = request.form.get("company")
-    model = request.form.get("model")
-    kms_driven = request.form.get("kms-driven")
-    fuel_type = request.form.get("fuel-type")
-    year = int(request.form.get("year"))
-    location = request.form.get("location")
+    company = request.form.get("select-company-price")
+    model = request.form.get("select-model-price")
+    kms_driven = request.form.get("kms-driven-price")
+    fuel_type = request.form.get("select-fuel-type-price")
+    year = int(request.form.get("year-price"))
+    location = request.form.get("select-location-price")
 
     print(company, model, kms_driven, fuel_type, location)
 
