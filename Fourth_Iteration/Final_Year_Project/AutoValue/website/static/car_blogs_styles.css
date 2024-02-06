@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Raleway&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+#blog-img{
+    width: 215px;
+}
+footer{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: large;
+}
+
+@media(max-width: 800px){
+    #blog-link{
+        width: 100%;
+    }
+    #blog-img{
+        width: 100%
+    }
+
+    h4{
+        font-size: large;
+    }
+    footer{
+        padding-top: 1.0rem;
+        padding-bottom: 1.0rem;
+        font-size: small;
+    }
+}
