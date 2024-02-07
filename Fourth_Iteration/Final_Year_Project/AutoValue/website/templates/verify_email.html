@@ -15,15 +15,23 @@
 
 <div id="myFlash" class="flash-container">
     <div class="flash-message success">
-        {{ message }} <span><button onclick="closeFlash()" class="flash-btn">X</button></span>
+        {{ message }} <span><button onclick="closeFlash()" class="flash-btn-success">X</button></span>
     </div>
 
 </div>
-{% elif category == "reset-error" %}
+{% elif category == "expire-error" %}
 <div class="flash-container" id="myFlash">
 
     <div class="flash-message error">
-        {{ message }} Go to <a href="/forgot-password" style="color: white;">Forgot Password</a> again. <span><button onclick="closeFlash()" class="flash-btn-error">X</button></span>
+        {{ message }} Go to <a href="/sign-up" style="color: white;">Sign up</a> again. <span><button onclick="closeFlash()" class="flash-btn-error">X</button></span>
+    </div>
+
+</div>
+{% elif category == "invalid-error" %}
+<div class="flash-container" id="myFlash">
+
+    <div class="flash-message error">
+        {{ message }} <span><button onclick="closeFlash()" class="flash-btn-error">X</button></span>
     </div>
 
 </div>
@@ -42,12 +50,12 @@
     <form method="POST" onsubmit="return validate()" name="form">
         <h3>Verify Email</h3>
         <input class="box" type="number" placeholder="Enter OTP" name="otp" id="otp">
-        <div id="otp_error">Invalid OTP</div>
+        <div id="otp_error">Enter 6 digit OTP.</div>
         
         <button class="btn" type="submit">Submit</button>
     </form>
 </div>
-<div id="flash-messages" style="display: none;">
+<!-- <div id="flash-messages" style="display: none;">
     {% with messages = get_flashed_messages(with_categories=true) %}
     {% for category, message in messages %}
     {% if category == 'error' %}
@@ -71,7 +79,7 @@
     {% endif %}
     {% endfor %}
     {% endwith %}
-</div>
+</div> -->
 <div class="footer">
     AutoValue. All Rights Reserved © 2023
 </div>
@@ -82,8 +90,7 @@
         flash.style.display = 'none'
     }
     
-    var otp= document.forms['form']['otp']
-    console.log(email.id)
+    var otp = document.forms['form']['otp']
 
     
     var otp_error = document.getElementById('otp_error');
@@ -91,141 +98,35 @@
     
     otp.addEventListener('input', otp_verify)
 
-    function fullname_verify(event) {
-        if (event.target.value.length >= 5) {
-            full_name_error.style.display = 'none'
-            fullName.style.border = '1px solid silver'
-            return true
-        }
-    }
+    
+    
 
-    function email_verify() {
-        console.log("email ver called")
-        if (email.value.length >= 4) {
-            email_error.style.display = "none"
-            email.style.border = "1px solid silver"
-            return true
-        }
-    }
-    function password_verify() {
-        if (password.value.length > 5) {
-            password_error.style.display = "none"
-            password.style.border = "1px solid silver"
-            return true
-        }
-    }
-
-    function cpassword_verify() {
-        if (cpassword.value.length > 5) {
-            cpassword_error.style.display = "none"
-            cpassword.style.border = '1px solid silver'
+    
+    function otp_verify() {
+        if (otp.value.length >= 6) {
+            otp_error.style.display = "none"
+            otp_error.style.border = '1px solid silver'
             return true
         }
     }
 
     function validate() {
-        function validateFullName() {
+        
+        function validateOTP() {
 
-            if (fullName.value.length <= 6) {
-                fullName.style.border = '1px solid red'
-                full_name_error.innerText = 'Full Name should be more than 6 characters.'
-                full_name_error.style.display = "block"
+            if (otp.value.length < 6) {
+                otp.style.border = '1px solid red'
+                otp_error.innerText = 'Enter 6 digit OTP.'
+                otp_error.style.display = "block"
                 return false
             }
-            else if (fullName.value.trim().indexOf(' ') === -1) {
-                // No space found in the full name
-                fullName.style.border = '1px solid red';
-                full_name_error.innerText = 'Invalid format.(Must contain a space)'
-                full_name_error.style.display = "block";
-                return false;
-            }
+            
         }
 
-        if (validateFullName() === false) {
+        if (validateOTP() === false) {
             return false
         }
-
-        function validateEmail() {
-            var email = document.getElementById("email");
-            var email_error = document.getElementById("email_error");
-
-            // Regular expression for a basic email validation
-            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email.value)) {
-                if (email.value.length < 1) {
-                    email.style.border = "1px solid red";
-                    email_error.innerHTML = "Email Address cannot be empty."
-                    email_error.style.display = "block";
-
-                    return false;
-                }
-                else if (!emailRegex.test(email.value)) {
-                    // Invalid email format
-                    email.style.border = "1px solid red";
-                    email_error.innerHTML = "Invalid Email Address."
-                    email_error.style.display = "block";
-                    return false;
-                }
-            }
-
-            else {
-                // Valid email format
-                email.style.border = ""; // Reset border to default
-                email_error.style.display = "none"; // Hide the error message
-                return true;
-            }
-        }
-        if (validateEmail() !== true) {
-            return false
-        }
-
-        function validatePassword() {
-            if (password.value.length <= 5) {
-
-
-                // email.focus()
-                password.style.border = "1px solid red"
-
-                password_error.style.display = "block"
-                return false
-            }
-            else {
-                return true
-            }
-        }
-        if (validatePassword() !== true) {
-            return false
-        }
-        console.log('above c pass')
-        function validateConfirmPassword() {
-            console.log('cpass ver called')
-            if (cpassword.value.length <= 5) {
-                cpassword.style.border = "1px solid red"
-                cpassword_error.innerHTML = "Confirm Password should be more than 5 characters."
-                cpassword_error.style.display = "block"
-                return false;
-            }
-
-            else if (cpassword.value.trim() !== password.value.trim()) {
-
-
-                // email.focus()
-                cpassword.style.border = "1px solid red"
-                cpassword_error.innerHTML = "Passwords do not match."
-                cpassword_error.style.display = "block"
-                return false
-            }
-            else {
-                cpassword.style.border = "1px solid silver"
-
-                cpassword_error.style.display = "none"
-            }
-        }
-        if (validateConfirmPassword() === false) {
-            return false
-        }
-
-        return true
+        return true;
     }
 </script>
 {% endblock %}

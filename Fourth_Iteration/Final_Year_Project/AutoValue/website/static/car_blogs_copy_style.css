@@ -11,7 +11,8 @@
 }
 
 :root{
-    --container-color: #1a1e21;
+    /* --container-color: #1a1e21; */
+    --container-color: #fff;
     --second-color: #24be21;
     --text-color: #172317;
     --bg-color: #fff
@@ -57,6 +58,24 @@ section{
     padding: 2rem;
 }
 
+.banner-slider{
+    width: 600px;
+}
+.swiper-slide .container {
+    background-image: url(https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20240207033836_Nexon%20EV%20Offers.001.jpeg&w=800&h=533&q=70&c=1);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Align content at the bottom */
+}
+
+
+.swiper-slide{
+    width: 100%;
+}
 .child .home-text{
     color: var(--bg-color);
     text-align: center;
@@ -105,6 +124,14 @@ section{
     padding: 0;
     margin-bottom: 40px;
 }
+.banner-slide {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+
 
 
 .post-box{

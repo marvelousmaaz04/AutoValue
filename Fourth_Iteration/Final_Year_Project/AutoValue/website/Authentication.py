@@ -9,7 +9,10 @@ from flask_login import login_user,login_required,logout_user, current_user
 from email.message import EmailMessage
 import ssl
 import smtplib
+import asyncio
+import threading
 from datetime import datetime, timedelta
+
 
 auth = Blueprint("auth",__name__)
 
@@ -71,7 +74,7 @@ def sign_up():
             # db.session.add(new_user)
             # db.session.commit()
             email_sender = 'autovaluesup@gmail.com'
-            email_password = 'qoti aruq tswy zzlw' # better to use environment var
+            email_password = 'eryj kyjp gotk vmvo' # better to use environment var
             email_receiver = email
             
             subject = 'OTP FOR EMAIL VERIFICATION'
@@ -89,17 +92,48 @@ def sign_up():
 
             with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
                 smtp.login(email_sender, email_password)
+                
+                context = ssl.create_default_context()
+                # email_exists = verifier(email_receiver)
+                
                 smtp.sendmail(email_sender, email_receiver, email_message.as_string())
                 session['email'] = email
                 session['fullName'] = full_name
-            flash("Email sent successfully! Enter the OTP provided.", category="success")
-            return redirect(url_for("auth.verify_email"))
+            
+                flash("Email sent successfully! Enter the OTP provided.", category="success")
+                return redirect(url_for("auth.verify_email_otp"))
+                
+                
+            # with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
+            #     smtp.login(email_sender, email_password)
+                
+            #     context = ssl.create_default_context()
+
+            
+                
+            #     email_exists = verify_email(email_receiver)
+                
+                
+            #     # email_exists = verifier(email_receiver)
+            #     if email_exists:
+            #         smtp.sendmail(email_sender, email_receiver, email_message.as_string())
+            #         session['email'] = email
+            #         session['fullName'] = full_name
+                
+            #         flash("Email sent successfully! Enter the OTP provided.", category="success")
+            #         return redirect(url_for("auth.verify_email_otp"))
+            #     else:
+            #         flash("Invalid Email Address!", category="email-error")
+            #         return redirect(url_for("auth.sign_up"))
+            
+                    
     return render_template("signup.html")
 
 
+
 @auth.route("/verify-email",methods=['GET','POST'])
-def verify_email():
-    email = session .get('email')
+def verify_email_otp():
+    email = session.get('email')
     if request.method == 'POST':
         entered_otp = request.form.get('otp')
         # Retrieve OTP and its creation time from storage
@@ -109,16 +143,22 @@ def verify_email():
             if time.time() - stored_otp_data['timestamp'] <= 300:  # 300 seconds = 5 minutes
                 # OTP verification successful, proceed to password setup
                 session['email'] = email  # Store email in session for password setup
-                flash("Email has been verified! Set your Password", category="success")
+                otp_storage.pop(email, None)
+                
+                flash("Email has been verified! Set your Password.", category="success")
                 return redirect('/set-password')
             else:
                 # OTP has expired, display error message
-                flash("OTP has expired.", category="error")
+                otp_storage.pop(email, None)
+                session.pop('email',None)
+                flash("OTP has expired!", category="expire-error")
                 return render_template('verify_email.html')
         else:
             # Invalid OTP, display error message
-            flash("Invalid OTP.", category="error")
+        
+            flash("OTP entered is Invalid! Enter correct OTP.", category="invalid-error")
             return render_template('verify_email.html')
+        
     return render_template('verify_email.html', email=email)
 
 
@@ -137,6 +177,7 @@ def set_password():
             new_user = User(full_name=full_name,email=email,password=password)
             db.session.add(new_user)
             db.session.commit()
+            session.pop('email',None)
             flash("Successfully Signed Up! You can now Log in.", category="success")
             return redirect(url_for("auth.login"))
 

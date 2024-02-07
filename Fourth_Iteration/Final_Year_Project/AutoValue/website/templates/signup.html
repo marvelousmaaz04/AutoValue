@@ -5,7 +5,33 @@
 <div class="header" style="text-align: center;">
     <a href="/" class="logo"><span>Auto</span>Value</a>
 </div>
+{% block handle_flash %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+{% if category == "success" %}
 
+
+<div id="myFlash" class="flash-container">
+    <div class="flash-message success">
+        {{ message }} <span><button onclick="closeFlash()" class="flash-btn-success">X</button></span>
+    </div>
+
+</div>
+{% elif category == "email-error" %}
+<div class="flash-container" id="myFlash">
+
+    <div class="flash-message error">
+        {{ message }} <span><button onclick="closeFlash()" class="flash-btn-error">X</button></span>
+    </div>
+
+</div>
+
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endwith %}
+{% endblock %}
 
 <div class="signup-form-container">
 
