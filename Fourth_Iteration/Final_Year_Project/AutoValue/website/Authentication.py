@@ -185,7 +185,7 @@ def set_password():
 
 
 email_sender = 'autovaluesup@gmail.com'
-email_password = 'qoti aruq tswy zzlw' # better to use environment var
+email_password = 'eryj kyjp gotk vmvo' # better to use environment var
 reset_user_email = ""
 @auth.route("/forgot-password",methods=['GET','POST'])
 def forgot_password():
@@ -220,7 +220,7 @@ def forgot_password():
             with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
                 smtp.login(email_sender, email_password)
                 smtp.sendmail(email_sender, email_receiver, email_message.as_string())
-            flash('Email sent successfully. Check your inbox.', category="success")
+            flash('Email sent successfully! Check your inbox.', category="success")
     return render_template("forgot_password_copy.html")
 
 @auth.route('/reset-password',methods=['GET','POST'])
@@ -236,7 +236,7 @@ def reset_password():
             user.reset_token_expiration = None
             user.password = new_password
             db.session.commit()
-            flash("Password reset successfully.", category="reset-success")
+            flash("Password reset successfully!", category="reset-success")
         else:
             flash('Token has been expired.', category='reset-error')
     return render_template("reset_password.html")

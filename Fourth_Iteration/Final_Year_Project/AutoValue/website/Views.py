@@ -105,8 +105,11 @@ def car_blogs():
     if request.method == "GET":
         response = requests.get("http://127.0.0.1:12000/blogs")
         # print(response.json())
-        all_blogs = response.json()
-        return render_template("car_blogs_copy.html",all_blogs=all_blogs)
+        # all_blogs = response.json()
+        data = response.json()
+        all_blogs = data.get("all_blogs")
+        last_10_blogs = data.get("last_10_blogs")
+        return render_template("car_blogs_copy.html",all_blogs=all_blogs,last_10_blogs=last_10_blogs)
     elif request.method == "POST":
         keyword = request.form.get("search-input")
         # params = {'keyword':keyword}

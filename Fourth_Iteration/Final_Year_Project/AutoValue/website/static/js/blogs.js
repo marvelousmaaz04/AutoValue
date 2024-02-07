@@ -24,7 +24,7 @@ var swiper = new Swiper(".banner-slider", {
     grabCursor: true,
     centeredSlides: true,
     autoplay: {
-        delay: 112000,
+        delay: 3000,
         disableOnInteraction: false,
       },
 

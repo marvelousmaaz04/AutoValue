@@ -76,7 +76,11 @@ def get_all_blogs():
     car_blogs_dict = [{key.lower(): value for key, value in dictionary.items()} for dictionary in car_blogs_dict]
     print(car_blogs_dict)
     # return jsonify({"blogs": all_blogs})
-    return jsonify(car_blogs_dict)
+    # print(car_blogs_dict)
+    # return jsonify(car_blogs_dict)
+    last_10_blogs = car_blogs_dict[-19:-9]
+
+    return jsonify({"all_blogs": car_blogs_dict, "last_10_blogs": last_10_blogs})
 
 @app.route("/blogs/search", methods=["GET"])
 def search_blogs():
