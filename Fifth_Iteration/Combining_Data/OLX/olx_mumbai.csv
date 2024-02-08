@@ -1,0 +1,464 @@
+CarName,Price,Year,KilometersDriven,Fuel Type,Location
+Mercedes-Benz C-Class,"22,51,111",2015,"62,000 km",Diesel,Bandra West
+Mercedes-Benz E-Class,"15,50,000",2014,"72,000 km",Diesel,Bandra West
+Audi Q7,"39,99,999",2016,"66,000 km",Diesel,Bandra West
+Hyundai i10,"2,99,000",2013,"12,000 km",Petrol,Mahim
+Kia Seltos,"15,35,000",2019,"47,425 km",Diesel,Chembur
+Maruti Suzuki Ertiga,"6,75,000",2015,"51,000 km",Petrol,Mahim
+Tata EV,"12,95,000",2021,"31,000 km",Electric,Chembur
+Maruti Suzuki Swift,"3,78,000",2012,"80,000 km",Diesel,Chembur
+Hyundai Verna,"4,60,000",2013,"64,000 km",Diesel,Chembur
+BMW 3 Series,"15,55,000",2015,"77,000 km",Diesel,Bandra West
+Maruti Suzuki Wagon-R-1-0,"4,15,000",2017,"68,000 km",CNG & Hybrids,Chembur
+BMW X1,"6,11,000",2012,"123,000 km",Diesel,Chembur
+Mitsubishi Pajero Sport,"11,85,000",2016,"80,000 km",Diesel,Chembur
+Hyundai Creta,"8,80,000",2015,"76,000 km",Diesel,Chembur
+Maruti Suzuki Swift,"3,68,000",2012,"62,000 km",Petrol,Chembur
+Maruti Suzuki Baleno,"5,60,000",2017,"58,000 km",Petrol,Chembur
+BMW 7 Series,"21,85,000",2013,"45,000 km",Diesel,Chembur
+Hyundai Creta,"9,45,000",2017,"68,000 km",Petrol,Chembur
+Jeep Compass,"25,00,000",2021,"21,000 km",Diesel,Matunga Road
+Toyota Innova,"8,75,000",2015,"118,367 km",Diesel,Sion West
+Land Rover Range Rover Evoque,"39,49,999",2017,"55,830 km",Diesel,Bandra West
+Toyota Yaris,"6,99,999",2018,"82,000 km",Petrol,Chembur
+Honda City,"6,50,000",2015,"78,583 km",CNG & Hybrids,Sion West
+Land Rover Discovery,"44,99,999",2019,"27,700 km",Diesel,Bandra West
+Toyota Fortuner,"32,99,000",2017,"57,708 km",Diesel,Kurla West
+Hyundai Verna,"8,00,000",2017,"23,000 km",Petrol,Santacruz East
+Mahindra TUV,"6,25,000",2016,"70,000 km",Diesel,Bandra West
+Honda City,"8,25,000",2017,"55,000 km",Diesel,Santacruz West
+Maruti Suzuki Wagon-R,"1,10,000",2008,"55,000 km",Petrol,Kurla West
+Mercedes-Benz B Class,"8,25,000",2015,"74,000 km",Diesel,Bandra West
+Ford Fiesta,"1,25,000",2007,"117,000 km",Petrol,Vile Parle East
+Tata Tiago,"4,75,000",2018,"31,800 km",Petrol,Vile Parle East
+Maruti Suzuki Wagon-R,"5,95,000",2021,"29,000 km",CNG & Hybrids,Sion East
+Maruti Suzuki Swift,"3,75,000",2012,"82,086 km",Petrol,Sion West
+Toyota Innova Hycross,"3,00,000",2023,10 km,Petrol,Bandra West
+BMW 5 Series,"18,21,000",2016,"96,500 km",Diesel,Chembur
+Maruti Suzuki Alto-800,"2,85,000",2015,"51,000 km",CNG & Hybri..,Chembur
+Honda Mobilio,"5,25,000",2015,"46,500 km",Petrol,Chembur
+Toyota Innova Crysta,"17,99,000",2017,"54,369 km",Diesel,Kurla West
+Maruti Suzuki Swift-Dzire,"7,50,000",2019,"79,000 km",Diesel,Dadar East
+Renault Duster,"6,25,111",2016,"78,000 km",Diesel,Bandra West
+BMW M4 Competition,"1,60,00,000",2023,"7,000 km",Petrol,Santacruz West
+Toyota Innova Crysta,"19,51,000",2018,"78,365 km",Diesel,Kurla West
+Maruti Suzuki S-Presso,"4,85,000",2020,"37,000 km",CNG & Hybrids,Santacruz West
+Mercedes-Benz GL-Class,"24,00,000",2013,"85,000 km",Diesel,Santacruz West
+Tata EV,"13,45,000",2021,"10,229 km",Electric,Chembur
+Mercedes-Benz B Class,"17,99,000",2017,"58,000 km",Petrol,Chembur
+Audi Q3,"15,75,000",2015,"70,000 km",Diesel,Mahim
+Maruti Suzuki S-Cross,"5,80,000",2016,95500.0 km,Diesel,Mahim
+Maruti Suzuki maruti-suzuki-brezza,"8,50,000",2019,"70,428 km",Diesel,Sion West
+Hyundai Grand i10,"4,00,000",2014,"47,000 km",Petrol,Kurla West
+Toyota Innova Crysta,"17,49,999",2016,"99,751 km",Diesel,Chembur
+Maruti Suzuki Ritz,"4,10,000",2014,"78,000 km",Diesel,Chembur
+Maruti Suzuki Ertiga,"6,95,000",2015,"68,408 km",CNG & ..,Tilak Nagar
+Toyota Innova,"11,50,000",2014,"79,914 km",Diesel,Kurla West
+Audi Q5,"9,99,998",2010,"99,999 km",Diesel,Bandra West
+Honda City,"4,99,999",2014,"79,000 km",Electric,Bandra West
+Honda Jazz,"5,99,000",2016,"34,356 km",Petrol,Kurla West
+Toyota Innova Crysta,"25,51,000",2020,"60,723 km",Diesel,Kurla West
+Maruti Suzuki Swift-Dzire,"6,25,111",2018,"26,500 km",Petrol,Bandra West
+Audi A6,"14,75,000",2013,"26,221 km",Diesel,Santacruz West
+Honda Brio,"3,40,000",2012,"58,309 km",Petrol,Chembur
+Toyota Innova Crysta,"17,40,000",2017,"93,000 km",Diesel,Khar West
+Hyundai Venue,"12,45,000",2022,"5,000 km",Petrol,Santacruz West
+Mercedes-Benz E-Class,"8,75,000",2012,"67,000 km",Petrol,Mahim
+Honda City,"6,75,000",2015,"69,000 km",Diesel,Sion West
+Chevrolet Beat,"1,35,000",2010,"89,700 km",Petrol,Kurla West
+Tata Nexon,"14,19,999",2022,"20,630 km",Diesel,Bandra West
+Toyota Glanza,"7,75,000",2019,"33,824 km",Petrol,Kurla West
+Renault Duster,"5,65,000",2015,"68,000 km",Diesel,Mahim
+Toyota Camry,"13,25,000",2014,"40,000 km",Petrol,Khar West
+Toyota Innova,"5,78,000",2011,"110,000 km",Diesel,Chembur
+Toyota Innova Crysta,"19,85,000",2019,"109,000 km",Diesel,Chembur
+Mercedes-Benz C-Class,"7,55,000",2011,"72,000 km",Diesel,Chembur
+Hyundai i10,"2,68,000",2011,"64,000 km",Petrol,Chembur
+Volkswagen VentoTest,"3,45,000",2012,"61,000 km",Petrol,Chembur
+Ford Figo Aspire,"3,45,000",2015,"66,700 km",CNG & Hybrids,Chembur
+Mercedes-Benz GLE Class,"48,75,000",2018,"38,000 km",Diesel,Bandra West
+Honda WRV,"7,95,000",2018,"34,000 km",Petrol,Chembur
+Maruti Suzuki Swift-Dzire,"5,25,000",2015,"22,882 km",Petrol,Vile Parle East
+Maruti Suzuki Swift-Dzire,"2,02,000",2009,"93,000 km",Petrol,Santacruz West
+Honda City,"4,35,000",2012,"30,000 km",Petrol,Bandra West
+Maruti Suzuki Swift-Dzire,"7,11,000",2018,"74,000 km",Diesel,Vile Parle West
+Hyundai Creta,"10,50,000",2018,"49,000 km",Petrol,Chembur
+Tata Tigor,"4,95,000",2017,"34,000 km",Petrol,Chembur
+Hyundai Elantra,"7,25,000",2014,"71,000 km",Diesel,Chembur
+Hyundai i20,"3,69,000",2012,"75,000 km",Diesel,Chembur
+Honda City,"6,65,000",2016,"65,000 km",Petrol,Dadar East
+Maruti Suzuki Ertiga,"10,40,000",2021,"86,864 km",Petrol,Matunga East
+Maruti Suzuki Wagon-R,"3,55,000",2016,"140,782 km",Petrol,Bandra East
+Maruti Suzuki Ertiga,"10,25,000",2020,"28,000 km",Electric,Bandra West
+Toyota Innova,"10,50,000",2016,"94,000 km",Diesel,Bandra West
+Maruti Suzuki XL6,"10,75,000",2020,"16,806 km",Petrol,Chembur
+Volkswagen Passat,"9,75,000",2012,"35,000 km",Diesel,Chembur
+Maruti Suzuki Ritz,"1,85,000",2010,"58,346 km",Petrol,Chembur
+Nissan Sunny,"2,95,000",2013,"77,000 km",Petrol,Vile Parle East
+Toyota Corolla Altis,"15,50,000",2019,"24,500 km",Petrol,Chembur
+Audi A8 L,"19,25,000",2012,"58,000 km",Diesel,Vile Parle East
+Maruti Suzuki maruti-suzuki-dzire,"7,15,000",2018,"27,000 km",Petrol,Chembur
+BMW X7,"1,19,00,000",2021,"7,000 km",Petrol,Bandra West
+BMW 3 Series,"45,99,000",2020,"19,800 km",Petrol,Bandra West
+Toyota Innova,"5,50,000",2010,"149,754 km",Diesel,Kurla West
+Audi A6,"19,49,999",2016,"68,000 km",Diesel,Bandra West
+Hyundai Creta,"19,49,999",2022,"13,500 km",Diesel,Bandra West
+BMW X3,"39,99,000",2019,"73,000 km",Diesel,Mahim
+Mercedes-Benz C-Class,"5,25,000",2011,"63,000 km",Petrol,Bandra West
+Hyundai i20,"3,60,000",2013,"51,000 km",Petrol,Chembur
+Maruti Suzuki S-Cross,"5,99,900",2015,"84,000 km",Diesel,Chembur
+Volkswagen Polo,"2,75,000",2012,"67,000 km",Diesel,Chembur
+Renault Duster,"3,78,000",2012,"80,000 km",Diesel,Chembur
+Toyota Land Cruiser Prado,"9,99,999",2007,"214,000 km",Petrol,Bandra West
+Toyota Urban Cruiser,"10,99,000",2022,"3,242 km",Petrol,Kurla West
+Maruti Suzuki S-Presso,"4,85,000",2020,"37,354 km",Petrol,Guru Teg Bahadur Nagar
+Maruti Suzuki Wagon-R-1-0,"2,45,000",2011,"62,000 km",Petrol,Khar West
+Hyundai i20,"3,60,000",2012,"69,000 km",Petrol,Wadala West
+Maruti Suzuki Swift,"3,90,000",2014,"68,000 km",Petrol,Dadar East
+Audi A8 L,"23,50,000",2012,"36,326 km",Diesel,Santacruz West
+Nissan Terrano,"5,00,000",2013,"84,000 km",Diesel,Matunga Road
+Honda Brio,"3,10,000",2013,"68,000 km",Petrol,Matunga Road
+Mercedes-Benz A-class Limousine,"41,90,000",2021,"4,500 km",Petrol,Vile Parle West
+Maruti Suzuki Ertiga,"5,45,000",2012,"82,000 km",Diesel,Santacruz East
+Maruti Suzuki Wagon-R,"1,45,000",2009,"70,000 km",Petrol,Santacruz West
+Skoda Rapid,"7,95,000",2017,"77,000 km",Diesel,Bandra West
+Ford Ecosport,"4,80,000",2014,"69,000 km",Diesel,Chembur
+Maruti Suzuki Baleno,"5,78,000",2017,"57,000 km",Petrol,Chembur
+Maruti Suzuki Swift-Dzire,"3,68,000",2012,"82,000 km",Petrol,Chembur
+Toyota Innova Hycross,"32,54,999",2023,"12,000 km",Petrol,Vile Parle West
+Hyundai Venue,"9,98,000",2020,"57,000 km",Petrol,Chembur
+Volvo XC60,"56,94,999",2021,"36,000 km",Diesel,Vile Parle West
+Mercedes-Benz E-Class,"41,94,999",2017,"38,000 km",Diesel,Vile Parle West
+Maruti Suzuki Ertiga,"11,10,999",2021,"20,500 km",Petrol,Chembur
+Maruti Suzuki Alto,"69,000",2001,"68,000 km",Petrol,Bandra East
+Tata Harrier,"23,75,000",2022,"13,500 km",Diesel,Chembur
+Honda City,"2,25,000",2008,"123,560 km",Petrol,Kurla West
+Land Rover Discovery Sport,"35,50,000",2017,"38,000 km",Diesel,Vile Parle East
+Maruti Suzuki Vitara-Brezza,"8,40,000",2018,"59,000 km",Diesel,Dadar East
+Maruti Suzuki Sx4,"2,10,000",2010,"44,000 km",Petrol,Sion East
+Toyota Glanza,"7,75,000",2018,"7,981 km",Petrol,Kurla West
+Toyota Etios Liva,"4,75,000",2013,"70,048 km",Diesel,Kurla West
+Hyundai i20 Active,"5,50,000",2016,"45,000 km",Petrol,Bandra West
+Volkswagen Ameo,"4,90,000",2017,"63,000 km",Petrol,Santacruz East
+Maruti Suzuki Ertiga,"12,11,111",2022,"15,000 km",Petrol,Bandra West
+Mercedes-Benz GLC Class,"39,75,111",2018,"50,000 km",Diesel,Bandra West
+Hyundai Venue,"11,90,000",2023,"6,744 km",Diesel,Chembur
+Kia Sonet,"11,50,000",2020,"18,237 km",Petrol,Chembur
+Tata Nexon,"9,75,000",2021,"21,000 km",Petrol,Bandra West
+Skoda Superb,"3,45,000",2012,"57,000 km",Petrol,Bandra West
+Mercedes-Benz E-Class,"19,50,000",2016,"84,000 km",Petrol,Bandra West
+Audi Q3,"14,85,000",2014,"60,000 km",Diesel,Chembur
+Maruti Suzuki Ertiga,"6,49,000",2014,"111,000 km",Diesel,Bandra East
+Maruti Suzuki Wagon-R,"3,85,000",2015,"65,000 km",CNG & Hybrids,Dadar East
+Maruti Suzuki Wagon-R,"6,25,000",2021,"42,710 km",Petrol,Bandra West
+Honda City,"2,15,000",2009,"53,000 km",CNG & Hybrids,Santacruz East
+Jaguar XJ,"36,50,000",2015,"82,000 km",Diesel,Khar West
+Audi A4,"8,95,000",2012,"78,144 km",Diesel,Vile Parle East
+Mercedes-Benz S-Class,"1,51,00,000",2020,"26,000 km",Petrol,Vile Parle East
+Tata EV,"14,50,000",2023,"10,000 km",Electric,Vile Parle East
+Mahindra TUV,"7,25,000",2017,"45,000 km",Diesel,Bandra West
+Kia Sonet,"10,85,000",2021,"21,521 km",Petrol,Chembur
+Hyundai Fluidic Verna,"5,68,000",2014,"71,000 km",Diesel,Chembur
+Honda City ZX,"1,45,000",2008,"89,000 km",CNG & Hybrids,Vile Parle East
+Land Rover Range Rover Evoque,"68,00,000",2021,"23,000 km",Diesel,Bandra West
+Maruti Suzuki Swift-Dzire,"2,49,000",2010,"32,200 km",Petrol,Santacruz West
+Volkswagen Polo,"8,50,000",2019,"25,000 km",Petrol,Bandra West
+Hyundai i20,"3,25,000",2014,"69,000 km",Petrol,Chembur
+Hyundai Grand i10,"5,25,000",2019,"22,600 km",Petrol,Chembur
+Land Rover Range Rover Evoque,"66,00,000",2020,"8,700 km",Petrol,Dharavi
+Hyundai Venue,"7,99,999",2019,"24,000 km",Petrol,Matunga Road
+Toyota Etios,"4,99,999",2016,"48,400 km",Petrol,Juhu Tara Road
+Mercedes-Benz C-Class,"10,25,000",2012,"67,500 km",Petrol,Bandra West
+Mercedes-Benz GLA Class,"16,99,999",2015,"47,500 km",Petrol,Santacruz East
+Audi A4,"10,50,000",2013,"54,000 km",Diesel,Chembur
+BMW X7,"1,09,00,000",2021,"38,000 km",Diesel,Santacruz West
+Hyundai Creta,"12,45,000",2018,"42,817 km",Petrol,Vile Parle East
+Toyota Camry,"14,60,000",2014,"77,844 km",Petrol,Chembur
+Mercedes-Benz A Class,"13,95,000",2015,"49,800 km",Diesel,Dadar East
+Mercedes-Benz GLC Class,"62,00,000",2021,"23,000 km",Petrol,Santacruz East
+Mini Cooper Convertible,"37,00,000",2016,"27,000 km",Petrol,Dadar West
+Maruti Suzuki Swift,"4,99,999",2016,"47,247 km",Petrol,Chembur
+Ford Figo,"1,85,000",2013,"55,241 km",Petrol,Sion West
+Nissan Terrano,"5,40,000",2015,"62,500 km",Diesel,Tilak Nagar
+Honda City,"4,99,999",2014,"81,000 km",Diesel,Bandra West
+Mercedes-Benz E-Class,"16,25,000",2013,"51,000 km",Diesel,Matunga Road
+Kia Sonet,"13,95,000",2022,"41,000 km",Diesel,Bandra West
+Mini Cooper Convertible,"44,00,000",2019,"23,000 km",Petrol,Bandra West
+BMW 3 Series,"50,50,000",2021,"7,600 km",Petrol,Bandra West
+Hyundai i10,"2,75,000",2011,"65,000 km",CNG & Hybrids,Matunga Road
+BMW 3 Series,"8,75,000",2011,"84,000 km",Diesel,Matunga Road
+Toyota Camry,"7,45,000",2012,"55,000 km",Petrol,Santacruz West
+Hyundai Creta,"12,85,000",2021,"38,300 km",Diesel,Dadar East
+Land Rover Range Rover,"65,00,000",2013,"79,500 km",Diesel,Bandra West
+Honda Brio,"2,91,000",2013,"65,278 km",Petrol,Vile Parle East
+Mahindra XUV500,"10,75,000",2018,"70,000 km",Diesel,Sion East
+Land Rover Range Rover,"2,55,00,000",2021,"22,000 km",Diesel,Santacruz West
+Maruti Suzuki Wagon-R-1-0,"2,55,000",2012,"77,000 km",CNG & Hybrids,Matunga Road
+Volvo XC 90,"13,11,000",2012,"67,999 km",Diesel,Santacruz East
+Renault Duster,"7,90,000",2017,"52,000 km",Diesel,Vile Parle East
+Honda Jazz,"4,65,000",2015,"115,000 km",Diesel,Vile Parle East
+Nissan Terrano,"4,75,000",2014,"68,000 km",Diesel,Vile Parle East
+Maruti Suzuki Wagon-R,"4,25,000",2018,"36,000 km",CNG & Hybrids,Vile Parle East
+Skoda Kodiaq,"26,50,000",2018,"45,000 km",Diesel,Matunga Road
+Skoda Rapid,"4,99,999",2016,"64,000 km",Petrol,Matunga Road
+Hyundai Grand i10,"4,49,999",2017,"19,000 km",Petrol,Matunga Road
+Ford Ecosport,"6,75,000",2018,"80,841 km",Petrol,Sion West
+BMW X5,"80,00,000",2020,"34,000 km",Diesel,Bandra West
+Mahindra Bolero Power Plus,"5,65,000",2017,"61,000 km",Diesel,Chembur
+Mahindra Bolero Power Plus,"5,65,000",2017,"60,000 km",Diesel,Chembur
+Maruti Suzuki Eeco,"4,10,000",2019,"39,600 km",Petrol,Chembur
+Mahindra Marazzo,"9,25,000",2018,"58,000 km",Diesel,Chembur
+Hyundai Grand i10 Nios,"6,35,000",2020,"26,765 km",Petrol,Chembur
+Toyota VELLFIRE,"1,08,00,000",2020,"18,000 km",Petrol,Santacruz West
+Maruti Suzuki XL6,"11,85,000",2020,"18,143 km",Petrol,Chembur
+Skoda Kushaq,"14,75,000",2021,"38,500 km",Petrol,Chembur
+Ford Ecosport,"4,75,000",2013,"77,500 km",Diesel,Chembur
+Hyundai i20,"3,95,000",2013,"19,500 km",Petrol,Chembur
+Maruti Suzuki Eeco,"3,50,000",2020,"15,000 km",Petrol,Chembur
+Maruti Suzuki Eeco,"4,25,000",2018,"28,000 km",CNG & Hybrids,Chembur
+Ford Figo,"2,49,999",2011,"33,800 km",Diesel,Bandra West
+Tata EV,"15,50,000",2023,"4,300 km",Electric,Vile Parle East
+Honda City,"5,65,000",2014,"55,000 km",Petrol,Vile Parle East
+Hyundai Creta,"9,25,000",2017,"48,000 km",Petrol,Matunga Road
+Mercedes-Benz GLE Class,"75,00,000",2020,"47,000 km",Diesel,Matunga Road
+Maruti Suzuki Vitara-Brezza,"8,11,000",2017,"56,242 km",Diesel,Chembur
+BMW 5 Series,"38,00,000",2017,"63,000 km",Diesel,Bandra West
+Toyota Innova Crysta,"15,99,000",2016,"140,247 km",Diesel,Kurla West
+Tata Harrier,"13,00,000",2019,"81,000 km",Diesel,Kurla West
+Isuzu D-Max V-Cross,"14,99,000",2018,"56,000 km",Diesel,Waterfield Road Bandra West
+Honda Civic,"13,50,000",2019,"32,000 km",Petrol,Bandra West
+Honda City,"6,50,000",2016,"40,000 km",Petrol,Dadar East
+Mahindra XUV500,"9,95,000",2015,"73,000 km",Diesel,Bandra West
+Hyundai i10,"2,95,000",2014,"75,000 km",Petrol,Sion East
+Toyota Innova Crysta,"29,99,000",2021,"16,256 km",Diesel,Kurla West
+Tata Nexon EV Max,"16,90,000",2022,"13,000 km",Electric,Vile Parle East
+Honda City,"6,25,000",2015,"48,000 km",Petrol,Matunga Road
+Honda City,"6,49,999",2015,"61,223 km",Petrol,Chembur
+Ford Ecosport,"7,85,000",2018,"71,779 km",Petrol,Sion East
+Land Rover Range Rover Sport,"58,00,000",2014,"70,000 km",Diesel,Bandra West
+Toyota Innova Crysta,"18,51,000",2018,"59,284 km",Diesel,Kurla West
+Hummer H2,"69,68,999",2016,"25,000 km",Petrol,Bandra West
+Honda Amaze,"4,50,000",2013,"33,000 km",Diesel,Chembur
+Honda Amaze,"8,75,000",2018,"47,000 km",Diesel,Chembur
+Maruti Suzuki Swift,"6,45,000",2018,"16,000 km",Petrol,Chembur
+Audi A6,"19,75,000",2016,"61,000 km",Petrol,Chembur
+Tata EV,"13,99,000",2020,"16,000 km",Electric,Chembur
+Volkswagen Virtus,"19,75,000",2023,"10,000 km",Petrol,Bandra Kurla Complex
+Skoda Kushaq,"16,75,000",2021,"23,000 km",Petrol,Chembur
+Mercedes-Benz C-Class,"9,95,000",2013,"58,986 km",Diesel,Vile Parle East
+Toyota Innova,"8,25,000",2014,"114,930 km",Diesel,Chembur
+Hyundai Verna,"2,50,000",2010,"81,000 km",Diesel,Dadar East
+Honda City,"6,85,000",2018,"81,000 km",Petrol,Wadala West
+Honda City,"8,75,000",2017,"31,000 km",Petrol,Matunga Road
+Hyundai Grand i10,"4,49,999",2016,"16,000 km",Petrol,Matunga Road
+Hyundai i20,"4,10,000",2012,"31,000 km",Petrol,Matunga Road
+Honda City,"2,20,000",2009,"78,869 km",Petrol,Chembur
+Maruti Suzuki Celerio,"4,65,000",2016,"60,657 km",Petrol,Chembur
+Hyundai Fluidic Verna,"2,90,000",2012,"71,555 km",Petrol,Chembur
+Maruti Suzuki maruti-suzuki-dzire,"6,25,111",2018,"26,500 km",Petrol,Bandra West
+Mercedes-Benz CLA,"18,75,000",2016,"51,000 km",Diesel,Bandra West
+Mercedes-Benz E-Class,"10,50,000",2012,118000.0 km,Diesel,Bandra West
+Hyundai Venue,"11,85,000",2020,"16,000 km",Petrol,Bandra West
+Skoda Rapid,"5,75,000",2016,"12,000 km",Petrol,Bandra West
+Audi A4,"5,90,000",2008,38000.0 km,Petrol,Bandra West
+Isuzu MU-7,"8,50,000",2015,"65,000 km",Diesel,Bandra West
+Mercedes-Benz R-Class,"11,25,000",2011,"82,000 km",Petrol,Bandra West
+Toyota Innova,"4,50,000",2009,"168,000 km",Diesel,Wadala West
+BMW 5 Series,"69,00,000",2022,"2,000 km",Diesel,Santacruz East
+Hyundai Creta,"8,95,000",2016,"49,341 km",Petrol,Chembur
+Fiat Abarth 595,"6,95,000",2017,"21,000 km",Petrol,Bandra West
+Other Brands Others,"6,75,000",1942,50000.0 km,Diesel,Bandra West
+Land Rover Range Rover,"11,50,000",2003,"75,000 km",Diesel,Bandra West
+Toyota Urban Cruiser,"10,99,000",2020,"3,616 km",Petrol,Kurla West
+Mercedes-Benz E-Class,"8,75,000",2011,"129,000 km",Diesel,Chembur
+Honda Jazz,"5,00,000",2015,"94,000 km",Diesel,Chembur
+Honda City,"7,75,000",2017,"84,000 km",Diesel,Chembur
+Toyota Innova Crysta,"19,51,000",2018,"740,009 km",Diesel,Kurla West
+Honda City,"5,50,000",2016,"82,000 km",Petrol,Matunga Road
+Hyundai Creta,"10,75,000",2018,"46,839 km",Diesel,Chembur
+Hyundai Grand i10,"5,25,000",2018,"45,123 km",Petrol,Sion East
+Honda City,"6,75,000",2017,"78,556 km",Diesel,Chembur
+Hyundai i10,"3,49,000",2013,"47,184 km",Petrol,Chembur
+Toyota Etios,"2,25,000",2011,"72,555 km",Petrol,Chembur
+Maruti Suzuki Baleno-RS,"6,95,000",2017,"38,000 km",Petrol,Chembur
+Toyota Corolla Altis,"3,50,000",2010,"97,000 km",Petrol,Bandra West
+Hyundai Elite i20,"6,75,000",2019,"23,231 km",Petrol,Chembur
+BMW X3,"21,00,000",2016,"104,000 km",Diesel,Chembur
+Honda City,"4,95,000",2014,"49,000 km",Petrol,Dadar East
+Hyundai Venue,"10,85,000",2020,"26,500 km",Petrol,Chembur
+BMW X1,"29,95,000",2019,"24,000 km",Diesel,Chembur
+Honda Jazz,"6,25,000",2017,"44,000 km",Petrol,Chembur
+Honda City ZX,"1,75,000",2008,"146,912 km",Petrol,Bandra Kurla Complex
+Toyota Corolla Altis,"9,25,000",2016,"44,800 km",Petrol,Chembur
+Honda CRV,"19,90,000",2018,"56,000 km",Petrol,Khar West
+Volkswagen Polo,"2,53,000",2011,"63,000 km",Petrol,Bandra West
+Land Rover Range Rover Sport,"87,00,000",2019,"65,000 km",Petrol,Bandra West
+Toyota Fortuner,"30,99,000",2017,"115,783 km",Diesel,Kurla West
+Mercedes-Benz GL-Class,"13,11,000",2008,"120,000 km",Diesel,Bandra West
+Land Rover Range Rover Sport,"18,50,000",2007,58925.0 km,Petrol,Bandra West
+Honda Jazz,"2,25,000",2010,"60,000 km",Petrol,Bandra West
+Mercedes-Benz S-Class,"7,75,000",2007,"121,000 km",Diesel,Bandra West
+Hyundai Sonata Embera,"2,95,000",2010,"100,000 km",Diesel,Bandra West
+Mercedes-Benz E-Class,"4,65,000",2008,"100,000 km",Diesel,Bandra West
+Tata Nano,"1,99,000",2014,"24,235 km",CNG & Hybrids,Chembur
+Maruti Suzuki Grand Vitara,"21,50,000",2023,"1,500 km",Petrol,Bandra West
+Mercedes-Benz SLC,"63,00,000",2018,"10,000 km",Petrol,Santacruz West
+Maserati Quattroporte,"55,00,000",2011,"28,000 km",Petrol,Bandra West
+Mercedes-Benz B Class,"13,75,000",2013,"28,000 km",Petrol,Vile Parle East
+Tata Manza,"1,19,999",2010,"85,431 km",Diesel,Vaibhav Nagar
+Honda Amaze,"4,25,000",2013,"52,000 km",Petrol,Matunga Road
+Maruti Suzuki Ertiga,"11,75,000",2022,"36,000 km",CNG & Hybrids,Sion West
+Maruti Suzuki maruti-suzuki-dzire,"6,75,000",2018,"46,493 km",Petrol,Chembur
+Honda Jazz,"4,75,000",2015,"48,559 km",Petrol,Chembur
+Maruti Suzuki Baleno-RS,"4,00,000",2023,10 km,Petrol,Bandra West
+Porsche Cayenne,"21,00,000",2011,"96,000 km",Petrol,Bandra West
+Maruti Suzuki Ignis,"4,85,000",2017,"30,000 km",Petrol,Bandra West
+Toyota Etios,"2,72,000",2012,"55,000 km",Petrol,Bandra West
+Maruti Suzuki Alto-K10,"2,95,000",2015,"37,700 km",Petrol,Vile Parle East
+BMW 7 Series,"59,75,000",2018,"42,000 km",Diesel,Vile Parle East
+Maruti Suzuki Ritz,"3,25,000",2016,"72,000 km",CNG & Hybrids,Dadar East
+Toyota Innova Crysta,"22,50,000",2018,"67,200 km",Diesel,Bandra West
+Hyundai Verna,"6,40,000",2015,"36,369 km",Petrol,Chembur
+Audi A4,"24,75,000",2016,"40,000 km",Petrol,Vile Parle East
+Maruti Suzuki Alto-K10,"2,95,000",2016,"75,134 km",CNG & Hybrids,Vaibhav Nagar
+Chevrolet Beat,"1,99,999",2013,"64,315 km",Diesel,Vaibhav Nagar
+Mini Cooper Countryman,"15,25,000",2015,"47,000 km",Diesel,Bandra West
+Toyota Innova Crysta,"24,50,000",2020,"51,000 km",Diesel,Matunga Road
+Jaguar F-Pace,"45,00,000",2019,"33,000 km",Petrol,Matunga Road
+Hyundai New Elantra,"13,50,000",2019,"23,000 km",Petrol,Matunga Road
+Maruti Suzuki Ertiga,"11,35,000",2021,"19,800 km",CNG & Hybrids,Chembur
+Land Rover Range Rover Sport,"17,75,000",2010,"100,000 km",Diesel,Bandra West
+Volkswagen Polo,"8,25,000",2019,"26,000 km",Petrol,Bandra East
+Mercedes-Benz C-Class,"21,90,000",2015,"35,000 km",Petrol,Vile Parle East
+Maruti Suzuki Wagon R,"1,05,000",2007,70000.0 km,CNG & Hybrids,Bandra West
+Audi Q3,"28,50,000",2018,"36,000 km",Diesel,Vile Parle East
+Mahindra XUV500,"4,35,000",2012,"95,000 km",Diesel,Bandra West
+Volvo S90,"35,75,111",2019,"38,000 km",Diesel,Bandra West
+Kia Carens,"18,75,000",2022,"12,000 km",Petrol,Chembur
+Audi Q2,"28,75,000",2020,"19,000 km",Petrol,Vile Parle East
+BMW X3,"49,50,000",2019,"47,000 km",Diesel,Bandra Kurla Complex
+Maruti Suzuki Wagon-R,"1,10,000",2008,"76,454 km",Petrol,Vaibhav Nagar
+Hyundai Verna,"3,55,000",2014,"40,000 km",Petrol,Vidya Nagari
+Maruti Suzuki Vitara-Brezza,"7,25,000",2016,"73,000 km",Diesel,Vidya Nagari
+BMW X1,"25,99,000",2018,"56,691 km",Diesel,Chembur
+Mini Cooper Countryman,"29,95,000",2019,"24,343 km",Petrol,Chembur
+Hyundai i10,"2,10,000",2011,"83,000 km",CNG & Hybrids,Chembur
+Bentley GT,"76,00,000",2009,"32,000 km",Petrol,Bandra West
+Hyundai Grand i10,"4,40,000",2014,"46,000 km",Petrol,Khar West
+Maruti Suzuki Ertiga,"7,35,000",2015,"75,965 km",Diesel,Bandra West
+Maruti Suzuki Ertiga,"6,75,000",2014,"85,000 km",CNG & Hybrids,Dadar East
+Toyota Innova Crysta,"16,51,000",2016,"137,377 km",Diesel,Kurla West
+Kia Sonet,"6,73,000",2020,"35,000 km",Petrol,Vile Parle West
+Mahindra XUV500,"11,25,000",2016,"48,000 km",Diesel,Vile Parle East
+Ford Ecosport,"4,75,000",2014,"63,000 km",Petrol,Bandra West
+Kia Seltos,"16,50,000",2022,"20,000 km",Petrol,Vile Parle East
+Mahindra Bolero,"3,50,000",2007,"112,000 km",Diesel,Vile Parle East
+Maruti Suzuki Zen-Estilo,"1,79,999",2014,"29,134 km",Petrol,Vaibhav Nagar
+Ford Ecosport,"9,75,000",2021,"36,800 km",Petrol,Bandra West
+Datsun RediGO,"2,25,000",2017,"35,000 km",Petrol,Dadar East
+Mercedes-Benz E-Class,"49,50,000",2019,"45,000 km",Diesel,Santacruz West
+Maruti Suzuki Eeco,"3,35,000",2015,"70,350 km",CNG & Hybrids,Vidya Nagari
+Hyundai Santro Xing,"1,35,000",2010,"85,000 km",Petrol,Vidya Nagari
+Toyota Innova,"5,85,000",2011,"85,000 km",Diesel,Vidya Nagari
+Honda Amaze,"4,25,000",2015,"75,000 km",Diesel,Kalina
+Ssangyong Rexton,"4,95,000",2013,"100,000 km",Diesel,Khar West
+Hyundai Verna,"5,50,000",2023,10 km,Diesel,Bandra Kurla Complex
+Mercedes-Benz C-Class,"11,59,000",2013,"48,000 km",Die..,Bandra East
+Ford Endeavour,"3,79,000",2010,"79,000 km",Diesel,Bandra East
+Maruti Suzuki Ritz,"2,25,000",2010,"28,000 km",Petrol,Chembur
+Toyota Innova Crysta,"16,99,000",2017,"53,134 km",Diesel,Kurla West
+Volkswagen Polo,"5,65,000",2016,"49,200 km",Petrol,Santacruz East
+Volkswagen Polo,"3,95,000",2014,"35,000 km",Petrol,Santacruz East
+Mercedes-Benz E-Class,"8,74,999",2011,"60,000 km",Petrol,Bandra West
+Hyundai Creta,"12,75,000",2018,"44,000 km",Petrol,Vile Parle East
+Hyundai Xcent,"4,35,000",2015,"18,000 km",Petrol,Vile Parle East
+BMW X1,"30,00,000",2018,"22,114 km",Diesel,Santacruz West
+Volvo XC90,"59,75,000",2018,"30,600 km",Diesel,Bandra West
+Honda City,"7,25,000",2018,"49,000 km",Petrol,Dadar East
+Audi RS5,"34,00,000",2012,"35,000 km",Petrol,Vaidya Nagar
+Maruti Suzuki Ciaz,"6,45,000",2017,"53,700 km",Petrol,Santacruz East
+Toyota Innova Crysta,"15,99,999",2016,"117,000 km",Diesel,Chembur
+Volvo XC40,"33,00,000",2020,"15,000 km",Petrol,Vile Parle East
+Maruti Suzuki Ciaz,"10,75,000",2021,"21,000 km",Petrol,Vile Parle East
+Mahindra Thar,"15,99,000",2021,"22,000 km",Diesel,Bandra East
+Audi Q5,"11,50,000",2011,43000.0 km,Diesel,Bandra West
+Toyota Others,"15,75,000",2004,20000.0 km,Petrol,Bandra West
+Chevrolet Spark,"1,10,000",2010,"43,000 km",Petrol,Bandra West
+Mini Cooper Countryman,"14,25,000",2013,"39,000 km",Diesel,Bandra West
+BMW X5,"12,75,000",2009,"73,000 km",Diesel,Bandra West
+Mitsubishi Outlander,"4,75,000",2011,"54,532 km",Petrol,Chembur
+Hyundai Verna,"5,25,000",2015,"62,352 km",CNG & Hybrids,Chembur
+Hyundai Venue,"9,65,000",2020,"23,510 km",Petrol,Chembur
+Mercedes-Benz C-Class,"64,00,000",2017,"29,000 km",Petrol,Bandra West
+Toyota Urban Cruiser Hyryder,"22,50,000",2022,"10,610 km",Petrol,Chembur
+Maruti Suzuki Baleno,"6,65,000",2019,"21,447 km",Petrol,Chembur
+Honda City,"5,25,000",2014,"26,000 km",Petrol,Kurla West
+Honda Amaze,"4,50,000",2016,"51,163 km",Petrol,Chembur
+Mercedes-Benz C-Class,"23,49,999",2016,"65,200 km",Diesel,Bandra West
+Audi Q3,"25,75,000",2018,"68,000 km",Petrol,Bandra Kurla Complex
+BMW 5 Series,"11,50,000",2011,"75,000 km",Diesel,Santacruz West
+Tata EV,"11,95,000",2021,"18,000 km",Electric,Santacruz West
+Toyota Innova Crysta,"27,85,000",2021,"18,000 km",Diesel,Santacruz West
+BMW 6 Series,"44,95,000",2018,"51,000 km",Diesel,Santacruz West
+BMW 5 Series,"8,95,000",2009,"69,000 km",Petrol,Santacruz West
+Mercedes-Benz C-Class,"11,85,000",2012,"26,000 km",Petrol,Santacruz West
+Skoda Superb,"16,95,000",2017,"52,000 km",Petrol,Khar West
+Mercedes-Benz E-Class,"8,75,000",2010,"79,000 km",Diesel,Bandra West
+Mercedes-Benz GLE Class,"42,00,000",2018,"90,000 km",Diesel,Bandra West
+Mercedes-Benz S-Class,"51,00,000",2016,"62,000 km",Diesel,Bandra West
+Maruti Suzuki Vitara-Brezza,"7,95,000",2017,"53,000 km",Diesel,Chembur
+BMW 5 Series,"59,49,999",2020,"16,500 km",Diesel,Bandra East
+Toyota Corolla Altis,"10,85,000",2017,"27,315 km",Petrol,Chembur
+Mercedes-Benz GLC Class,"42,00,000",2018,"57,000 km",Diesel,Bandra West
+BMW X5,"29,50,000",2016,"106,000 km",Diesel,Bandra West
+Nissan Terrano,"4,30,111",2013,"86,800 km",Diesel,Bandra West
+Maruti Suzuki Ciaz,"7,45,111",2017,"48,700 km",Diesel,Bandra West
+BMW 7 Series,"58,25,111",2018,"59,000 km",Diesel,Bandra West
+Maruti Suzuki Swift-Dzire,"5,55,000",2018,"65,000 km",Petrol,Kurla West
+Mercedes-Benz E-Class,"42,75,111",2018,"41,000 km",Diesel,Bandra West
+Mercedes-Benz GLS,"52,75,111",2017,"77,000 km",Diesel,Bandra West
+BMW 5 Series,"5,95,000",2010,"78,000 km",Petrol,Juhu Tara Road
+Mercedes-Benz C-Class,"5,50,000",2010,"36,500 km",Petrol,Juhu Tara Road
+Land Rover Discovery,"34,95,000",2017,"39,500 km",Diesel,Juhu Tara Road
+Volkswagen VentoTest,"5,95,000",2015,"45,000 km",Diesel,Juhu Tara Road
+Maruti Suzuki Ciaz,"8,95,000",2019,"44,500 km",Petrol,Juhu Tara Road
+Toyota Land Cruiser Prado,"28,50,000",2010,"195,000 km",Diesel,Juhu Tara Road
+Honda CRV,"2,85,000",2007,"88,600 km",Petrol,Juhu Tara Road
+Volkswagen Caraville,"14,99,999",2009,65000.0 km,Diesel,Bandra West
+BMW X1,"28,25,000",2018,"36,000 km",Diesel,Vile Parle East
+Tata EV,"14,60,000",2022,"8,415 km",Petrol,Chembur
+Land Rover Range Rover,"2,02,00,000",2019,"26,000 km",Diesel,Santacruz West
+Hyundai Creta,"9,75,000",2017,"48,500 km",Petrol,Dadar West
+Hyundai Grand i10,"4,75,000",2018,"42,245 km",CNG & Hybrids,Chembur
+Maruti Suzuki S-Cross,"8,75,000",2018,"70,611 km",Diesel,Chembur
+Maruti Suzuki Wagon-R,"6,65,000",2021,"7,545 km",Petrol,Chembur
+Hyundai Grand i10,"4,50,000",2014,"58,859 km",Petrol,Chembur
+Maruti Suzuki Swift-Dzire,"1,99,000",2008,"102,000 km",Diesel,Mahim
+Hyundai Accent,"79,000",2004,"80,000 km",Petrol,Mahim
+Mercedes-Benz GLC Class,"48,99,000",2020,"20,000 km",Petrol,Matunga Road
+Toyota Innova,"5,39,000",2010,"130,000 km",Diesel,Chembur
+Hyundai i20,"5,39,000",2015,"68,000 km",Petrol,Chembur
+Volkswagen VentoTest,"2,75,000",2012,"85,881 km",Petrol,Chembur
+Maruti Suzuki Ertiga,"8,89,000",2017,"39,000 km",Diesel,Chembur
+Honda Accord,"3,45,000",2011,"88,000 km",Petrol,Santacruz East
+Maruti Suzuki Baleno,"5,45,000",2020,"65,000 km",Petrol,Chembur
+Toyota Corolla Altis,"2,25,000",2008,"95,000 km",CNG & Hybrids,Bandra West
+Tata Harrier,"18,79,000",2020,"82,000 km",Diesel,Chembur
+Volkswagen Polo,"3,25,000",2012,"87,000 km",Diesel,Santacruz East
+Maruti Suzuki Celerio,"4,65,000",2016,"25,744 km",Petrol,Chembur
+Ford Figo,"2,95,000",2013,"62,000 km",Diesel,Chembur
+Maruti Suzuki Swift-Dzire,"6,55,000",2021,"49,000 km",Petrol,Santacruz East
+Maruti Suzuki Swift,"4,95,000",2017,"34,000 km",Petrol,Santacruz East
+Maruti Suzuki Swift-Dzire,"6,85,000",2017,"73,000 km",Diesel,Santacruz East
+Mahindra TUV,"7,99,000",2018,"32,000 km",Diesel,Kurla East
+Hyundai Elite i20,"5,80,000",2018,"61,500 km",Petrol,Santacruz East
+BMW 7 Series,"14,90,000",2013,"100,000 km",Diesel,Mahim
+Honda City,"2,90,000",2012,"75,000 km",Petrol,Bandra East
+Mercedes-Benz E-Class,"10,50,000",2013,"43,000 km",Diesel,Bandra West
+Hyundai Accent,"95,000",2005,"52,000 km",Petrol,Bandra West
+Maruti Suzuki Swift,"5,49,000",2017,"40,000 km",Diesel,Mahim
+Hyundai i10,"2,11,000",2011,"39,000 km",Petrol,Bandra West
+Audi A6,"6,95,000",2011,"81,000 km",Diesel,Santacruz East
+Hyundai i20,"1,95,000",2010,"75,000 km",CNG & Hybrids,Kurla East
+Maruti Suzuki Swift,"2,95,000",2012,"75,000 km",Petrol,Kurla East
+Tata Harrier,"24,50,000",2022,"9,000 km",Diesel,Vile Parle West

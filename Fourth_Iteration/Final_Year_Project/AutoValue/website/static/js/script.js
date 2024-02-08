@@ -52,6 +52,10 @@ document.querySelector(".home").onmouseleave = () => {
     });
 };
 
+
+
+
+
 var swiper = new Swiper(".vehicles-slider", {
     slidesPerView: 1,
     spaceBetween: 20,
@@ -80,6 +84,10 @@ var swiper = new Swiper(".vehicles-slider", {
 
         },
     },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
 });
 
 var swiper1 = new Swiper(".featured-slider", {
@@ -89,7 +97,7 @@ var swiper1 = new Swiper(".featured-slider", {
     grabCursor: true,
     centeredSlides: true,
     autoplay: {
-        delay: 2000,
+        delay: 3000,
         disableOnInteraction: false,
       },
     pagination: {
@@ -109,6 +117,10 @@ var swiper1 = new Swiper(".featured-slider", {
             slidesPerView: 3,
 
         },
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
     },
 });
 var swiper2 = new Swiper(".reviews-slider", {

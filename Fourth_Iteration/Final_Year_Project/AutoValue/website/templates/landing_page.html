@@ -26,8 +26,9 @@
             <a href="/landing-page#services">Services</a>
             <a href="/landing-page#featured">Featured</a>
 
-            <a href="/landing-page#reviews">Reviews</a>
+
             <a href="/landing-page#price-prediction">Price</a>
+            <a href="/landing-page#reviews">Reviews</a>
             <a href="/car-blogs" target="_blank">Blogs</a>
             <!-- <a href="/landing-page#contact">Contact</a> -->
         </nav>
@@ -37,7 +38,7 @@
                 <button class="btn" type="submit">Logout</button>
             </form>
 
-            
+
         </div>
     </header>
 
@@ -132,6 +133,9 @@
                 {% endfor %}
 
             </div>
+            <!-- Navigation arrows -->
+        <div class="swiper-button-prev swiper-btn"></div>
+        <div class="swiper-button-next swiper-btn"></div>
             <div class="swiper-pagination"></div>
         </div>
     </section>
@@ -190,7 +194,7 @@
     <!-- search section ends -->
 
     <!-- services section starts -->
-    <section class="services" id="services">
+    <!-- <section class="services" id="services">
         <h1 class="heading">Our <span>Services</span></h1>
         <div class="box-container">
             <div class="box">
@@ -212,8 +216,8 @@
                 <a href="" class="btn">Read more</a>
             </div>
             <div class="box">
-                <i class="fas fa-car-battery"></i>
-                <h3>Battery Replacement</h3>
+                <i class="fas fa-car-crash"></i>
+                <h3>Car Insurance</h3>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, reprehenderit.</p>
                 <a href="" class="btn">Read more</a>
             </div>
@@ -228,6 +232,115 @@
                 <h3>24/7 Support</h3>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, reprehenderit.</p>
                 <a href="" class="btn">Read more</a>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Adding flip effect to services section -->
+
+
+    <section class="services" id="services">
+        <h1 class="heading">Our <span>Services</span></h1>
+        <div class="box-container">
+            <div class="box" onclick="this.classList.toggle('flip')">
+                <div class="inner-box front">
+                    <i class="fas fa-car"></i>
+                    <h3>Used Car Selling</h3>
+                    <p>Explore our wide selection of quality used vehicles.</p>
+                    <button class="btn">Read more</button>
+                </div>
+                <div class="inner-box back">
+                    <i class="fas fa-car"></i>
+
+                    <p class="details">We have aggregated used vehicles from trusted websites spanning Mumbai,
+                        Pune, Hyderabad, Delhi and bangalore</p>
+                    <button class="btn">Read less</button>
+                </div>
+
+            </div>
+            <div class="box" onclick="this.classList.toggle('flip')">
+
+                <div class="inner-box front">
+                    <i class="fas fa-tools"></i>
+                    <h3>Repair Parts</h3>
+                    <p>Find the right parts to keep your vehicle running smoothly.</p>
+                    <button class="btn">Read more</button>
+                </div>
+                <div class="inner-box back">
+                    <i class="fas fa-tools"></i>
+
+                    <p class="details">We guarantee the authenticity, durability and performance of all the parts that
+                        we sell to our satisfied customers</p>
+                    <button class="btn">Read less</button>
+                </div>
+
+            </div>
+            <div class="box" onclick="this.classList.toggle('flip')">
+
+                <div class="inner-box front">
+
+                    <i class="fas fa-car-crash"></i>
+                    <h3>Car Insurance</h3>
+                    <p>Ensure peace of mind with our comprehensive car insurance.</p>
+                    <button class="btn">Read more</button>
+                </div>
+                <div class="inner-box back">
+                    <i class="fas fa-car-crash"></i>
+                    
+                    <p class="details">Secure your confidence with our thorough car insurance coverage, providing peace
+                        of mind for any journey ahead.</p>
+                    <button class="btn">Read less</button>
+                </div>
+
+            </div>
+            <div class="box" onclick="this.classList.toggle('flip')">
+
+                <div class="inner-box front">
+                    <i class="fas fa-gas-pump"></i>
+                    <h3>Oil Change</h3>
+                    <p>Keep your engine in top condition with our professional oil change service.</p>
+                    <button class="btn">Read more</button>
+                </div>
+                <div class="inner-box back">
+                    <i class="fas fa-gas-pump"></i>
+
+
+                    <p class="details">Maintain engine health with our expert oil change service, ensuring optimal
+                        performance and longevity for your vehicle's engine.</p>
+                    <button class="btn">Read less</button>
+                </div>
+
+            </div>
+            <div class="box" onclick="this.classList.toggle('flip')">
+                <div class="inner-box front">
+                    <i class="fas fa-wrench"></i>
+                    <h3>Auto Maintenance</h3>
+                    <p>Ensure your vehicle stays in top condition with our professional auto maintenance services.</p>
+                    <button class="btn">Read more</button>
+                </div>
+                <div class="inner-box back">
+                    <i class="fas fa-wrench"></i>
+                   
+                    <p class="details">Maintain peak performance with our expert auto maintenance, ensuring your vehicle remains reliable and efficient for every journey.</p>
+                    <button class="btn">Read less</button>
+                </div>
+            </div>
+            
+            <div class="box" onclick="this.classList.toggle('flip')">
+
+                <div class="inner-box front">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Get assistance anytime, anywhere with our round-the-clock support.</p>
+                    <button class="btn">Read more</button>
+                </div>
+                <div class="inner-box back">
+                    <i class="fas fa-headset"></i>
+
+                    <p class="details">Access reliable support whenever and wherever needed with our 24/7 assistance service, ensuring help is always available for you.</p>
+                    <button class="btn">Read less</button>
+                </div>
+
             </div>
         </div>
     </section>
@@ -257,6 +370,8 @@
                 </div>
                 {% endfor %}
             </div>
+            <div class="swiper-button-prev swiper-btn-cars"></div>
+            <div class="swiper-button-next swiper-btn-cars"></div>
             <div class="swiper-pagination"></div>
         </div>
         <div class="swiper featured-slider">
@@ -280,6 +395,8 @@
                 </div>
                 {% endfor %}
             </div>
+            <div class="swiper-button-prev swiper-btn-cars"></div>
+            <div class="swiper-button-next swiper-btn-cars"></div>
             <div class="swiper-pagination"></div>
         </div>
     </section>
@@ -293,7 +410,8 @@
         <form id="price-prediction-form" onsubmit="form_handler(event); getCarPrice()">
             <label for="select-company-price">Company</label>
 
-            <select name="select-company-price" id="select-company-price" onchange="loadCarModelsPredictionPage(this.id,'select-model-price')">
+            <select name="select-company-price" id="select-company-price"
+                onchange="loadCarModelsPredictionPage(this.id,'select-model-price')">
                 <option>Select Company</option>
                 {% for company in companies %}
                 <option value="{{ company }}">{{ company }}</option>
@@ -310,7 +428,8 @@
                 placeholder="Enter Kilometers Driven" value="0">
 
             <label for="select-location-price" class="form-label">Location</label>
-            <select class="form-select" id="select-location-price" name="select-location-price" aria-label="Default select example">
+            <select class="form-select" id="select-location-price" name="select-location-price"
+                aria-label="Default select example">
                 <option>Select Car Location</option>
                 {% for location in locations %}
                 <option value="{{ location }}">{{ location }}</option>
@@ -318,7 +437,8 @@
             </select>
 
             <label for="year-price" class="form-label">Year</label>
-            <input type="number" class="form-control" id="year-price" name="year-price" placeholder="Enter Year" value="2010">
+            <input type="number" class="form-control" id="year-price" name="year-price" placeholder="Enter Year"
+                value="2010">
 
             <label for="select-fuel-type-price" class="form-label">Fuel Type</label>
             <select class="form-select" id="select-fuel-type-price" name="select-fuel-type-price"
@@ -341,7 +461,7 @@
     <!-- price prediction section ends -->
 
 
-    
+
     <!-- review section starts -->
     <section id="reviews" class="reviews">
         <h1 class="heading">Clients' <span>Reviews</span></h1>
@@ -350,9 +470,8 @@
                 <div class="swiper-slide box">
                     <img src="../static/images/client-1.jpg" alt="">
                     <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint rerum nisi sapiente recusandae
-                            quibusdam fugit veniam, quae repellat omnis dolore?</p>
-                        <h3>John Doe</h3>
+                        <p>"I am amazed by the quality of service provided. The team went above and beyond to meet my expectations. Highly recommended!"</p>
+                        <h3>Michael Johnson</h3>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -365,24 +484,22 @@
                 <div class="swiper-slide box">
                     <img src="../static/images/client-2.jpg" alt="">
                     <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint rerum nisi sapiente recusandae
-                            quibusdam fugit veniam, quae repellat omnis dolore?</p>
-                        <h3>John Doe</h3>
+                        <p>"Exceptional experience! From start to finish, everything was smooth and efficient. Will definitely be returning for future services."</p>
+                        <h3>Arif Khan</h3>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide box">
                     <img src="../static/images/client-3.jpg" alt="">
                     <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint rerum nisi sapiente recusandae
-                            quibusdam fugit veniam, quae repellat omnis dolore?</p>
-                        <h3>John Doe</h3>
+                        <p>"Couldn't be happier with the results. Professionalism and attention to detail were evident throughout the process. Thank you!"</p>
+                        <h3>Raghav Sharma</h3>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -393,11 +510,10 @@
                     </div>
                 </div>
                 <div class="swiper-slide box">
-                    <img src="../static/images/client-1.jpg" alt="">
+                    <img src="../static/images/client-5.jpeg" alt="">
                     <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint rerum nisi sapiente recusandae
-                            quibusdam fugit veniam, quae repellat omnis dolore?</p>
-                        <h3>John Doe</h3>
+                        <p>"Outstanding service! The staff was knowledgeable, friendly, and attentive to my needs. Will be recommending to friends and family."</p>
+                        <h3>David Wilson</h3>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -408,11 +524,10 @@
                     </div>
                 </div>
                 <div class="swiper-slide box">
-                    <img src="../static/images/client-2.jpg" alt="">
+                    <img src="../static/images/client-6.jpg" alt="">
                     <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint rerum nisi sapiente recusandae
-                            quibusdam fugit veniam, quae repellat omnis dolore?</p>
-                        <h3>John Doe</h3>
+                        <p>"Remarkable service! The team demonstrated exceptional skill and dedication, ensuring a seamless experience from start to finish."</p>
+                        <h3>Mark Robert</h3>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -422,21 +537,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide box">
-                    <img src="../static/images/client-3.jpg" alt="">
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint rerum nisi sapiente recusandae
-                            quibusdam fugit veniam, quae repellat omnis dolore?</p>
-                        <h3>John Doe</h3>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -475,9 +576,9 @@
         </div>
     </section>
     <!-- contact section ends -->
-    
+
     {% endblock %} <!-- content block ends. this can be overridden -->
-    
+
 
     <!-- footer section starts -->
 
@@ -493,16 +594,15 @@
             </div>
             <div class="box">
                 <h3>Quick Links</h3>
-                <a href="#"><i class="fas fa-arrow-right"></i> Home</a>
-                <a href="#"><i class="fas fa-arrow-right"></i> Vehicles</a>
-                <a href="#"><i class="fas fa-arrow-right"></i> Services</a>
-                <a href="#"><i class="fas fa-arrow-right"></i> Featured</a>
-                <a href="#"><i class="fas fa-arrow-right"></i> Contact</a>
+                <a href="#home"><i class="fas fa-arrow-right"></i> Home</a>
+                <a href="#vehicles"><i class="fas fa-arrow-right"></i> Vehicles</a>
+                <a href="#services"><i class="fas fa-arrow-right"></i> Services</a>
+                <a href="#featured"><i class="fas fa-arrow-right"></i> Featured</a>
+                <a href="#contact"><i class="fas fa-arrow-right"></i> Contact</a>
             </div>
             <div class="box">
                 <h3>Professional</h3>
-                <a href="#"><i class="fas fa-phone"></i> +123-456-7890</a>
-                <a href="#"><i class="fas fa-phone"></i> +111-222-3333</a>
+                
                 <a href="#" style="text-transform: none;"><i class="fas fa-envelope"></i> shaikhmaaz04@gmail.com</a>
                 <a href="#"><i class="fas fa-map-marker-alt"></i> Mumbai, India - 400070</a>
 
@@ -510,12 +610,12 @@
             <div class="box">
                 <h3>Social</h3>
 
-                <a href=""><i class="fab fa-twitter"></i> Twitter</a>
-                <a href=""><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://twitter.com/shaikhmaaz04" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="https://www.linkedin.com/in/maaz-shaikh-9b30902a5/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
 
             </div>
         </div>
-        <div class="credits">Created by Maaz Shaikh | All rights reserved &copy;</div>
+        <div class="credits">Created by Maaz Shaikh | All rights reserved &copy; 2024</div>
 
     </section>
 

@@ -3,6 +3,7 @@ import time
 from flask import Blueprint, flash,render_template,request,jsonify,redirect,url_for, make_response, session
 
 from .Models import User
+
 from . import db
 from .Views import views
 from flask_login import login_user,login_required,logout_user, current_user
@@ -100,7 +101,7 @@ def sign_up():
                 session['email'] = email
                 session['fullName'] = full_name
             
-                flash("Email sent successfully! Enter the OTP provided.", category="success")
+                flash("Enter the OTP provided in the Email. OTP expires in 5 minutes.", category="success")
                 return redirect(url_for("auth.verify_email_otp"))
                 
                 
