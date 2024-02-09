@@ -72,7 +72,7 @@ section{
     align-items: flex-end; /* Align content at the bottom */
 }
 
-.swiper-btn{
+.swiper-btn-blogs{
     color: var(--bg-color);
     /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
@@ -80,7 +80,7 @@ section{
 
 }
 
-.swiper-btn:hover {
+.swiper-btn-blogs:hover {
     transform: scale(1.2);
 }
 

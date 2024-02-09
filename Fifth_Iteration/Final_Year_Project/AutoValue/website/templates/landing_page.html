@@ -93,7 +93,7 @@
     <!-- icons section end -->
 
     <!-- vehicles section starts -->
-    <section id="vehicles" class="vehicles">
+    <section id="vehicles" class="vehicles" style="text-transform: capitalize;">
         <h1 class="heading">Popular <span>Vehicles</span></h1>
         <div class="swiper vehicles-slider">
             <div class="swiper-wrapper">
@@ -119,12 +119,12 @@
                     <div class="content">
                         <h3>{{ car.carname }}</h3>
                         <div class="price">
-                            <span>Price:</span> {{ car.price }}
+                            <span>Price:</span> {{ car.price|format_price }}
                         </div>
                         <p>{% if loop.index <= 10 %} Spinny {% elif loop.index <=20 %} Cars24 {% else %} OLX {% endif %}
                                 <span class="fas fa-circle"></span> {{ car.year }}
                                 <span class="fas fa-circle"></span> {{ car.fueltype }}
-                                <span class="fas fa-circle"></span> {{ car.kilometersdriven }}
+                                <span class="fas fa-circle"></span> {{ car.kilometersdriven }} km
                                 <span class="fas fa-circle"></span> {{ car.location }}
                         </p>
                         <a href="{{ car.listingurl }}" target="_blank" class="btn">Check Out</a>
@@ -164,7 +164,7 @@
 
             <label for="kmsdriven" class="form-label">Kilometers Driven</label>
             <input type="number" class="form-control" id="kms-driven" name="kms-driven"
-                placeholder="Enter Kilometers Driven" value="0">
+                placeholder="Enter Kilometers Driven" value="0" required>
 
             <label for="select-location" class="form-label">Location</label>
             <select class="form-select" id="select-location" name="select-location" aria-label="Default select example">
@@ -175,11 +175,11 @@
             </select>
 
             <label for="year" class="form-label">Year</label>
-            <input type="number" class="form-control" id="year" name="year" placeholder="Enter Year" value="2010">
+            <input type="number" class="form-control" id="year" name="year" placeholder="Enter Year" value="2010" required>
 
             <label for="select-fuel-type" class="form-label">Fuel Type</label>
-            <select class="form-select" id="select-fuel-type" name="select-fuel-type"
-                aria-placeholder="Select Fuel Type">
+            <select class="form-select" id="select-fuel-type" name="select-fuel-type" 
+                aria-placeholder="Select Fuel Type" required="true">
                 <option>Select Fuel Type</option>
                 {% for type in fuel_types %}
                 <option value="{{ type }}">{{ type }}</option>
@@ -365,7 +365,7 @@
                         <i class="fas fa-star-half-alt"></i>
                         {% endif %}
                     </div>
-                    <div class="price">Rs.{{ car.price }}</div>
+                    <div class="price">Rs. {{ car.price }}</div>
                     <a href="{{ car.listingurl }}" target="_blank" class="btn">Check Out</a>
                 </div>
                 {% endfor %}
@@ -390,7 +390,7 @@
                         <i class="fas fa-star-half-alt"></i>
                         {% endif %}
                     </div>
-                    <div class="price">Rs.{{ car.price }}</div>
+                    <div class="price">Rs. {{ car.price|format_price }}</div>
                     <a href="{{ car.listingurl }}" target="_blank" class="btn">Check Out</a>
                 </div>
                 {% endfor %}
@@ -549,7 +549,7 @@
         <h3>Subscribe for Latest Updates</h3>
         <p>Stay on top of trends with AutoValue weekly newsletter.</p>
 
-        <form id="subscribe-form">
+        <form id="subscribe-form" onsubmit="form_handler(event); subscribeNewsletter(event)">
             <input type="email" placeholder="Enter your Email" name="email-input" id="email-input" required>
             <input type="submit" value="Subscribe" class="subscribe" id="subscribe-button">
         </form>
@@ -558,20 +558,20 @@
     <!-- contact section starts -->
 
     <section class="contact" id="contact">
-        <h1 class="heading"><span>Contact</span>Us</h1>
+        <h1 class="heading"><span>Contact</span> Us</h1>
         <div class="row">
             <iframe class="map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60333.12826454517!2d72.84272122499519!3d19.071627397168847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c89a5efa11d5%3A0x90728ea7729a78f9!2sKurla%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1705568574114!5m2!1sen!2sin"
                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-            <form action="">
+            <form onsubmit="form_handler(event); sendMessage(event);" id="contact-form">
                 <h3>Get in touch</h3>
-                <input type="text" placeholder="Name" class="box">
-                <input type="email" name="" placeholder="Email" id="" class="box">
-                <input type="number" name="" placeholder="Number" class="box" id="">
-                <textarea name="" class="box" placeholder="Message" id="" cols="30" rows="10"></textarea>
-                <input type="submit" value="Send Message" class="btn">
+                <input type="text" placeholder="Name" class="box" name="client-name" id="client-name" required>
+                <input type="email" name="client-email" placeholder="Email" id="client-email" class="box" required>
+                <input type="number" name="client-number" placeholder="Phone Number" class="box" id="client-number" required>
+                <textarea name="client-message" class="box" placeholder="Message" id="client-message" cols="30" rows="10" required></textarea>
+                <input type="submit" value="Send Message" class="btn" id="contact-button">
             </form>
         </div>
     </section>

@@ -34,6 +34,7 @@ def landing_page():
     # Extract unique values after sorting
     models = (all_cars_sorted['CarName'].unique())
     fuel_types = sorted(cleaned_car_data["Fuel Type"].unique())
+    fuel_types = ["Petrol","CNG","Diesel"]
     fuel_types.append('Any')
     print(fuel_types)
 
@@ -182,10 +183,28 @@ def get_car_models():
     # Filter models based on the selected company
     filtered_models = all_cars.loc[all_cars['Company'] == selected_company, 'CarName'].dropna().unique()
     filtered_models = filtered_models.tolist()
-    print((filtered_models))
+    # filtered_models = [model.split()[0] for model in filtered_models]
+    # filtered_models = list(set(filtered_models)) # drop duplicates
+    filtered_models = [keep_one_word(model) for model in filtered_models]
+    filtered_models = list(set(filtered_models)) # drop duplicates
+    print(filtered_models)
     filtered_models = {"models":filtered_models}
-    print((filtered_models))
+    print(filtered_models)
     return jsonify(filtered_models)
+
+def keep_one_word(model):
+    words = model.split()
+   
+    if len(words) > 1:
+        last_word = words[-1]
+        if "1." in last_word:
+            last_word = last_word.replace("1.", "")
+            words[-1] = last_word  # Remove "1."
+        if len(last_word) <= 2:
+            return words[0]
+        
+    return ' '.join(words)
+
 
 
 @views.route("/get-car-listings",methods=["POST"])

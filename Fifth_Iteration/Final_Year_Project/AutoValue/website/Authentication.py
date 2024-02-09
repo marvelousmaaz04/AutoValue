@@ -263,12 +263,28 @@ def subscribe():
         subject = 'Welcome to AutoValue Weekly Newsletter'
         
         # link = "http://localhost:5000/reset-password"
-        body = f"Top Trends for this week."
+        # Blog titles and links
+        blog_titles = [
+            ("Ferrari 499P Modificata unveiled", "https://www.autocarindia.com/car-news/ferrari-499p-modificata-unveiled-429704"),
+            ("Lamborghini Huracan Sterrato Deliveries Commence in India; Price Starts at Rs 4.61 Crore", "https://www.autox.com/news/car-news/lamborghini-huracan-sterrato-deliveries-commence-in-india-price-starts-at-rs-461-crore-115047/"),
+            ("FOSS Movement: Porsche Anchors Open Source in Software Strategy", "https://indianautosblog.com/foss-movement-porsche-anchors-open-source-in-software-strategy-p326119"),
+            ("Mahindra Pending Orders At 2.86 Lakh – Scorpio 119k, Thar 76k, XUV700 70k", "https://www.rushlane.com/mahindra-pending-orders-at-2-86-lakh-scorpio-119k-thar-76k-xuv700-70k-12482080.html"),
+            ("Mercedes Benz GLE facelift launched at Rs 96.4 lakh", "https://www.autocarindia.com/car-news/mercedes-benz-gle-facelift-launched-at-rs-964-lakh-429735"),
+        ]
+
+        # Constructing the HTML body with clickable links
+        body = "<h2>Top Trends for this week:</h2>"
+        body += "<h3><ol>"
+        for title, link in blog_titles:
+            body += f"<li><a href='{link}'>{title}</a></li>"
+        body += "</ol></h3>"
+
+        # Create EmailMessage object
         email_message = EmailMessage()
-        email_message['From'] = 'AutoValue' # this will be displayed to the user
+        email_message['From'] = 'AutoValue'  # This will be displayed to the user
         email_message['To'] = email_receiver
         email_message['Subject'] = subject
-        email_message.set_content(body)
+        email_message.add_alternative(body, subtype='html')  # Set the body as HTML content
 
         context = ssl.create_default_context()
 
@@ -281,3 +297,50 @@ def subscribe():
             smtp.sendmail(email_sender, email_receiver, email_message.as_string())
         # Email added successfully, return a message
         return jsonify({'message': 'You have successfully subscribed!'})
+
+email_sender = 'autovaluesup@gmail.com'
+email_password = 'eryj kyjp gotk vmvo' # better to use environment var
+    
+@auth.route('/contact', methods=['POST'])
+def contact():
+    client_name = request.form['client-name']
+    client_email = request.form['client-email']
+    client_number = request.form['client-number']
+    client_message = request.form['client-message']
+
+    email_receiver = client_email
+    
+    # Process the form data as needed (e.g., send email, save to database)
+    subject = 'Thanks for reaching out to AutoValue Support'
+    body = f"""Dear {client_name},
+
+        Thank you for reaching out to AutoValue Support. Your inquiry is important to us, and we appreciate the opportunity to assist you.
+
+        Our team is currently reviewing your message and will respond to you promptly. We strive to provide the highest level of service and will do our best to address your concerns or questions.
+
+        In the meantime, if you have any urgent matters or additional information to share, please feel free to contact us directly at autovaluesup@gmail.com or 7977962360.
+
+        Thank you for choosing AutoValue. We look forward to serving you.
+
+        Best regards,
+        AutoValue Support Team"""
+
+        # Create EmailMessage object
+    email_message = EmailMessage()
+    email_message['From'] = 'AutoValue Support'  # This will be displayed to the user
+    email_message['To'] = email_receiver
+    email_message['Subject'] = subject
+    email_message.set_content(body)  # Set the body as HTML content
+
+    context = ssl.create_default_context()
+
+    with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
+        smtp.login(email_sender, email_password)
+        
+        context = ssl.create_default_context()
+        # email_exists = verifier(email_receiver)
+        
+        smtp.sendmail(email_sender, email_receiver, email_message.as_string())
+    
+    # Return a response
+    return jsonify({'message': 'Message sent successfully!'})

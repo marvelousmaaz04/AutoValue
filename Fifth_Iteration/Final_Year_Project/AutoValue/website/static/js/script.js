@@ -273,9 +273,8 @@ function getCarPrice() {
 //     });
 // });
 
-document.getElementById('subscribe-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    var formData = new FormData(this);
+function subscribeNewsletter(event){
+    var formData = new FormData(document.getElementById('subscribe-form'));
     fetch('/subscribe', {
         method: 'POST',
         body: formData
@@ -298,5 +297,45 @@ document.getElementById('subscribe-form').addEventListener('submit', function(ev
         }, 5000);
     })
     .catch(error => console.error('Error:', error));
+}
+document.getElementById("client-number").addEventListener("input", function(event) {
+    var clientNumber = event.target.value;
+    validatePhoneNumber(clientNumber);
 });
+
+// Function to validate the phone number length
+function validatePhoneNumber(clientNumber) {
+    if (isNaN(clientNumber) || clientNumber.length !== 10) {
+        // If the phone number length is not 10, show an error message
+        document.getElementById("client-number").setCustomValidity("Phone number must be 10 digits.");
+    } else {
+        // If the phone number length is 10, clear any existing error message
+        document.getElementById("client-number").setCustomValidity("");
+    }
+}
+
+function sendMessage(event) {
+    var formData = new FormData(event.target);
+    fetch('/contact', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Handle response, e.g., show success message to the user
+        if(data.message == "Message sent successfully!"){
+            contactButton = document.getElementById("contact-button");
+            contactButton.value = "Message Sent!";
+            setTimeout(() => {
+                contactButton.value = "Send Message"
+                document.getElementById("client-name").value = "";
+                document.getElementById("client-email").value = "";
+                document.getElementById("client-number").value = "";
+                document.getElementById("client-message").value = "";
+            },5000)
+        }
+        console.log(data.message);
+    })
+    .catch(error => console.error('Error:', error));
+}
 

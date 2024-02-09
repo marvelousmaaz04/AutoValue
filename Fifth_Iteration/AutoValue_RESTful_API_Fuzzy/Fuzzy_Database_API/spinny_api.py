@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import text
 # from whooshalchemy import IndexService,Searcher,whoosh
 from unidecode import unidecode
 import string
@@ -12,13 +13,21 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=True
 
 def preprocess_query(query):
     # Remove punctuation
+    print("Before processing", query)
     translator = str.maketrans(string.punctuation, ' ' * len(string.punctuation))
     query = query.translate(translator)
     
     # Handle diacritics
     query = unidecode(query)
+    # query= query.split(" ")
+    # query = query[0:2]
+    # processed_query = '-'.join(query)
     
-    return query
+    processed_query = (query)
+    print("After processing", processed_query)
+    
+    return processed_query
+    
 
 
 db = SQLAlchemy(app)
@@ -199,7 +208,8 @@ def get_table1():
     # Step 1: Match CarName
     if model:
         search_terms = model.split(" ")
-        model_query = 'AND ' +' AND '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
+        print(search_terms)
+        model_query = 'AND ' +' OR '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
 
         # Bind all the parameters to the query
         model_params = {'term{}'.format(i): search_terms[i] for i in range(len(search_terms))}
@@ -351,7 +361,7 @@ def get_table2():
     # Step 1: Match CarName
     if model:
         search_terms = model.split(" ")
-        model_query = 'AND ' +' AND '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
+        model_query = 'AND ' +' OR '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
 
         # Bind all the parameters to the query
         model_params = {'term{}'.format(i): search_terms[i] for i in range(len(search_terms))}
@@ -503,7 +513,7 @@ def get_table3():
     # Step 1: Match CarName
     if model:
         search_terms = model.split(" ")
-        model_query = 'AND ' +' AND '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
+        model_query = 'AND ' +' OR '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
 
         # Bind all the parameters to the query
         model_params = {'term{}'.format(i): search_terms[i] for i in range(len(search_terms))}
@@ -656,7 +666,7 @@ def get_table4():
     # Step 1: Match CarName
     if model:
         search_terms = model.split(" ")
-        model_query = 'AND ' +' AND '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
+        model_query = 'AND ' +' OR '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
 
         # Bind all the parameters to the query
         model_params = {'term{}'.format(i): search_terms[i] for i in range(len(search_terms))}
@@ -808,7 +818,7 @@ def get_table5():
     # Step 1: Match CarName
     if model:
         search_terms = model.split(" ")
-        model_query = 'AND ' +' AND '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
+        model_query = 'AND ' +' OR '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
 
         # Bind all the parameters to the query
         model_params = {'term{}'.format(i): search_terms[i] for i in range(len(search_terms))}

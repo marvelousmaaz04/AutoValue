@@ -171,7 +171,7 @@ def get_table1():
     # Step 1: Match CarName
     if model:
         search_terms = model.split(" ") # split using space in case of one word only
-        query += ' AND '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
+        query += ' OR '.join(['CarName MATCH :term{}'.format(i) for i in range(len(search_terms))])
         
 
         # Bind all the parameters to the query
