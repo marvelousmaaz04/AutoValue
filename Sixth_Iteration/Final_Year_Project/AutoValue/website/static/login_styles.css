@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root {
+    --green: #24be21;
+    --light-green: #59c957;
+    --black: #130f40;
+    --light-color: #666;
+    --border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    --box-shadow: 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: none;
+    transition: all 0.2s linear;
+}
+
+.header {
+    margin-top: 20px;
+}
+
+.header .logo {
+    font-size: 2.5rem;
+    color: var(--black);
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.header .logo span {
+    color: var(--green);
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+    overflow-x: hidden;
+}
+
+/* Style for the entire body */
+
+/* Style for the sign-up form container */
+
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    padding: 0.8rem 3rem;
+    background-color: var(--light-green);
+    color: var(--black);
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+.btn:hover {
+    background-color: var(--green);
+}
+
+.form-container {
+    position: fixed;
+
+    height: 80%;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, .9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.form-container form {
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    text-align: center;
+    width: 40rem;
+    background-color: #fff;
+}
+
+.form-container form .buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form-container form .btn {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
+.form-container form h3 {
+    font-size: 2.5rem;
+    color: black;
+    padding-bottom: 1rem;
+    /* text-transform: uppercase; */
+}
+
+.form-container form .box {
+    font-size: 1.6rem;
+    margin: 0.7rem 0;
+    width: 100%;
+    color: var(--black);
+    padding: 1rem 1.2rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+}
+
+.form-container form p {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: var(--light-color);
+}
+
+.form-container form p a {
+    color: var(--green);
+    text-decoration: underline;
+}
+
+
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+    font-size: 1.6rem;
+    text-align: center;
+    width: 100%;
+    background-color: var(--light-green);
+    padding: 1rem 2rem;
+    z-index: 1004;
+}
+
+#email_error,
+#password_error {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: red;
+    display: none;
+    border: 1px solid red;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+#password_error {
+    margin-bottom: 10px;
+}
+
+/* Style for the form fields and button */
+.form-input {
+    margin: 10px 0;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+
+.form-button {
+    background-color: #1b2069;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.form-button:hover {
+    background-color: #262c8a;
+}
+
+.logo {
+    /* Adjust margin as needed */
+
+    margin-top: 20px;
+    /* Adjust margin as needed */
+}
+
+/* Style for the last div */
+.last-div {
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Add styles for flash messages */
+.flash-container {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flash-message {
+    padding: 10px;
+    margin: 0 10px; /* Adjusted margin for smaller screens */
+    border-radius: 50cm; /* Changed from 50cm to 10px for consistency */
+    color: #fff;
+    background-color: var(--green);
+    text-align: center;
+    font-size: 1.6rem;
+    margin-top: 40px;
+    width: 90%;
+}
+
+.flash-btn {
+    background-color: var(--light-green);
+    color: white;
+    border: 2px solid;
+    border-color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.flash-btn:hover {
+    background-color: var(--green);
+}
+
+.flash-message.success {
+    background-color: var(--green);
+    /* Green */
+}
+
+.flash-message.error {
+    background-color: #f44336;
+    /* Red */
+}
+
+/* Add more styles for different categories if needed */
+
+
+@media(max-width: 800px) {
+
+    
+
+    .form-input,
+    #password_error,
+    #email_error {
+        font-size: 12px;
+    }
+
+    .form-button {
+        font-size: 12px;
+    }
+
+    .login-form h1 {
+        font-size: large;
+    }
+
+    .flash-message {
+        width: 90%; /* Adjusted width for smaller screens */
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+}

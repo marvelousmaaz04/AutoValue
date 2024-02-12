@@ -251,7 +251,7 @@ function getCarPrice() {
         if (xhr.readyState == XMLHttpRequest.DONE) {
             
             
-            document.getElementById("predicted-price").innerHTML = "Predicted Price: Rs." + xhr.responseText;
+            document.getElementById("predicted-price").innerHTML = "Predicted Price: Rs. " + xhr.responseText;
     
         }
     }

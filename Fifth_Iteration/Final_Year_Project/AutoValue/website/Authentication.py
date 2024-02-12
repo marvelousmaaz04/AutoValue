@@ -2,8 +2,8 @@ import random
 import time
 from flask import Blueprint, flash,render_template,request,jsonify,redirect,url_for, make_response, session
 
-from .Models import User
-from .Models import Subscriber
+from .Models import Users
+from .Models import Subscribers
 
 from . import db
 from .Views import views
@@ -27,9 +27,9 @@ def login():
         password = request.form.get("password")
         
 
-        user = User.query.filter_by(email=email).first()
+        user = Users.query.filter_by(email=email).first()
         if not user:
-            flash("Email does not exist.",category="error")
+            flash("Email Address is not Registered.",category="error")
         elif password != user.password:
             flash("Incorrect Password, try again.",category="error")
         else:
@@ -59,7 +59,7 @@ def sign_up():
         print('post req sent')
         full_name = request.form.get("fullName")
         email = request.form.get("email")
-        user = User.query.filter_by(email=email).first()
+        user = Users.query.filter_by(email=email).first()
         if user:
             flash("Email already in use.",category="error")
             
@@ -82,7 +82,7 @@ def sign_up():
             subject = 'OTP FOR EMAIL VERIFICATION'
             otp = ''.join([str(random.randint(0, 9)) for _ in range(6)])
             otp_storage[email] = {'otp': otp, 'timestamp': time.time()}
-            # link = "http://localhost:5000/reset-password"
+         
             body = f"OTP: {otp}. OTP expires in 5 minutes."
             email_message = EmailMessage()
             email_message['From'] = 'AutoValue Support' # this will be displayed to the user
@@ -106,27 +106,7 @@ def sign_up():
                 return redirect(url_for("auth.verify_email_otp"))
                 
                 
-            # with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
-            #     smtp.login(email_sender, email_password)
-                
-            #     context = ssl.create_default_context()
-
-            
-                
-            #     email_exists = verify_email(email_receiver)
-                
-                
-            #     # email_exists = verifier(email_receiver)
-            #     if email_exists:
-            #         smtp.sendmail(email_sender, email_receiver, email_message.as_string())
-            #         session['email'] = email
-            #         session['fullName'] = full_name
-                
-            #         flash("Email sent successfully! Enter the OTP provided.", category="success")
-            #         return redirect(url_for("auth.verify_email_otp"))
-            #     else:
-            #         flash("Invalid Email Address!", category="email-error")
-            #         return redirect(url_for("auth.sign_up"))
+           
             
                     
     return render_template("signup.html")
@@ -176,7 +156,7 @@ def set_password():
             flash("Passwords do not match.",category="error")
         else:
             # create account
-            new_user = User(full_name=full_name,email=email,password=password)
+            new_user = Users(full_name=full_name,email=email,password=password)
             db.session.add(new_user)
             db.session.commit()
             session.pop('email',None)
@@ -198,7 +178,7 @@ def forgot_password():
         email = request.form.get("email")
         
 
-        user = User.query.filter_by(email=email).first()
+        user = Users.query.filter_by(email=email).first()
         if not user:
             flash("Email does not exist.",category="error")
         else:
@@ -223,7 +203,7 @@ def forgot_password():
                 smtp.login(email_sender, email_password)
                 smtp.sendmail(email_sender, email_receiver, email_message.as_string())
             flash('Email sent successfully! Check your inbox.', category="success")
-    return render_template("forgot_password_copy.html")
+    return render_template("forgot_password.html")
 
 @auth.route('/reset-password',methods=['GET','POST'])
 def reset_password():
@@ -231,7 +211,7 @@ def reset_password():
         token = request.args.get('token')
         new_password = request.form.get('password')
         confirm_password = request.form.get("cpassword")
-        user = User.query.filter_by(email=reset_user_email).first()
+        user = Users.query.filter_by(email=reset_user_email).first()
         if (user and token == user.reset_token and user.reset_token_expiration and user.reset_token_expiration > datetime.utcnow() and new_password == confirm_password):
             
             user.reset_token = None
@@ -247,13 +227,13 @@ def reset_password():
 def subscribe():
     email = request.form['email-input']
     # Check if the email already exists in the database
-    existing_subscriber = Subscriber.query.filter_by(email=email).first()
+    existing_subscriber = Subscribers.query.filter_by(email=email).first()
     if existing_subscriber:
         # Email already exists, return a message
         return jsonify({'message': 'You have already subscribed!'})
     else:
         # Add the email to the database
-        subscriber = Subscriber(email=email)
+        subscriber = Subscribers(email=email)
         db.session.add(subscriber)
         db.session.commit()
         email_sender = 'autovaluesup@gmail.com'
@@ -314,7 +294,7 @@ def contact():
     subject = 'Thanks for reaching out to AutoValue Support'
     body = f"""Dear {client_name},
 
-        Thank you for reaching out to AutoValue Support. Your inquiry is important to us, and we appreciate the opportunity to assist you.
+        Thank you for reaching out to AutoValue Support. Your query is important to us, and we appreciate the opportunity to assist you.
 
         Our team is currently reviewing your message and will respond to you promptly. We strive to provide the highest level of service and will do our best to address your concerns or questions.
 

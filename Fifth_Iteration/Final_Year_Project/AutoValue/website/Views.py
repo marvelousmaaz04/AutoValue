@@ -111,26 +111,21 @@ def car_blogs():
         data = response.json()
         all_blogs = data.get("all_blogs")
         last_10_blogs = data.get("last_10_blogs")
-        return render_template("car_blogs_copy.html",all_blogs=all_blogs,last_10_blogs=last_10_blogs)
+        return render_template("car_blogs.html",all_blogs=all_blogs,last_10_blogs=last_10_blogs)
     elif request.method == "POST":
         keyword = request.form.get("search-input")
         # params = {'keyword':keyword}
         response = requests.get(f"http://127.0.0.1:12000/blogs/search?keyword={keyword}")
-        print(response.json())
-        all_blogs = response.json()
-        return render_template("car_blogs_copy.html",all_blogs=all_blogs)
+
+        data = response.json()
+        all_blogs = data.get("all_blogs")
+        last_10_blogs = data.get("last_10_blogs")
+        return render_template("car_blogs.html",all_blogs=all_blogs,last_10_blogs=last_10_blogs)
 
 # All Price Prediction routes
 
 pipe = pickle.load(open('GRDBOOSTModel.pkl','rb'))
 
-@views.route("/home/predict-price", methods=["GET"])
-def price_prediction_page():
-    company_names = sorted(cleaned_car_data["CompanyName"].unique())
-    model_names = sorted(cleaned_car_data["ModelName"].unique())
-    fuel_types = sorted(cleaned_car_data["Fuel Type"].unique())
-    locations = sorted(cleaned_car_data["Location"].unique())
-    return render_template("price_prediction.html", company_names=company_names, model_names=model_names, fuel_types=fuel_types, locations=locations)
 
 @views.route("/home/get-car-models-prediction-page", methods=["POST"])
 def get_car_models_for_prediction_page():
@@ -166,7 +161,19 @@ def get_car_price_prediction():
     prediction = int(prediction)
     print(prediction)
 
-    return str(prediction)
+    def format_price(price_str):
+        try:
+            price = float(price_str.replace(',', ''))
+            if price >= 100000:
+                return "{:.2f} Lakh".format(price / 100000)
+            else:
+                return "{:,.0f}".format(price)
+        except ValueError:
+            return price_str  # Return the original string if it cannot be converted to float
+    
+    predicted_price = format_price(str(prediction))
+
+    return str(predicted_price)
 
 
 # All Car Listing Routes
