@@ -1,0 +1,93 @@
+{% extends "home.html" %}
+{% block link %}
+<link rel="stylesheet" href="{{url_for('static',filename='price_prediction_styles.css')}}">
+{% endblock %}
+{% block content %}
+<div class="container mt-5 mb-5" id="priceContainer">
+    <div class="row">
+        <div class="card" style="text-align: center; height: 100%; width: 100%;">
+            <div class="card-title mt-5">
+                <h3>AutoValue Used Car Price Prediction</h3>
+            </div>
+            <div class="card-body mt-3" style="text-align: center;">
+                <form id="prediction-form" style="text-align: left;" onsubmit="getCarPrice()">
+                    <label for="company">Car Company</label>
+                    <select class="form-select" aria-label="Default select example" id="company" name="company"
+                        onchange="loadCarModelsPredictionPage(this.id,'model')" required>
+                        <option>Select Car Company</option>
+                        {% for company in company_names %}
+                        <option value="{{ company }}">{{ company }}</option>
+                        {% endfor %}
+                    </select>
+                    <br>
+                    <label for="model">Car Model</label>
+                    <select class="form-select" aria-label="Default select example" id="model" name="model" required>
+                        <option>Select Car Model</option>
+                    </select>
+                    <br>
+                    <label for="kms-driven">Car Kilometers Driven</label>
+                    <input type="number" class="form-control" id="kms-driven" name="kms-driven" min="1" max="50000"
+                        required placeholder="Enter Kilometers Driven">
+
+                    <br>
+                    <!-- remember that ids should be unique throughout the website since we have only one index.js -->
+                    <label for="years">Car Year</label>
+                    <input type="number" class="form-control" id="year" name="year" required placeholder="Enter Year">
+                    <br>
+                    <label for="fuel-type">Car Fuel Type</label>
+                    <select class="form-select" aria-label="Default select example" id="fuel-type" name="fuel-type"
+                        required>
+                        <option>Select Car Fuel Type</option>
+                        {% for fuel_type in fuel_types %}
+                        <option value="{{ company }}">{{ fuel_type }}</option>
+                        {% endfor %}
+                    </select>
+                    <br>
+                    <label for="Location">Car Location</label>
+                    <select class="form-select" aria-label="Default select example" id="location" name="location"
+                        required>
+                        <option value="Select Car Location">Select Car Location</option>
+                        {% for location in locations %}
+                        <option value="{{ location }}">{{ location }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <br>
+                    <button class="btn btn-primary mt-3 form-control btn-lg" type="submit">Predict Price</button>
+
+                </form>
+
+                <br>
+                <h3><span id="price"></span></h3>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function form_handler(event) {
+        event.preventDefault();
+    }
+    document.getElementById("prediction-form").addEventListener("submit", form_handler)
+
+    function getCarPrice() {
+        // document.getElementById("prediction-form").addEventListener("submit",form_handler)
+
+        var fd = new FormData(document.getElementById("prediction-form"))
+
+        var xhr = new XMLHttpRequest;
+
+        xhr.open("POST", "/home/get-price-prediction", true);
+
+        document.getElementById("price").innerHTML = "Wait! Predicting Price...";
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == XMLHttpRequest.DONE) {
+                document.getElementById("price").innerHTML = "Predicted Price: Rs." + xhr.responseText;
+            }
+        }
+
+        xhr.onload = function () { }
+        xhr.send(fd);
+    }
+</script>
+{% endblock %}

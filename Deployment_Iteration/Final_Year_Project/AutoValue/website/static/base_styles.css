@@ -1,0 +1,61 @@
+/* Styles for the alert container */
+.alert-container {
+    /* Initially hide the alert */
+   /* position: fixed; */
+   /* top: 130px; */
+   display: flex;
+   justify-content: space-between;
+   width: auto;
+   background-color: #c24b43; /* Red background color */
+   color: black;
+   padding: 10px;
+   text-align: center;
+   border: 2px solid white;
+}
+
+/* Styles for the alert message */
+.alert-message {
+   font-size: 18px;
+}
+
+/* Styles for the close button */
+.close-alert {
+   /* position: absolute; */
+   /* top: 10px; */
+   background-color: transparent;
+   border: none;
+   color: white;
+   cursor: pointer;
+}
+
+/* Styles for the success container */
+.success-container {
+   /* Initially hide the success message */
+   position: fixed;
+   top: 130px;
+   left: 0;
+   width: 100%;
+   background-color: #4CAF50; /* Green background color for success */
+   color: black;
+   padding: 10px;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   
+}
+
+/* Styles for the success message */
+.success-message {
+   font-size: 18px;
+}
+
+/* Styles for the close button */
+.close-success {
+   
+   top: 10px;
+   
+   background-color: transparent;
+   border: none;
+   color: white;
+   cursor: pointer;
+}
