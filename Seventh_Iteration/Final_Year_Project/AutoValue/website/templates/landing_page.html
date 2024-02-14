@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}AutoValue - Get the Right Price{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/landing_page_style.css">
+    {% block link %}
+    {% endblock %}
+
+</head>
+
+<body>
+    <header class="header">
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+        <a href="/landing-page#home" class="logo"><span>Auto</span>Value</a>
+        <nav class="navbar">
+            <!-- <a href="/landing-page#home">Home</a> -->
+            <a href="/landing-page#vehicles">Vehicles</a>
+            <a href="/landing-page#search">Search</a>
+            <a href="/landing-page#services">Services</a>
+            <a href="/landing-page#featured">Featured</a>
+
+
+            <a href="/landing-page#price-prediction">Price</a>
+            <a href="/landing-page#reviews">Reviews</a>
+            <a href="/car-blogs" target="_blank">Blogs</a>
+            <!-- <a href="/landing-page#contact">Contact</a> -->
+        </nav>
+        <div id="profile-btn">
+            <i class="fa-solid fa-user" id="profile"></i>
+            <!-- <form action="/logout" method="POST">
+                <button class="btn" type="submit">Logout</button>
+            </form> -->
+
+
+        </div>
+    </header>
+    <div class="profile-form-container">
+
+        <span id="close-profile-form" class="fa fa-times">
+
+        </span>
+        <form action="/logout" method="POST">
+            <h3>User Profile</h3>
+           
+            <div id="profile-details">
+                <p id="user-full-name">Full Name - {{ user.full_name }}</p>
+                <p id="user-email" >Email Address - <span style="text-transform: lowercase;">{{ user.email }}</span></p>
+
+            </div>
+
+            <button class="btn" type="submit">Logout</button>
+
+
+        </form>
+    </div>
+
+
+    {% block content %} <!-- content block starts. this can be overridden -->
+    <!-- home section starts -->
+
+    <section id="home" class="home">
+        <h1 class="home-parallax" data-speed="-2">Find Your Car</h1>
+        <img class="home-parallax" src="../static/images/home-page-banner-1.png" data-speed="7" alt="">
+        <a href="#search" class="btn home-parallax" data-speed="7">Explore Cars</a>
+    </section>
+
+    <!-- home section ends -->
+
+    <!-- icons section starts -->
+    <section class="icons-container">
+        <div class="icons">
+            <i class="fas fa-home"></i>
+            <div class="content">
+                <h3>150+</h3>
+                <p>Branches</p>
+            </div>
+
+        </div>
+        <div class="icons">
+            <i class="fas fa-car"></i>
+            <div class="content">
+                <h3>4750+</h3>
+                <p>Cars Sold</p>
+            </div>
+
+        </div>
+        <div class="icons">
+            <i class="fas fa-users"></i>
+            <div class="content">
+                <h3>520+</h3>
+                <p>Happy Clients</p>
+            </div>
+
+        </div>
+        <div class="icons">
+            <i class="fas fa-car"></i>
+            <div class="content">
+                <h3>890+</h3>
+                <p>Latest Models</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- icons section end -->
+
+    <!-- vehicles section starts -->
+    <section id="vehicles" class="vehicles" style="text-transform: capitalize;">
+        <h1 class="heading">Popular <span>Vehicles</span></h1>
+        <div class="swiper vehicles-slider">
+            <div class="swiper-wrapper">
+                <!-- <div class="swiper-slide box">
+                    <img src="../static/images/vehicle-1.png" alt="">
+                    <div class="content">
+                        <h3>New Model</h3>
+                        <div class="price">
+                            <span>Price:</span> Rs.250000
+                        </div>
+                        <p>New
+                            <span class="fas fa-circle"></span> 2021
+                            <span class="fas fa-circle"></span> Automatic
+                            <span class="fas fa-circle"></span> Petrol
+                            <span class="fas fa-circle"></span> 183mph
+                        </p>
+                        <a href="#" class="btn">Check Out</a>
+                    </div>
+                </div> -->
+                {% for car in popular_cars %}
+                <div class="swiper-slide box">
+                    <img src="{{ car.imageurl }}" alt="">
+                    <div class="content">
+                        <h3>{{ car.carname }}</h3>
+                        <div class="price">
+                            <span>Price:</span> {{ car.price|format_price }}
+                        </div>
+                        <p>{% if loop.index <= 10 %} Spinny {% elif loop.index <=20 %} Cars24 {% else %} OLX {% endif %}
+                                <span class="fas fa-circle"></span> {{ car.year }}
+                                <span class="fas fa-circle"></span> {{ car.fueltype|capitalize }}
+                                <span class="fas fa-circle"></span> {{ car.kilometersdriven }} km
+                                <span class="fas fa-circle"></span> {{ car.location }}
+                        </p>
+                        <a href="{{ car.listingurl }}" target="_blank" class="btn">Check Out</a>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+            <!-- Navigation arrows -->
+            <div class="swiper-button-prev swiper-btn"></div>
+            <div class="swiper-button-next swiper-btn"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- vehicles section ends -->
+
+    <!-- search section starts -->
+
+
+    <section id="search" class="search">
+        <h1 class="heading">Search <span>Best Cars</span></h1>
+        <form action="/get-car-listings" method="POST" target="_blank">
+            <label for="select-company">Company</label>
+
+            <select name="select-company" id="select-company" onchange="loadCarModels(this.id,'select-model')">
+                <option>Select Company</option>
+                {% for company in companies %}
+                <option value="{{ company }}">{{ company }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="select-model" class="form-label">Model</label>
+            <select id="select-model" name="select-model" aria-label="Default select example">
+                <option>Select Car Model</option>
+            </select>
+
+            <label for="kmsdriven" class="form-label">Kilometers Driven</label>
+            <input type="number" class="form-control" id="kms-driven" name="kms-driven"
+                placeholder="Enter Kilometers Driven" value="0" required>
+
+            <label for="select-location" class="form-label">Location</label>
+            <select class="form-select" id="select-location" name="select-location" aria-label="Default select example">
+                <option>Select Car Location</option>
+                {% for location in locations %}
+                <option value="{{ location }}">{{ location }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="year" class="form-label">Year</label>
+            <input type="number" class="form-control" id="year" name="year" placeholder="Enter Year" value="2010"
+                required>
+
+            <label for="select-fuel-type" class="form-label">Fuel Type</label>
+            <select class="form-select" id="select-fuel-type" name="select-fuel-type"
+                aria-placeholder="Select Fuel Type" required="true">
+                <option>Select Fuel Type</option>
+                {% for type in fuel_types %}
+                <option value="{{ type }}">{{ type }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit" class="btn">Search</button>
+        </form>
+    </section>
+
+
+    <!-- search section ends -->
+
+    <!-- services section starts -->
+    <!-- <section class="services" id="services">
+        <h1 class="heading">Our <span>Services</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <i class="fas fa-car"></i>
+                <h3>Used Car Selling</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, reprehenderit.</p>
+                <a href="" class="btn">Read more</a>
+            </div>
+            <div class="box">
+                <i class="fas fa-tools"></i>
+                <h3>Repair Parts</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, reprehenderit.</p>
+                <a href="" class="btn">Read more</a>
+            </div>
+            <div class="box">
+                <i class="fas fa-car-crash"></i>
+                <h3>Car Insurance</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, reprehenderit.</p>
+                <a href="" class="btn">Read more</a>
+            </div>
+            <div class="box">
+                <i class="fas fa-car-crash"></i>
+                <h3>Car Insurance</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, reprehenderit.</p>
+                <a href="" class="btn">Read more</a>
+            </div>
+            <div class="box">
+                <i class="fas fa-gas-pump"></i>
+                <h3>Oil Change</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, reprehenderit.</p>
+                <a href="" class="btn">Read more</a>
+            </div>
+            <div class="box">
+                <i class="fas fa-headset"></i>
+                <h3>24/7 Support</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, reprehenderit.</p>
+                <a href="" class="btn">Read more</a>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Adding flip effect to services section -->
+
+
+    <section class="services" id="services">
+        <h1 class="heading">Our <span>Services</span></h1>
+        <div class="box-container">
+            <div class="box" onclick="this.classList.toggle('flip')">
+                <div class="inner-box front">
+                    <i class="fas fa-car"></i>
+                    <h3>Used Car Selling</h3>
+                    <p>Explore our wide selection of quality used vehicles.</p>
+                    <button class="btn">Read more</button>
+                </div>
+                <div class="inner-box back">
+                    <i class="fas fa-car"></i>
+
+                    <p class="details">We have aggregated used vehicles from trusted websites spanning Mumbai,
+                        Pune, Hyderabad, Delhi and bangalore</p>
+                    <button class="btn">Read less</button>
+                </div>
+
+            </div>
+            <div class="box" onclick="this.classList.toggle('flip')">
+
+                <div class="inner-box front">
+                    <i class="fas fa-tools"></i>
+                    <h3>Repair Parts</h3>
+                    <p>Find the right parts to keep your vehicle running smoothly.</p>
+                    <button class="btn">Read more</button>
+                </div>
+                <div class="inner-box back">
+                    <i class="fas fa-tools"></i>
+
+                    <p class="details">We guarantee the authenticity, durability and performance of all the parts that
+                        we sell to our satisfied customers</p>
+                    <button class="btn">Read less</button>
+                </div>
+
+            </div>
+            <div class="box" onclick="this.classList.toggle('flip')">
+
+                <div class="inner-box front">
+
+                    <i class="fas fa-car-crash"></i>
+                    <h3>Car Insurance</h3>
+                    <p>Ensure peace of mind with our comprehensive car insurance.</p>
+                    <button class="btn">Read more</button>
+                </div>
+                <div class="inner-box back">
+                    <i class="fas fa-car-crash"></i>
+
+                    <p class="details">Secure your confidence with our thorough car insurance coverage, providing peace
+                        of mind for any journey ahead.</p>
+                    <button class="btn">Read less</button>
+                </div>
+
+            </div>
+            <div class="box" onclick="this.classList.toggle('flip')">
+
+                <div class="inner-box front">
+                    <i class="fas fa-gas-pump"></i>
+                    <h3>Oil Change</h3>
+                    <p>Keep your engine in top condition with our professional oil change service.</p>
+                    <button class="btn">Read more</button>
+                </div>
+                <div class="inner-box back">
+                    <i class="fas fa-gas-pump"></i>
+
+
+                    <p class="details">Maintain engine health with our expert oil change service, ensuring optimal
+                        performance and longevity for your vehicle's engine.</p>
+                    <button class="btn">Read less</button>
+                </div>
+
+            </div>
+            <div class="box" onclick="this.classList.toggle('flip')">
+                <div class="inner-box front">
+                    <i class="fas fa-wrench"></i>
+                    <h3>Auto Maintenance</h3>
+                    <p>Ensure your vehicle stays in top condition with our professional auto maintenance services.</p>
+                    <button class="btn">Read more</button>
+                </div>
+                <div class="inner-box back">
+                    <i class="fas fa-wrench"></i>
+
+                    <p class="details">Maintain peak performance with our expert auto maintenance, ensuring your vehicle
+                        remains reliable and efficient for every journey.</p>
+                    <button class="btn">Read less</button>
+                </div>
+            </div>
+
+            <div class="box" onclick="this.classList.toggle('flip')">
+
+                <div class="inner-box front">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Get assistance anytime, anywhere with our round-the-clock support.</p>
+                    <button class="btn">Read more</button>
+                </div>
+                <div class="inner-box back">
+                    <i class="fas fa-headset"></i>
+
+                    <p class="details">Access reliable support whenever and wherever needed with our 24/7 assistance
+                        service, ensuring help is always available for you.</p>
+                    <button class="btn">Read less</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- services section ends -->
+    <!-- featured section starts -->
+    <section id="featured" class="featured">
+        <h1 class="heading"><span>Featured</span> Cars</h1>
+        <div class="swiper featured-slider">
+            <div class="swiper-wrapper">
+
+                {% for car in spinny_featured_cars %}
+                <div class="swiper-slide box">
+                    <img src="{{ car.imageurl }}" alt="">
+                    <h3>{{ car.carname }}</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        {% if loop.index % 2 == 0 or loop.index % 3 == 0 %}
+                        <i class="fas fa-star-half-alt"></i>
+                        {% endif %}
+                    </div>
+                    <div class="price">Rs. {{ car.price }}</div>
+                    <a href="{{ car.listingurl }}" target="_blank" class="btn">Check Out</a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-button-prev swiper-btn-cars"></div>
+            <div class="swiper-button-next swiper-btn-cars"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper featured-slider">
+            <div class="swiper-wrapper">
+
+                {% for car in cars24_featured_cars %}
+                <div class="swiper-slide box">
+                    <img src="{{ car.imageurl }}" alt="">
+                    <h3>{{ car.carname }}</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        {% if loop.index % 2 == 0 or loop.index % 3 == 0 %}
+                        <i class="fas fa-star-half-alt"></i>
+                        {% endif %}
+                    </div>
+                    <div class="price">Rs. {{ car.price|format_price }}</div>
+                    <a href="{{ car.listingurl }}" target="_blank" class="btn">Check Out</a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-button-prev swiper-btn-cars"></div>
+            <div class="swiper-button-next swiper-btn-cars"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- featured section ends -->
+
+    <!-- price prediction section starts -->
+
+    <section id="price-prediction" class="price-prediction">
+        <h1 class="heading">Car <span>Price Predictor</span></h1>
+        <form id="price-prediction-form" onsubmit="form_handler(event); getCarPrice()">
+            <label for="select-company-price">Company</label>
+
+            <select name="select-company-price" id="select-company-price"
+                onchange="loadCarModelsPredictionPage(this.id,'select-model-price')">
+                <option>Select Company</option>
+                {% for company in companies %}
+                <option value="{{ company }}">{{ company }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="select-model-price" class="form-label">Model</label>
+            <select id="select-model-price" name="select-model-price" aria-label="Default select example">
+                <option>Select Car Model</option>
+            </select>
+
+            <label for="kms-driven-price" class="form-label">Kilometers Driven</label>
+            <input type="number" class="form-control" id="kms-driven-price" name="kms-driven-price"
+                placeholder="Enter Kilometers Driven" value="0">
+
+            <label for="select-location-price" class="form-label">Location</label>
+            <select class="form-select" id="select-location-price" name="select-location-price"
+                aria-label="Default select example">
+                <option>Select Car Location</option>
+                {% for location in locations %}
+                <option value="{{ location }}">{{ location }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="year-price" class="form-label">Year</label>
+            <input type="number" class="form-control" id="year-price" name="year-price" placeholder="Enter Year"
+                value="2010">
+
+            <label for="select-fuel-type-price" class="form-label">Fuel Type</label>
+            <select class="form-select" id="select-fuel-type-price" name="select-fuel-type-price"
+                aria-placeholder="Select Fuel Type">
+                <option>Select Fuel Type</option>
+                {% for type in fuel_types %}
+                <option value="{{ type }}">{{ type }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit" class="btn">Predict Price</button>
+            <br>
+
+            <h3 id="price-heading"><span id="predicted-price"></span></h3>
+        </form>
+    </section>
+
+
+
+    <!-- price prediction section ends -->
+
+
+
+    <!-- review section starts -->
+    <section id="reviews" class="reviews">
+        <h1 class="heading">Clients' <span>Reviews</span></h1>
+        <div class="swiper reviews-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box">
+                    <img src="../static/images/client-1.jpg" alt="">
+                    <div class="content">
+                        <p>"I am amazed by the quality of service provided. The team went above and beyond to meet my
+                            expectations. Highly recommended!"</p>
+                        <h3>Michael Johnson</h3>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="../static/images/client-2.jpg" alt="">
+                    <div class="content">
+                        <p>"Exceptional experience! From start to finish, everything was smooth and efficient. Will
+                            definitely be returning for future services."</p>
+                        <h3>Arif Khan</h3>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="../static/images/client-3.jpg" alt="">
+                    <div class="content">
+                        <p>"Couldn't be happier with the results. Professionalism and attention to detail were evident
+                            throughout the process. Thank you!"</p>
+                        <h3>Raghav Sharma</h3>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="../static/images/client-5.jpeg" alt="">
+                    <div class="content">
+                        <p>"Outstanding service! The staff was knowledgeable, friendly, and attentive to my needs. Will
+                            be recommending to friends and family."</p>
+                        <h3>David Wilson</h3>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="../static/images/client-6.jpg" alt="">
+                    <div class="content">
+                        <p>"Remarkable service! The team demonstrated exceptional skill and dedication, ensuring a
+                            seamless experience from start to finish."</p>
+                        <h3>Mark Robert</h3>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <!-- review section ends -->
+    <!-- newsletter section starts -->
+
+    <div class="newsletter">
+        <h3>Subscribe for Latest Updates</h3>
+        <p>Stay on top of trends with AutoValue weekly newsletter.</p>
+
+        <form id="subscribe-form" onsubmit="form_handler(event); subscribeNewsletter(event)">
+            <input type="email" placeholder="Enter your Email" name="email-input" id="email-input" required>
+            <input type="submit" value="Subscribe" class="subscribe" id="subscribe-button">
+        </form>
+    </div>
+    <!-- newsletter section ends -->
+    <!-- contact section starts -->
+
+    <section class="contact" id="contact">
+        <h1 class="heading"><span>Contact</span> Us</h1>
+        <div class="row">
+            <iframe class="map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60333.12826454517!2d72.84272122499519!3d19.071627397168847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c89a5efa11d5%3A0x90728ea7729a78f9!2sKurla%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1705568574114!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <form onsubmit="form_handler(event); sendMessage(event);" id="contact-form">
+                <h3>Get in touch</h3>
+                <input type="text" placeholder="Name" class="box" name="client-name" id="client-name" required>
+                <input type="email" name="client-email" placeholder="Email" id="client-email" class="box" required>
+                <!-- <input type="tel" name="client-number" placeholder="+91 - 1234567890" class="box" id="client-number" pattern="^((\+91 - [0-9]{10})|(0[0-9]{10}))$"
+                    required> -->
+                <textarea name="client-message" class="box" placeholder="Message" id="client-message" cols="30"
+                    rows="10" required></textarea>
+                <input type="submit" value="Send Message" class="btn" id="contact-button">
+            </form>
+        </div>
+    </section>
+    <!-- contact section ends -->
+
+    {% endblock %} <!-- content block ends. this can be overridden -->
+
+
+    <!-- footer section starts -->
+
+    <section class="footer" id="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Our Branches</h3>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> India</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Japan</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Australia</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Turkey</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Dubai</a>
+            </div>
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="#home"><i class="fas fa-arrow-right"></i> Home</a>
+                <a href="#vehicles"><i class="fas fa-arrow-right"></i> Vehicles</a>
+                <a href="#services"><i class="fas fa-arrow-right"></i> Services</a>
+                <a href="#featured"><i class="fas fa-arrow-right"></i> Featured</a>
+                <a href="#contact"><i class="fas fa-arrow-right"></i> Contact</a>
+            </div>
+            <div class="box">
+                <h3>Professional</h3>
+
+                <a href="#" style="text-transform: none;"><i class="fas fa-envelope"></i> shaikhmaaz04@gmail.com</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Mumbai, India - 400070</a>
+
+            </div>
+            <div class="box">
+                <h3>Social</h3>
+
+                <a href="https://twitter.com/shaikhmaaz04" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="https://www.linkedin.com/in/maaz-shaikh-9b30902a5/" target="_blank"><i
+                        class="fab fa-linkedin"></i> LinkedIn</a>
+
+            </div>
+        </div>
+        <div class="credits">AutoValue | Created by Maaz Shaikh | All rights reserved &copy; 2024</div>
+
+    </section>
+
+    <!-- footer section ends -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- custom js -->
+    <script src="../static/js/script.js"></script>
+
+</body>
+
+</html>

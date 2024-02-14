@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root {
+    --green: #24be21;
+    --light-green: #59c957;
+    /* --light-green: #8dd48c; */
+    --black: #130f40;
+    --light-color: #666;
+    --border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    --box-shadow: 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: none;
+    transition: all 0.2s linear;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    padding: 0.8rem 3rem;
+    background-color: var(--light-green);
+    color: var(--black);
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+.btn:hover {
+    background-color: var(--green);
+}
+
+.header{
+    margin-top: 20px;
+}
+
+.header .logo {
+    font-size: 2.5rem;
+    color: var(--black);
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.header .logo span {
+    color: var(--green);
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+    overflow-x: hidden;
+}   
+
+.footer{
+    position: absolute;
+    bottom: 0px;
+    font-size: 1.6rem;
+    text-align: center;
+    width: 100%;
+    background-color: var(--light-green);
+    padding: 1rem 2rem;
+    z-index: 10000;
+}
+
+.verify-email-form-container {
+    position: fixed;
+
+    height: 80%;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, .9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+/* Style for the sign-up form container */
+.verify-email-form-container form {
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    text-align: center;
+    width: 40rem;
+    background-color: #fff;
+}
+
+.verify-email-form-container form .buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.verify-email-form-container form .btn {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
+.verify-email-form-container form h3 {
+    font-size: 2.5rem;
+    color: black;
+    padding-bottom: 1rem;
+    /* text-transform: uppercase; */
+}
+
+.verify-email-form-container form .box {
+    font-size: 1.6rem;
+    margin: 0.7rem 0;
+    width: 100%;
+    color: var(--black);
+    padding: 1rem 1.2rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+}
+
+.verify-email-form-container form p {
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    color: var(--light-color);
+}
+
+.verify-email-form-container form p a {
+    color: var(--green);
+    text-decoration: underline;
+}
+
+#otp_error{
+    background-color: rgba(255, 0, 0, 0.1);
+    color: red;
+    display: none;
+    border: 1px solid red;
+    border-radius: 3px;
+    font-size: 1.4rem;
+}
+
+/* Add styles for flash messages */
+.flash-container {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flash-message {
+    padding: 10px;
+    margin: 0 10px; /* Adjusted margin for smaller screens */
+    border-radius: 50cm; /* Changed from 50cm to 10px for consistency */
+    color: #fff;
+    background-color: var(--green);
+    text-align: center;
+    font-size: 1.6rem;
+    margin-top: 40px;
+    width: 90%;
+}
+
+.flash-btn-success {
+    background-color: var(--light-green);
+    color: white;
+    border: 2px solid;
+    border-color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.flash-btn-error {
+    background-color: #f44336;;
+    color: white;
+    border: 2px solid;
+    border-color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.flash-btn-error:hover {
+    background-color: #ff1100;;
+}
+
+.flash-btn-success:hover {
+    background-color: var(--green);
+}
+
+.flash-message.success {
+    background-color: var(--green);
+    /* Green */
+}
+
+.flash-message.error {
+    background-color: #f44336;
+    /* Red */
+}
+
+
+@media(max-width: 800px){
+    .verify-email-form{
+        max-width: 300px;
+        max-height: fit-content;
+    }
+    .form-input{
+        font-size: 12px;
+    }
+    .verify-email-form h1{
+        font-size: large;
+    }
+    .form-button{
+        font-size: 12px;
+    }
+    #email_error, #password_error, #full_name_error, #cpassword_error{
+        font-size: 1.3rem;
+    }
+    
+}
