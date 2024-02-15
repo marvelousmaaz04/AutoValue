@@ -15,6 +15,21 @@ $(document).ready(function(){
     })
 })
 
+function validateSearchForm() {
+    var inputField = document.getElementById('search-input');
+    var inputValue = inputField.value.trim();
+
+    if (inputValue === '') {
+        // If input is empty, prevent form submission
+        // alert('Please enter a value in the search field');
+        inputField.placeholder = "Enter your search term!";
+        return false;
+    } else {
+        // Reset the placeholder if the input is not empty
+        inputField.placeholder = "Search";
+        return true;
+    }
+}
 
 // Initialize Swiper
 var swiper = new Swiper(".banner-slider", {

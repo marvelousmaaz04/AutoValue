@@ -105,8 +105,8 @@
 
 
 
-    <form action="/car-blogs" method="POST" id="search-form">
-        <input type="search" id="child-input" id="search-input" name="search-input">
+    <form action="/car-blogs" method="POST" id="search-form" onsubmit="return validateSearchForm();">
+        <input type="search" id="search-input" name="search-input" placeholder="Search">
         <button class="btn-outline-dark" type="submit" id="search-button">
             <i class="fa-solid fa-magnifying-glass larger-icon" class="input-icon"></i>
         </button>
