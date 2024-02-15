@@ -82,7 +82,7 @@ def landing_page():
         return car_listings_dict
         
     params_1 = {'limit': '2','company':'maruti','model':'suzuki','fuel-type':'any','kms-driven':'1000','year':'2010'}
-    params_2 = {'limit': '2','company':'honda','model':'amaze','fuel-type':'any','kms-driven':'2000','year':'2010'}
+    params_2 = {'limit': '2','company':'honda','fuel-type':'any','kms-driven':'2000','year':'2010'}
     params_3 = {'limit': '2','company':'tata','model':'harrier','fuel-type':'any','kms-driven':'3000','year':'2010'}
 
     popular_car_listings_dict = landing_page_cars(params_1,params_2,None)

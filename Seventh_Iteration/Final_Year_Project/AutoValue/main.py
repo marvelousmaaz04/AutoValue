@@ -1,5 +1,6 @@
 from website import create_app
 
+
 app = create_app()
 
 @app.template_filter('format_price')

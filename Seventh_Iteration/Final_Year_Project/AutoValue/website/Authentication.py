@@ -61,7 +61,7 @@ def sign_up():
         email = request.form.get("email")
         user = Users.query.filter_by(email=email).first()
         if user:
-            flash("Email already in use.",category="error")
+            flash("Email Address is already Registered.",category="error")
             
         elif len(full_name) <= 5:
             flash("Full Name should be more than 5 characters.",category="error")
@@ -83,12 +83,12 @@ def sign_up():
             otp = ''.join([str(random.randint(0, 9)) for _ in range(6)])
             otp_storage[email] = {'otp': otp, 'timestamp': time.time()}
          
-            body = f"OTP: {otp}. OTP expires in 5 minutes."
+            body = f"<b>OTP: {otp}</b>. <b>Your OTP expires in 5 minutes.</b>"
             email_message = EmailMessage()
             email_message['From'] = 'AutoValue Support' # this will be displayed to the user
             email_message['To'] = email_receiver
             email_message['Subject'] = subject
-            email_message.set_content(body)
+            email_message.set_content(body, subtype="html")
 
             context = ssl.create_default_context()
 
@@ -186,7 +186,7 @@ def forgot_password():
 
         user = Users.query.filter_by(email=email).first()
         if not user:
-            flash("Email does not exist.",category="error")
+            flash("Email Address is not Registered.",category="error")
         else:
             user.generate_reset_token()
             db.session.commit()
@@ -196,12 +196,12 @@ def forgot_password():
             subject = 'Password Reset Request'
             reset_link = url_for('auth.reset_password', token=user.reset_token, _external=True)
             # link = "http://localhost:5000/reset-password"
-            body = f"Click on the link to reset your password. Link is valid for 5 minutes.\n\nPassword reset link: {reset_link}"
+            body = f"<b>Click on the link to reset your password. Link is valid for 5 minutes.</b><br><br><b>Password reset link:</b> {reset_link}"
             email_message = EmailMessage()
             email_message['From'] = 'AutoValue Support' # this will be displayed to the user
             email_message['To'] = email_receiver
             email_message['Subject'] = subject
-            email_message.set_content(body)
+            email_message.set_content(body, subtype='HTML')
 
             context = ssl.create_default_context()
 

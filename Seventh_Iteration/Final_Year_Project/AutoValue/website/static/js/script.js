@@ -298,12 +298,12 @@ function subscribeNewsletter(event){
         } 
         else if(data.message === "Invalid Email Address!"){
             subscribeButton.value= 'Invalid Email!';
-            subscribeButton.style.fontSize = "1.2rem";
+            subscribeButton.style.fontSize = "1.6rem";
             
         }
         else if(data.message === "You have successfully subscribed!"){
             subscribeButton.value= 'Subscribed!';
-            subscribeButton.style.fontSize = "1.2rem"
+            
             
         }
         setTimeout(function() {
