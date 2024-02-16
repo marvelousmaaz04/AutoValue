@@ -23,6 +23,7 @@ function validateSearchForm() {
         // If input is empty, prevent form submission
         // alert('Please enter a value in the search field');
         inputField.placeholder = "Enter your search term!";
+        inputField.focus()
         return false;
     } else {
         // Reset the placeholder if the input is not empty

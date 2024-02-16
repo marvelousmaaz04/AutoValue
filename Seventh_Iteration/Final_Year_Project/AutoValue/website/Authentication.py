@@ -37,6 +37,18 @@ def login():
             return redirect(url_for("views.landing_page")) # var name.func name
     return render_template("login.html")
 
+@auth.route("/update-profile", methods=["POST"])
+def update_profile():
+    if request.method == "POST":
+        data = request.json  # Retrieve JSON data from the request
+        new_full_name = data.get('full_name') 
+        user_id = session.get("user_id")
+        current_user = Users.query.filter_by(id=user_id).first()
+        current_user.full_name = new_full_name
+        db.session.commit()
+
+        return jsonify({"message":"Profile Updated!"})
+
 
 @auth.route("/logout",methods=["POST","GET"])
 @login_required

@@ -200,9 +200,12 @@ def get_car_models():
     filtered_models = [keep_one_word(model) for model in filtered_models]
     filtered_models = list(set(filtered_models)) # drop duplicates
     print(filtered_models)
-    filtered_models = {"models":filtered_models}
-    print(filtered_models)
-    return jsonify(filtered_models)
+    filtered_models_json = {"models":filtered_models}
+    print(filtered_models_json)
+    if len(filtered_models) > 0:
+        return jsonify(filtered_models_json)
+    else:
+        return jsonify({"models": ["Select Car Model"]})
 
 def keep_one_word(model):
     words = model.split()
@@ -228,6 +231,92 @@ def get_car_listings():
         car_location = request.form.get("select-location").strip().lower()
         car_fuel_type = request.form.get("select-fuel-type").strip().lower()
         car_year = request.form.get("year")
+
+        print(car_company)
+        print(car_model)
+        print(car_kms_driven)
+        print(car_location)
+        print(type(car_location))
+        print(car_fuel_type)
+        print(car_year)
+
+        
+        api_url_spinny = ""
+        api_url_olx = ""
+        api_url_cars24 = ""
+
+        if car_location == "mumbai":
+            api_url_spinny = "http://127.0.0.1:8000/api/spinny_mumbai"
+            api_url_olx = "http://127.0.0.1:9000/api/olx_mumbai"
+            api_url_cars24 = "http://127.0.0.1:9500/api/cars24_mumbai"
+            print("Request sent to Mumbai APIs")
+        elif car_location == "delhi":
+            api_url_spinny = "http://127.0.0.1:8000/api/spinny_delhi"
+            api_url_olx = "http://127.0.0.1:9000/api/olx_delhi"
+            api_url_cars24 = "http://127.0.0.1:9500/api/cars24_newdelhi"
+            print("Request sent to Delhi APIs")
+        elif car_location == "pune":
+            api_url_spinny = "http://127.0.0.1:8000/api/spinny_pune"
+            api_url_olx = "http://127.0.0.1:9000/api/olx_pune"
+            api_url_cars24 = "http://127.0.0.1:9500/api/cars24_pune"
+            print("Request sent to Pune APIs")
+        elif car_location == "hyderabad":
+            api_url_spinny = "http://127.0.0.1:8000/api/spinny_hyderabad"
+            api_url_olx = "http://127.0.0.1:9000/api/olx_hyderabad"
+            api_url_cars24 = "http://127.0.0.1:9500/api/cars24_hyderabad"
+            print("Request sent to Hyderabad APIs")
+        elif car_location == "bangalore":
+            api_url_spinny = "http://127.0.0.1:8000/api/spinny_bangalore"
+            api_url_olx = "http://127.0.0.1:9000/api/olx_bangalore"
+            api_url_cars24 = "http://127.0.0.1:9500/api/cars24_bangalore"
+            print("Request sent to Bangalore APIs")
+        elif car_location == "any":
+            api_url_spinny = "http://127.0.0.1:8000/api/spinny_any"
+            api_url_olx = "http://127.0.0.1:9000/api/olx_any"
+            api_url_cars24 = "http://127.0.0.1:9500/api/cars24_any"
+        
+        
+        params = {'limit': '100','company':car_company,'model':car_model,'fuel-type':car_fuel_type,'location':car_location,'year':car_year,'kms-driven':car_kms_driven}
+
+        response_spinny = requests.get(api_url_spinny, params=params)
+        response_olx = requests.get(api_url_olx, params=params)
+        response_cars24 = requests.get(api_url_cars24, params=params)
+
+        all_car_listings = []
+
+        spinny_data = ""
+        olx_data = ""
+        cars24_data = ""
+
+        if response_spinny.status_code == 200:
+            spinny_data = response_spinny.json()
+            print("Received spinny response")
+        
+        
+        if response_olx.status_code == 200:
+            olx_data = response_olx.json()
+            print("Received olx response")
+        
+        
+        
+        if response_cars24.status_code == 200:
+            cars24_data = response_cars24.json()
+            print("Received cars24 response")
+        
+        user_id = session.get('user_id')  # Fetch user id from session
+        user = Users.query.get(user_id) if user_id else None  # Fetch user details using user id
+            
+        return render_template("car_listings.html",spinny_data=spinny_data,olx_data=olx_data,cars24_data=cars24_data, user=user)
+
+@views.route("/get-similar-car-listings",methods=["POST"])
+def get_similar_car_listings():
+    if request.method == "POST":
+        car_company = request.form.get("select-company-price")
+        car_model = request.form.get("select-model-price")
+        car_kms_driven = request.form.get("kms-driven-price")
+        car_location = request.form.get("select-location-price").strip().lower()
+        car_fuel_type = request.form.get("select-fuel-type-price").strip().lower()
+        car_year = request.form.get("year-price")
 
         print(car_company)
         print(car_model)

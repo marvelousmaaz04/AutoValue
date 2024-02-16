@@ -226,9 +226,131 @@ function loadCarModelsPredictionPage(id, car_model_id) {
         newOption.innerHTML = data.models[i];
         car_model.options.add(newOption);
     }
-});
-    
+});}
+
+// Function to set the display of error divs to "none" when corresponding form elements are changed
+// Function to set the display of error divs to "none" when corresponding form elements are changed
+function hideErrorOnInputOrChange(fieldId, errorId) {
+    var field = document.getElementById(fieldId);
+    var errorDiv = document.getElementById(errorId);
+
+    // Add input or change event listener based on the field type
+    if (field.tagName.toLowerCase() === "select") {
+        field.addEventListener("change", function() {
+            // Hide the error message when the field value changes
+            errorDiv.style.display = "none";
+        });
+    } else if (field.tagName.toLowerCase() === "input") {
+        field.addEventListener("input", function() {
+            // Hide the error message when the input value changes
+            errorDiv.style.display = "none";
+        });
+    }
 }
+
+// Call the function for each form element and corresponding error div
+hideErrorOnInputOrChange("select-company", "select-company-error");
+hideErrorOnInputOrChange("select-model", "select-model-error");
+
+hideErrorOnInputOrChange("select-location", "select-location-error");
+
+hideErrorOnInputOrChange("select-fuel-type", "select-fuel-type-error");
+
+// Repeat the process for input fields
+hideErrorOnInputOrChange("kms-driven", "kmsdriven-error");
+hideErrorOnInputOrChange("year", "year-error");
+
+
+// Repeat the process for input fields
+hideErrorOnChange("kms-driven", "kmsdriven-error");
+hideErrorOnChange("year", "year-error");
+function selectCompany(){
+    var selectModelError = document.querySelector("#select-model-error");
+    selectModelError.style.display = "none";
+}
+
+function validateCarSearchForm() {
+    var isValid = true;
+
+    // Validate select company
+    var selectCompany = document.getElementById("select-company");
+    var selectCompanyError = document.querySelector("#select-company-error");
+    if (selectCompany.value === "Select Car Company") {
+        selectCompanyError.textContent = "Please select a car company.";
+        selectCompanyError.style.display = "block"; // Set display to block
+        isValid = false;
+    } else {
+        selectCompanyError.textContent = "";
+        selectCompanyError.style.display = "none"; // Hide the error message
+    }
+
+    // Validate select model
+    var selectModel = document.getElementById("select-model");
+    var selectModelError = document.querySelector("#select-model-error");
+    if (selectModel.value === "Select Car Model") {
+        selectModelError.textContent = "Please select a car model.";
+        selectModelError.style.display = "block"; // Set display to block
+        isValid = false;
+    } else {
+        selectModelError.textContent = "";
+        selectModelError.style.display = "none"; // Hide the error message
+    }
+
+    // Validate kilometers driven
+    var kmsDriven = document.getElementById("kms-driven");
+    var kmsDrivenError = document.querySelector("#kmsdriven-error");
+    if (kmsDriven.value.trim() === "" || isNaN(kmsDriven.value)) {
+        kmsDrivenError.textContent = "Please enter a valid number of kilometers driven.";
+        kmsDrivenError.style.display = "block"; // Set display to block
+        isValid = false;
+    } else {
+        kmsDrivenError.textContent = "";
+        kmsDrivenError.style.display = "none"; // Hide the error message
+    }
+
+    // Validate select location
+    var selectLocation = document.getElementById("select-location");
+    var selectLocationError = document.querySelector("#select-location-error");
+    if (selectLocation.value === "Select Car Location") {
+        selectLocationError.textContent = "Please select a car location.";
+        selectLocationError.style.display = "block"; // Set display to block
+        isValid = false;
+    } else {
+        selectLocationError.textContent = "";
+        selectLocationError.style.display = "none"; // Hide the error message
+    }
+
+    // Validate year
+    var year = document.getElementById("year");
+    var yearError = document.querySelector("#year-error");
+    if (year.value.trim() === "" || isNaN(year.value)) {
+        yearError.textContent = "Please enter a valid year.";
+        yearError.style.display = "block"; // Set display to block
+        isValid = false;
+    } else {
+        yearError.textContent = "";
+        yearError.style.display = "none"; // Hide the error message
+    }
+
+    // Validate select fuel type
+    var selectFuelType = document.getElementById("select-fuel-type");
+    var selectFuelTypeError = document.querySelector("#select-fuel-type-error");
+    if (selectFuelType.value === "Select Fuel Type") {
+        selectFuelTypeError.textContent = "Please select a fuel type.";
+        selectFuelTypeError.style.display = "block"; // Set display to block
+        isValid = false;
+    } else {
+        selectFuelTypeError.textContent = "";
+        selectFuelTypeError.style.display = "none"; // Hide the error message
+    }
+
+    // If form is valid, submit the form
+    return isValid;
+}
+
+
+
+
 function form_handler(event) {
     event.preventDefault();
 }
@@ -238,6 +360,7 @@ var predictedPriceSpan = document.getElementById('predicted-price');
     // Add a class to the heading when the text is displayed
     predictedPriceSpan.addEventListener('transitionend', function () {
         document.querySelector('h2.heading').classList.add('show-shape');
+        
     });
 
 
@@ -260,6 +383,9 @@ function getCarPrice() {
             
             
             document.getElementById("predicted-price").innerHTML = "Predicted Price: Rs. " + xhr.responseText;
+            setTimeout(() => {
+                document.getElementById('similar-car-listings').style.opacity = '1';
+            },3000)
     
         }
     }
@@ -267,7 +393,62 @@ function getCarPrice() {
     xhr.onload = function () { }
     xhr.send(fd);
 }
+function submitFormAndGetListings() {
+    var form = document.getElementById('price-prediction-form');
+    form.method = 'POST';
+    form.action = '/get-similar-car-listings';
+    form.target = '_blank';
+    form.submit();
+}
 
+function updateFullName() {
+    var newName = document.getElementById('new-full-name').value;
+
+    // Check if the length is less than or equal to 6
+    if (newName.length <= 6) {
+        var inputField = document.getElementById('new-full-name');
+        inputField.value = ""
+        inputField.style.border = '1px solid red';
+        inputField.placeholder = "Cannot be less than 6 characters!";
+        inputField.focus();
+        return false; // Prevent form submission
+    }
+
+    // Check if there is a space in the full name
+    if (newName.trim().indexOf(' ') === -1) {
+        var inputField = document.getElementById('new-full-name');
+        inputField.value = ""
+        inputField.style.border = '1px solid red';
+        inputField.placeholder = "Must contain a space!";
+        inputField.focus();
+        return false; // Prevent form submission
+    }
+
+    // If validation passes, proceed with the update
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/update-profile", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                // Update the button text
+                document.getElementById('profile-update-btn').textContent = "Profile Updated!";
+                // Optionally, you can reset the input field and hide the edit name div here
+                var inputField = document.getElementById('new-full-name');
+                setTimeout(() => {
+                    var inputField = document.getElementById('new-full-name');
+                    inputField.value = "";
+                    document.getElementById('profile-update-btn').textContent = "Update Profile"
+                })
+            } else {
+                // Handle error response
+                console.error("Failed to update profile");
+            }
+        }
+    };
+    var data = JSON.stringify({ full_name: newName });
+    xhr.send(data);
+}
 // Assuming you're using jQuery for AJAX
 // $('#subscribe-form').submit(function(event) {
 //     event.preventDefault();

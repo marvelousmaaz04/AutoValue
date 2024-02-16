@@ -34,7 +34,7 @@
         </nav>
         <div id="profile-btn">
             <button class="btn"> <i class="fa-solid fa-user" id="profile"></i></button>
-           
+
             <!-- <form action="/logout" method="POST">
                 <button class="btn" type="submit">Logout</button>
             </form> -->
@@ -49,14 +49,25 @@
         </span>
         <form action="/logout" method="POST">
             <h3>User Profile</h3>
-           
+
             <div id="profile-details">
                 <p id="user-full-name">Full Name - {{ user.full_name }}</p>
-                <p id="user-email" >Email Address - <span style="text-transform: lowercase;">{{ user.email }}</span></p>
+                <p id="user-email">Email Address - <span style="text-transform: lowercase;">{{ user.email }}</span></p>
 
             </div>
 
-            <button class="btn" type="submit">Logout</button>
+            <h3>Update Profile</h3>
+            <div id="profile-update">
+                <input type="text" id="new-full-name" placeholder="Update Full Name">
+                <button class="btn" type="button" onclick="updateFullName()" id="profile-update-btn">Update
+                    Profile</button>
+                <a href="/forgot-password" target="_blank" class="btn">Forgot / Update Password?</a>
+
+            </div>
+            <button class="btn" type="submit" id="logout-btn">Logout</button>
+
+
+
 
 
         </form>
@@ -167,24 +178,29 @@
 
     <section id="search" class="search">
         <h1 class="heading">Search <span>Best Cars</span></h1>
-        <form action="/get-car-listings" method="POST" target="_blank">
+        <form action="/get-car-listings" method="POST" target="_blank" onsubmit="return validateCarSearchForm();">
             <label for="select-company">Company</label>
 
-            <select name="select-company" id="select-company" onchange="loadCarModels(this.id,'select-model')">
-                <option>Select Company</option>
+            <select name="select-company" id="select-company"
+                onchange="loadCarModels(this.id,'select-model'); selectCompany()">
+                <option>Select Car Company</option>
                 {% for company in companies %}
                 <option value="{{ company }}">{{ company }}</option>
                 {% endfor %}
             </select>
+            <div id="select-company-error" class="search-error"></div>
 
             <label for="select-model" class="form-label">Model</label>
             <select id="select-model" name="select-model" aria-label="Default select example">
                 <option>Select Car Model</option>
             </select>
+            <div id="select-model-error" class="search-error"></div>
 
             <label for="kmsdriven" class="form-label">Kilometers Driven</label>
             <input type="number" class="form-control" id="kms-driven" name="kms-driven"
-                placeholder="Enter Kilometers Driven" value="0" required>
+                placeholder="Enter Kilometers Driven">
+
+            <div id="kmsdriven-error" class="search-error"></div>
 
             <label for="select-location" class="form-label">Location</label>
             <select class="form-select" id="select-location" name="select-location" aria-label="Default select example">
@@ -193,10 +209,11 @@
                 <option value="{{ location }}">{{ location }}</option>
                 {% endfor %}
             </select>
+            <div id="select-location-error" class="search-error"></div>
 
             <label for="year" class="form-label">Year</label>
-            <input type="number" class="form-control" id="year" name="year" placeholder="Enter Year" value="2010"
-                required>
+            <input type="number" class="form-control" id="year" name="year" placeholder="Enter Year">
+            <div id="year-error" class="search-error"></div>
 
             <label for="select-fuel-type" class="form-label">Fuel Type</label>
             <select class="form-select" id="select-fuel-type" name="select-fuel-type"
@@ -206,6 +223,7 @@
                 <option value="{{ type }}">{{ type }}</option>
                 {% endfor %}
             </select>
+            <div id="select-fuel-type-error" class="search-error"></div>
 
             <button type="submit" class="btn">Search</button>
         </form>
@@ -476,6 +494,11 @@
             <br>
 
             <h3 id="price-heading"><span id="predicted-price"></span></h3>
+
+            <div id="similar-car-listings">
+                <h3>Want to find cars similar to your search?</h3>
+                <button onclick="submitFormAndGetListings()" class="btn">Find Cars</button>
+            </div>
         </form>
     </section>
 

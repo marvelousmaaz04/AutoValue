@@ -48,7 +48,7 @@ section {
     margin-top: 20px;
 }
 
-#price-heading span{
+#price-heading span {
     text-align: center;
     padding-bottom: 1rem;
     font-size: 3.5rem;
@@ -69,9 +69,24 @@ section {
 }
 
 
-.heading span, #price-heading span {
+.heading span,
+#price-heading span {
     position: relative;
     z-index: 0;
+}
+
+#similar-car-listings {
+    margin-top: 1rem;;
+    opacity: 0;
+
+}
+
+#similar-car-listings  h3{
+
+    font-size: 3rem;
+    color: var(--black);
+    transition: all 3s ease-in;
+
 }
 
 .heading span::before {
@@ -148,8 +163,8 @@ section {
 }
 
 #profile-btn i:hover {
-    
-    
+
+
     color: black;
 }
 
@@ -233,12 +248,29 @@ section {
     text-decoration: underline;
 }
 
-#profile-details{
+#profile-details {
     border-top: 2px solid var(--light-color);
     margin: 20px 0px;
     padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--light-color);
 }
+#profile-update input{
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding-left: 20px;
+}
+#logout-btn{margin-top: 20px;}
 
+#profile-update{
+    border-bottom: 2px solid var(--light-color);
+    padding-bottom: 20px;
+}
 .profile-form-container #close-profile-form {
     position: absolute;
     top: 1.5rem;
@@ -246,6 +278,16 @@ section {
     font-size: 5rem;
     color: var(--black);
     cursor: pointer;
+}
+
+.search-error{
+    display: none;
+    color: red;
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+    border: 2px solid red;
+    border-radius: 5px;
+    background-color: rgb(247, 208, 208);
 }
 
 
@@ -397,16 +439,18 @@ section {
     background-color: var(--green);
 }
 
-.swiper-btn{
+.swiper-btn {
     color: var(--light-green);
     position: absolute;
     top: 25%;
 }
-.swiper-btn-cars{
+
+.swiper-btn-cars {
     color: var(--light-green);
     position: absolute;
     top: 30%;
 }
+
 /* .swiper-button-prev,
 .swiper-button-next {
     position: absolute;
@@ -423,7 +467,8 @@ section {
 }
 
 /* search and price prediction section styles */
-.search, .price-prediction {
+.search,
+.price-prediction {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -436,12 +481,14 @@ section {
 }
 
 
-.search form, .price-prediction form {
+.search form,
+.price-prediction form {
     width: 70rem;
     margin: auto;
 }
 
-.search label, .price-prediction label {
+.search label,
+.price-prediction label {
     display: block;
     margin-bottom: 8px;
     font-size: 2.2rem;
@@ -449,7 +496,9 @@ section {
 }
 
 .search select,
-.search input,.price-prediction select, .price-prediction input {
+.search input,
+.price-prediction select,
+.price-prediction input{
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -460,7 +509,8 @@ section {
 }
 
 /* Change background color of select to white */
-.search select, .price-prediction select {
+.search select,
+.price-prediction select {
     background-color: white;
 }
 
@@ -544,36 +594,44 @@ select::after {
 /* .services {
     perspective: 1000px;
 } */
-.services .box-container .box{
+.services .box-container .box {
     transition: all 0.5s ease;
     transform-style: preserve-3d;
     /* transition: height 0.5s ease; */
 }
+
 .services .box-container .box .inner-box {
     transform-style: preserve-3d;
     backface-visibility: hidden;
     transform: rotateY(0deg);
 }
+
 .flip {
     transform: rotateY(180deg);
 }
+
 .services .box-container .box .front {
     transform: rotateY(0deg);
-    z-index: 2; /* Ensure front content is on top */
+    z-index: 2;
+    /* Ensure front content is on top */
 }
 
 .services .box-container .box .back {
     transform: rotateY(180deg);
-    display: none; /* Hide back content by default */
-    z-index: 1; /* Ensure back content is behind front content */
+    display: none;
+    /* Hide back content by default */
+    z-index: 1;
+    /* Ensure back content is behind front content */
 }
 
 .services .box-container .box.flip .front {
-    display: none; /* Hide front content when flipped */
+    display: none;
+    /* Hide front content when flipped */
 }
 
 .services .box-container .box.flip .back {
-    display: block; /* Show back content when flipped */
+    display: block;
+    /* Show back content when flipped */
 }
 
 /*.front, .back {
@@ -937,7 +995,7 @@ select::after {
         transform: rotate(180deg);
     }
 
-    #logout-btn{
+    #logout-btn {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -945,14 +1003,14 @@ select::after {
     }
 
     /* .header #logout-btn .btn { */
-        /* display: none; */
-        /* Initially hide the logout button */
-        /* position: absolute; */
-        /* top: 100%; */
-        /* Position the button below the profile icon */
-        /* right: 0; */
-        /* margin-top: 5px; */
-        /* Adjust the margin as needed */
+    /* display: none; */
+    /* Initially hide the logout button */
+    /* position: absolute; */
+    /* top: 100%; */
+    /* Position the button below the profile icon */
+    /* right: 0; */
+    /* margin-top: 5px; */
+    /* Adjust the margin as needed */
     /* } */
 
     .header #logout-btn .btn.active {
@@ -997,7 +1055,8 @@ select::after {
         display: block;
     }
 
-    .search form, .price-prediction form {
+    .search form,
+    .price-prediction form {
         max-width: 45rem;
         margin: auto;
     }
@@ -1014,7 +1073,8 @@ select::after {
         padding: 1rem 2rem;
     }
 
-    .search form, .price-prediction form {
+    .search form,
+    .price-prediction form {
         max-width: 35rem;
 
     }
