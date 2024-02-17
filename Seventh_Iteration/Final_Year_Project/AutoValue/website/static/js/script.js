@@ -257,15 +257,12 @@ hideErrorOnInputOrChange("select-location", "select-location-error");
 hideErrorOnInputOrChange("select-fuel-type", "select-fuel-type-error");
 
 // Repeat the process for input fields
-hideErrorOnInputOrChange("kms-driven", "kmsdriven-error");
+hideErrorOnInputOrChange("kms-driven", "kms-driven-error");
 hideErrorOnInputOrChange("year", "year-error");
 
 
-// Repeat the process for input fields
-hideErrorOnChange("kms-driven", "kmsdriven-error");
-hideErrorOnChange("year", "year-error");
-function selectCompany(){
-    var selectModelError = document.querySelector("#select-model-error");
+function selectCompany(id){
+    var selectModelError = document.querySelector(id);
     selectModelError.style.display = "none";
 }
 
@@ -298,7 +295,7 @@ function validateCarSearchForm() {
 
     // Validate kilometers driven
     var kmsDriven = document.getElementById("kms-driven");
-    var kmsDrivenError = document.querySelector("#kmsdriven-error");
+    var kmsDrivenError = document.querySelector("#kms-driven-error");
     if (kmsDriven.value.trim() === "" || isNaN(kmsDriven.value)) {
         kmsDrivenError.textContent = "Please enter a valid number of kilometers driven.";
         kmsDrivenError.style.display = "block"; // Set display to block
@@ -347,9 +344,106 @@ function validateCarSearchForm() {
     // If form is valid, submit the form
     return isValid;
 }
+function submitPriceForm(event) {
+    event.preventDefault();
+    isValid = validateCarPriceForm()
+    if(isValid){
+        getCarPrice();
+    }
+}
 
+function validateCarPriceForm() {
+    var isValid = true;
 
+    // Validate select company
+    var selectCompany = document.getElementById("select-company-price");
+    var selectCompanyError = document.querySelector("#select-company-error-price");
+    if (selectCompany.value === "Select Car Company") {
+        selectCompanyError.textContent = "Please select a car company.";
+        selectCompanyError.style.display = "block"; // Set display to block
+        isValid = false;
+    } else {
+        selectCompanyError.textContent = "";
+        selectCompanyError.style.display = "none"; // Hide the error message
+    }
 
+    // Validate select model
+    var selectModel = document.getElementById("select-model-price");
+    var selectModelError = document.querySelector("#select-model-error-price");
+    if (selectModel.value === "Select Car Model") {
+        selectModelError.textContent = "Please select a car model.";
+        selectModelError.style.display = "block"; // Set display to block
+        isValid = false;
+    } else {
+        selectModelError.textContent = "";
+        selectModelError.style.display = "none"; // Hide the error message
+    }
+
+    // Validate kilometers driven
+    var kmsDriven = document.getElementById("kms-driven-price");
+    var kmsDrivenError = document.querySelector("#kms-driven-error-price");
+    if (kmsDriven.value.trim() === "" || isNaN(kmsDriven.value)) {
+        kmsDrivenError.textContent = "Please enter a valid number of kilometers driven.";
+        kmsDrivenError.style.display = "block"; // Set display to block
+        isValid = false;
+    } else {
+        kmsDrivenError.textContent = "";
+        kmsDrivenError.style.display = "none"; // Hide the error message
+    }
+
+    // Validate select location
+    var selectLocation = document.getElementById("select-location-price");
+    var selectLocationError = document.querySelector("#select-location-error-price");
+    if (selectLocation.value === "Select Car Location") {
+        selectLocationError.textContent = "Please select a car location.";
+        selectLocationError.style.display = "block"; // Set display to block
+        isValid = false;
+    } else {
+        selectLocationError.textContent = "";
+        selectLocationError.style.display = "none"; // Hide the error message
+    }
+
+    // Validate year
+    var year = document.getElementById("year-price");
+    var yearError = document.querySelector("#year-error-price");
+    if (year.value.trim() === "" || isNaN(year.value)) {
+        yearError.textContent = "Please enter a valid year.";
+        yearError.style.display = "block"; // Set display to block
+        isValid = false;
+    } else {
+        yearError.textContent = "";
+        yearError.style.display = "none"; // Hide the error message
+    }
+
+    // Validate select fuel type
+    var selectFuelType = document.getElementById("select-fuel-type-price");
+    var selectFuelTypeError = document.querySelector("#select-fuel-type-error-price");
+    if (selectFuelType.value === "Select Fuel Type") {
+        selectFuelTypeError.textContent = "Please select a fuel type.";
+        selectFuelTypeError.style.display = "block"; // Set display to block
+        isValid = false;
+    } else {
+        selectFuelTypeError.textContent = "";
+        selectFuelTypeError.style.display = "none"; // Hide the error message
+    }
+
+    // If form is valid, submit the form
+    // if (isValid){
+    //     getCarPrice();
+    // }
+    return isValid;
+}
+// Call the function for each form element and corresponding error div
+hideErrorOnInputOrChange("select-company-price", "select-company-error-price");
+hideErrorOnInputOrChange("select-model-price", "select-model-error-price");
+
+hideErrorOnInputOrChange("select-location-price", "select-location-error-price");
+
+hideErrorOnInputOrChange("select-fuel-type-price", "select-fuel-type-error-price");
+
+// Repeat the process for input fields
+hideErrorOnInputOrChange("kms-driven-price", "kms-driven-error-price");
+hideErrorOnInputOrChange("year-price", "year-error-price");
 
 function form_handler(event) {
     event.preventDefault();

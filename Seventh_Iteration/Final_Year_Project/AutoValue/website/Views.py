@@ -144,9 +144,12 @@ def get_car_models_for_prediction_page():
     filtered_models = cleaned_car_data[cleaned_car_data['CompanyName'] == selected_company]['ModelName'].unique().tolist()
     # print(filtered_models)
     print((filtered_models))
-    filtered_models = {"models":filtered_models}
+    filtered_models_json = {"models":filtered_models}
     print((filtered_models))
-    return jsonify(filtered_models)
+    if len(filtered_models) > 0:
+        return jsonify(filtered_models_json)
+    else:
+        return jsonify({"models":["Select Car Model"]})
 
 
 @views.route("/home/get-price-prediction",methods=["POST"])

@@ -182,7 +182,7 @@
             <label for="select-company">Company</label>
 
             <select name="select-company" id="select-company"
-                onchange="loadCarModels(this.id,'select-model'); selectCompany()">
+                onchange="loadCarModels(this.id,'select-model'); selectCompany('#select-model-error')">
                 <option>Select Car Company</option>
                 {% for company in companies %}
                 <option value="{{ company }}">{{ company }}</option>
@@ -196,11 +196,11 @@
             </select>
             <div id="select-model-error" class="search-error"></div>
 
-            <label for="kmsdriven" class="form-label">Kilometers Driven</label>
+            <label for="kms-driven" class="form-label">Kilometers Driven</label>
             <input type="number" class="form-control" id="kms-driven" name="kms-driven"
                 placeholder="Enter Kilometers Driven">
 
-            <div id="kmsdriven-error" class="search-error"></div>
+            <div id="kms-driven-error" class="search-error"></div>
 
             <label for="select-location" class="form-label">Location</label>
             <select class="form-select" id="select-location" name="select-location" aria-label="Default select example">
@@ -448,25 +448,29 @@
 
     <section id="price-prediction" class="price-prediction">
         <h1 class="heading">Car <span>Price Predictor</span></h1>
-        <form id="price-prediction-form" onsubmit="form_handler(event); getCarPrice()">
+        <form id="price-prediction-form" onsubmit="submitPriceForm(event);">
             <label for="select-company-price">Company</label>
 
             <select name="select-company-price" id="select-company-price"
-                onchange="loadCarModelsPredictionPage(this.id,'select-model-price')">
-                <option>Select Company</option>
+                onchange="loadCarModelsPredictionPage(this.id,'select-model-price'); selectCompany('#select-model-error-price')">
+                <option>Select Car Company</option>
                 {% for company in companies %}
                 <option value="{{ company }}">{{ company }}</option>
                 {% endfor %}
             </select>
+            <div id="select-company-error-price" class="search-error"></div>
 
             <label for="select-model-price" class="form-label">Model</label>
             <select id="select-model-price" name="select-model-price" aria-label="Default select example">
                 <option>Select Car Model</option>
             </select>
+            <div id="select-model-error-price" class="search-error"></div>
 
             <label for="kms-driven-price" class="form-label">Kilometers Driven</label>
             <input type="number" class="form-control" id="kms-driven-price" name="kms-driven-price"
-                placeholder="Enter Kilometers Driven" value="0">
+                placeholder="Enter Kilometers Driven">
+            <div id="kms-driven-error-price" class="search-error"></div>
+
 
             <label for="select-location-price" class="form-label">Location</label>
             <select class="form-select" id="select-location-price" name="select-location-price"
@@ -476,10 +480,12 @@
                 <option value="{{ location }}">{{ location }}</option>
                 {% endfor %}
             </select>
+            <div id="select-location-error-price" class="search-error"></div>
 
             <label for="year-price" class="form-label">Year</label>
-            <input type="number" class="form-control" id="year-price" name="year-price" placeholder="Enter Year"
-                value="2010">
+            <input type="number" class="form-control" id="year-price" name="year-price" placeholder="Enter Year">
+            <div id="year-error-price" class="search-error"></div>
+
 
             <label for="select-fuel-type-price" class="form-label">Fuel Type</label>
             <select class="form-select" id="select-fuel-type-price" name="select-fuel-type-price"
@@ -489,6 +495,7 @@
                 <option value="{{ type }}">{{ type }}</option>
                 {% endfor %}
             </select>
+            <div id="select-fuel-type-error-price" class="search-error"></div>
 
             <button type="submit" class="btn">Predict Price</button>
             <br>

@@ -13,88 +13,14 @@ def preprocess_query(query):
     # Remove punctuation
     translator = str.maketrans(string.punctuation, ' ' * len(string.punctuation))
     query = query.translate(translator)
-    
     # Handle diacritics
     query = unidecode(query)
-    
     return query
-
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///all_cars24_car_listings_fuzzy.db'  
 db = SQLAlchemy(app)
 
-
-# Define data models as SQLAlchemy classes for each of the five tables
-class cars24_mumbai_fts(db.Model):
- 
-    __tablename__ = 'cars24_mumbai_fts'
-
-    ListingID = db.Column(db.Integer, primary_key=True)
-    CarName = db.Column(db.String())
-    Price = db.Column(db.Float)
-    Year = db.Column(db.Integer)
-    KilometersDriven = db.Column(db.Integer)
-    FuelType = db.Column(db.String())
-    Location = db.Column(db.String())
-    ListingURL = db.Column(db.String())
-    ImageURL = db.Column(db.String())
-
-class cars24_newdelhi_fts(db.Model):
-   
-    __tablename__ = 'cars24_newdelhi_fts'
-
-    ListingID = db.Column(db.Integer, primary_key=True)
-    CarName = db.Column(db.String())
-    Price = db.Column(db.Float)
-    Year = db.Column(db.Integer)
-    KilometersDriven = db.Column(db.Integer)
-    FuelType = db.Column(db.String())
-    Location = db.Column(db.String())
-    ListingURL = db.Column(db.String())
-    ImageURL = db.Column(db.String())
-
-class cars24_hyderabad_fts(db.Model):
-
-    __tablename__ = 'cars24_hyderabad_fts'
-
-    ListingID = db.Column(db.Integer, primary_key=True)
-    CarName = db.Column(db.String())
-    Price = db.Column(db.Float)
-    Year = db.Column(db.Integer)
-    KilometersDriven = db.Column(db.Integer)
-    FuelType = db.Column(db.String())
-    Location = db.Column(db.String())
-    ListingURL = db.Column(db.String())
-    ImageURL = db.Column(db.String())
-
-class cars24_bangalore_fts(db.Model):
-    
-    __tablename__ = 'cars24_bangalore_fts'
-
-    ListingID = db.Column(db.Integer, primary_key=True)
-    CarName = db.Column(db.String())
-    Price = db.Column(db.Float)
-    Year = db.Column(db.Integer)
-    KilometersDriven = db.Column(db.Integer)
-    FuelType = db.Column(db.String())
-    Location = db.Column(db.String())
-    ListingURL = db.Column(db.String())
-    ImageURL = db.Column(db.String())
-
-class cars24_pune_fts(db.Model):
-    
-    __tablename__ = 'cars24_pune_fts'
-
-    ListingID = db.Column(db.Integer, primary_key=True)
-    CarName = db.Column(db.String())
-    Price = db.Column(db.Float)
-    Year = db.Column(db.Integer)
-    KilometersDriven = db.Column(db.Integer)
-    FuelType = db.Column(db.String())
-    Location = db.Column(db.String())
-    ListingURL = db.Column(db.String())
-    ImageURL = db.Column(db.String())
 
 
 # Define API endpoints to interact with each table
@@ -247,20 +173,7 @@ def get_table1():
             print("*"*10)
             print()
             print()
-        # else:
-
-        #     query += ' AND Location MATCH :location'
-        #     print("Step 3 Query:", query)
-
-        #     # Bind all the parameters to the query
-        #     location_params = {'location': location}
-        #     params.update(location_params)
-        #     print("Step 3 Params:", params)
-        #     results = db.session.execute(query, params).fetchall()
-        #     print("Step 3 Results:", results)
-        #     print("*"*10)
-        #     print()
-        #     print()
+        
 
 
     # Step 4: Filter by Year
@@ -407,20 +320,7 @@ def get_table2():
             print("*"*10)
             print()
             print()
-        # else:
-
-        #     query += ' AND Location MATCH :location'
-        #     print("Step 3 Query:", query)
-
-        #     # Bind all the parameters to the query
-        #     location_params = {'location': location}
-        #     params.update(location_params)
-        #     print("Step 3 Params:", params)
-        #     results = db.session.execute(query, params).fetchall()
-        #     print("Step 3 Results:", results)
-        #     print("*"*10)
-        #     print()
-        #     print()
+       
 
     # Step 4: Filter by Year
     if year:
@@ -556,20 +456,7 @@ def get_table3():
             print("*"*10)
             print()
             print()
-        # else:
-
-        #     query += ' AND Location MATCH :location'
-        #     print("Step 3 Query:", query)
-
-        #     # Bind all the parameters to the query
-        #     location_params = {'location': location}
-        #     params.update(location_params)
-        #     print("Step 3 Params:", params)
-        #     results = db.session.execute(query, params).fetchall()
-        #     print("Step 3 Results:", results)
-        #     print("*"*10)
-        #     print()
-        #     print()
+        
 
     # Step 4: Filter by Year
     if year:
@@ -705,20 +592,7 @@ def get_table4():
             print("*"*10)
             print()
             print()
-        # else:
-
-        #     query += ' AND Location MATCH :location'
-        #     print("Step 3 Query:", query)
-
-        #     # Bind all the parameters to the query
-        #     location_params = {'location': location}
-        #     params.update(location_params)
-        #     print("Step 3 Params:", params)
-        #     results = db.session.execute(query, params).fetchall()
-        #     print("Step 3 Results:", results)
-        #     print("*"*10)
-        #     print()
-        #     print()
+        
 
     # Step 4: Filter by Year
     if year:
@@ -857,20 +731,7 @@ def get_table5():
             print("*"*10)
             print()
             print()
-        # else:
-
-        #     query += ' AND Location MATCH :location'
-        #     print("Step 3 Query:", query)
-
-        #     # Bind all the parameters to the query
-        #     location_params = {'location': location}
-        #     params.update(location_params)
-        #     print("Step 3 Params:", params)
-        #     results = db.session.execute(query, params).fetchall()
-        #     print("Step 3 Results:", results)
-        #     print("*"*10)
-        #     print()
-        #     print()
+        
 
     # Step 4: Filter by Year
     if year:
@@ -913,8 +774,6 @@ def get_table5():
     car_listings_dict = [{key.lower(): value for key, value in dictionary.items()} for dictionary in car_listings_dict]
     print(car_listings_dict)
     return jsonify(car_listings_dict)
-
-
 
 if __name__ == '__main__':
     app.run(debug=True,port=9500)
