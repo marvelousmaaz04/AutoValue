@@ -532,8 +532,10 @@ function updateFullName() {
                 setTimeout(() => {
                     var inputField = document.getElementById('new-full-name');
                     inputField.value = "";
+                    inputField.style.border = '';
+                    inputField.placeholder = "Update Full Name";
                     document.getElementById('profile-update-btn').textContent = "Update Profile"
-                })
+                },3000)
             } else {
                 // Handle error response
                 console.error("Failed to update profile");
