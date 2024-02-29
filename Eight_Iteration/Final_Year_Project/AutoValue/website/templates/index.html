@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block link %}
+<link rel="stylesheet" href="{{url_for('static',filename='index_styles.css')}}">{% endblock %}
+{% block content %}
+<div class="header" style="text-align: center;">
+    <a href="/" class="logo"><span>Auto</span>Value</a>
+</div>
+<div class="container-fluid" id="intro">
+    <div class="row">
+
+        <div class="col-12 col-md-6 text-center">
+            <div id="typewriter-head">
+             
+            </div>
+            
+            <!-- <h1>Welcome to AutoValue</h1> -->
+            <div id="typewriter" style="font-size: 1.3rem;">
+
+            </div>
+            <!-- You can generate random text dynamically using JavaScript -->
+        </div>
+
+        <!-- Right side with login and signup buttons -->
+        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center mt-5">
+
+            <button class="button" id="login" name="login" onclick="loginButton()">Login</button>
+            <button class="button" id="signUp" name="signUp" onclick="signUpButton()">Sign Up</button>
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="footer">
+    AutoValue | All Rights Reserved © 2024
+</div>
+
+
+<script>
+    var heading_text = "<h1>Welcome to "
+    let logo_text = "<span class='header'><a href='#'' class='logo'><br><span>Auto</span>Value - Get The Right Price</a></span></h1>"
+    // var heading_text = "<span><h1>Get The Right Price"
+    // let logo_text = "<span class='header'><a href='/'' class='logo'><span>Auto</span>Value</a></span></h1></span>"
+    const typewriter_head = document.getElementById('typewriter-head');
+    let index1 = 0;
+
+    async function type_head() {
+        console.log('functioncalled')
+        if (index1 < heading_text.length) {
+            typewriter_head.innerHTML = heading_text.slice(0, index1) + '<span class="blinking-cursor"><svg style="background: none;" height="10" width="10"><circle cx="5" cy="5" r="5" fill="black" /></svg></span>';
+            index1++;
+            setTimeout(type_head, Math.random() * 200);
+        } else {
+            typewriter_head.innerHTML = heading_text.slice(0, index1);
+            
+            // start typing
+            type();
+        }
+        typewriter_head.innerHTML =  heading_text.slice(0, index1) + logo_text ;
+    }
+
+    type_head();
+
+    var text = "Discover the best deals on cars from top dealerships.<br>Find your dream car today!<br>Search, compare, and buy with confidence.";
+    const typewriter = document.getElementById('typewriter');
+    let index = 0;
+
+    function type() {
+        if (index < text.length) {
+            typewriter.innerHTML = text.slice(0, index) + '<span class="blinking-cursor"><svg style="background: none;" height="10" width="10"><circle cx="5" cy="5" r="5" fill="black" /></svg></span>';
+            index++;
+            setTimeout(type, Math.random() * 50);
+        } else {
+            typewriter.innerHTML = text.slice(0, index)
+        }
+    }
+
+    
+
+
+</script>
+
+{% endblock %}

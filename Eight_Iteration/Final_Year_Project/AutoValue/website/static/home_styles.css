@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Raleway&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+div.banner{
+    background-color: rgb(198, 198, 58);
+    /* background-image: url("car_banner.jpg"); */
+}
+
+.custom-background1 {
+    width: 100%; /* Set the width of the container */
+    height: 600px;
+    background-image: url('car-banner1.jpg');
+    background-size: 100% 100%; 
+    background-repeat: no-repeat; /* Optional: Prevent background image from repeating */
+}
+
+.custom-text{
+    color: white;
+    border: 20px salmon;
+    text-decoration: solid;
+}
+
+.custom-background2 {
+    width: 100%; /* Set the width of the container */
+    height: 600px;
+    background-image: url('car_banner3.jpg');
+    background-size: 100% 100%; 
+    background-repeat: no-repeat; /* Optional: Prevent background image from repeating */
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(50%);
+    /* opacity: 0.2; */
+}
+
+#bannerContainer{
+    position: relative;
+}
+
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff; /* Set text color to contrast with the background */
+    text-align: center;
+    width: 100%;
+}
+#img-1{
+    height: 300px;
+    overflow: hidden;
+}
+#img-2{
+    height: 300px;
+    overflow: hidden;
+}
+#img-3{
+    height: 300px;
+    overflow: hidden;
+}
+#img-1 img{
+    width: 20vw;
+    height: auto;
+}
+#img-2 img{
+    width: 20vw;
+    height: auto;
+}
+#img-3 img{
+    width: 20vw;
+    height: 300px;
+}
+
+footer{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: large;
+}
+
+@media (max-width: 800px) {
+    .content {
+        font-size: 10px; /* Adjust the font size for smaller screens */
+        height: 850px;
+        color: black;
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+    footer{
+        padding-top: 1.0rem;
+        padding-bottom: 1.0rem;
+        font-size: small;
+    }
+    #bannerContainer{
+        height: 700px;
+    }
+    #myCarousel{
+        display: none;
+    }
+    .custom-text{
+        color: black;
+    }
+    .secondContainer{
+        margin-top: 10px;
+        /* padding-top: 50px; */
+    }
+
+    #img-1{
+        height: 130px;
+        overflow: hidden;
+    }
+    #img-2{
+        height: 130px;
+        overflow: hidden;
+    }
+    #img-3{
+        height: 170px;
+        overflow: hidden;
+    }
+
+    #img-1 img{
+        width: 40vw;
+        height: auto;
+    }
+
+    #img-2 img{
+        width: 40vw;
+        height: auto;
+    }
+
+    #img-3 img{
+        width: 40vw;
+        height: 250px;
+    }
+}

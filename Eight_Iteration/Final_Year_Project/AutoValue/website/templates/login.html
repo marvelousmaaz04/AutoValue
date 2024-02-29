@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% block link %}
+<link rel="stylesheet" href="{{url_for('static',filename='login_styles.css')}}">
+{% endblock %}
+{% block title %}Login - AutoValue{% endblock %}
+{% block content %}
+<div class="header" style="text-align: center;">
+    <a href="/" class="logo"><span>Auto</span>Value</a>
+</div>
+{% block handle_flash %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+{% if category == "success" %}
+
+
+<div id="myFlash" class="flash-container">
+    <div class="flash-message success">
+        {{ message }} <span><button onclick="closeFlash()" class="flash-btn">X</button></span>
+    </div>
+
+</div>
+
+
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endwith %}
+{% endblock %}
+
+{% block form_content %}
+<div class="form-container">
+
+
+    <form method="POST" onsubmit="return validate()" name="form">
+        <h3>User Login</h3>
+        <input type="text" placeholder="Email" name="email" id="email" class="box">
+        <div id="email_error">Please enter your email.</div>
+        <input type="password" placeholder="Password" name="password" id="password" class="box">
+        <div id="password_error">Password should be more than 5 characters.</div>
+        <p>Forgot Password ? <a href="/forgot-password" id="forgot-password">Click Here</a></p>
+    
+
+        <button class="btn" type="submit">Submit</button>
+    </form>
+</div>
+
+<div class="footer">
+    AutoValue | All Rights Reserved © 2024
+</div>
+
+<div id="flash-messages" style="display: none;">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+    {% if category == 'error' %}
+    <div class="error-message">
+        <script>
+            // Call your JavaScript function here
+            function handleFlashError(category, message) {
+                // Your JavaScript function logic to handle the flash error
+                // Update the corresponding error div based on the category
+                if (category === 'error' && message.toLowerCase().includes('email')) {
+                    document.getElementById('email_error').innerText = message;
+                    document.getElementById('email').style.border = "1px solid red"
+
+                    document.getElementById('email_error').style.display = "block"
+                    return false
+                } else if (category === 'error' && message.toLowerCase().includes('password')) {
+                    document.getElementById('password_error').innerText = message;
+                    document.getElementById('password').style.border = "1px solid red"
+
+                    document.getElementById('password_error').style.display = "block"
+                    // document.getElementById('forgotPassword').style.display = 'block'
+                    return false
+                }
+            }
+            handleFlashError("{{ category }}", "{{ message }}");
+        </script>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endwith %}
+</div>
+<script>
+    function closeFlash() {
+        flash = document.getElementById('myFlash')
+        flash.style.display = 'none'
+    }
+
+
+    var email = document.forms['form']['email']
+    var password = document.forms['form']['password']
+    console.log(email.id)
+    var email_error = document.getElementById('email_error');
+    var password_error = document.getElementById('password_error');
+
+    email.addEventListener("input", email_verify);
+    password.addEventListener("input", password_verify);
+
+    function email_verify() {
+        console.log("email ver called")
+        if (email.value.length >= 4) {
+            email_error.style.display = "none"
+            email.style.border = "1px solid silver"
+            return true
+        }
+    }
+    function password_verify() {
+        if (password.value.length >= 4) {
+            password_error.style.display = "none"
+            password.style.border = "1px solid silver"
+            return true
+        }
+    }
+
+    function validate() {
+        if (email.value.length < 4) {
+
+
+            // email.focus()
+            email.style.border = "1px solid red"
+
+            email_error.style.display = "block"
+            return false
+        }
+        if (password.value.length < 4) {
+
+
+            // email.focus()
+            password.style.border = "1px solid red"
+
+            password_error.style.display = "block"
+            return false
+        }
+    }
+
+
+</script>
+
+{% endblock %} <!-- form-content block ends here -->
+{% endblock %} <!-- content block ends here -->

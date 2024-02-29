@@ -1,0 +1,327 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* default styles */
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;padding: 0;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    box-sizing: border-box;
+}
+
+:root{
+    /* --container-color: #1a1e21; */
+    --container-color: #fff;
+    --second-color: #139611;
+    --light-green: #59c957;
+    --text-color: #172317;
+    --bg-color: #fff
+}
+a{
+    text-decoration: none;
+
+}
+li{
+    list-style: none;
+}
+img{
+    width: 100%;
+
+}
+section{
+    padding: 2rem 9%;
+}
+
+::selection{
+    color: var(--bg-color);
+    background: var(--second-color);
+}
+
+.container{
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+}
+/* default styles end*/
+
+/* home styles start */
+/* remeber to target using child class */
+.child.home{
+    /* all: unset !important; */
+    width: 100%;
+    min-height: 240px;
+    background: var(--container-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    padding: 2rem;
+}
+
+.banner-slider{
+    width: 600px;
+}
+.swiper-slide .container {
+    background-image: url(https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20240207033836_Nexon%20EV%20Offers.001.jpeg&w=800&h=533&q=70&c=1);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Align content at the bottom */
+}
+
+.swiper-btn-blogs{
+    color: var(--bg-color);
+    /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s ease;
+
+}
+
+.swiper-btn-blogs:hover {
+    transform: scale(1.2);
+}
+
+.swiper-slide{
+    width: 100%;
+}
+.slide-content{
+    padding: 3rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+.swiper-slide {
+    transition: transform 0.3s ease;
+}
+
+.swiper-slide:hover {
+    transform: scale(1.1);
+}
+.child .home-text{
+    color: var(--bg-color);
+    text-align: center;
+}
+
+.child .home-title{
+    font-size: 3.5rem;
+}
+
+.home-subtitle{
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+/* home styles end */
+
+/* Post filter styles */
+.post-filter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1.5rem;
+    margin-top: 2rem !important;
+}
+.filter-item{
+    font-size: 2.1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.active-filter{
+    /* font-size: 0.9rem; */
+    background-color: var(--second-color);
+    color: var(--bg-color);
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+/* Post filter styles end */
+
+/* Post styles start */
+.post{
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px,auto));
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0;
+    margin-bottom: 40px;
+}
+.banner-slider{
+    height: 60rem;
+    width: 100rem;
+}
+.banner-slide {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+.post-box{
+    background-color: var(--bg-color);
+    box-shadow: 0 4px 14px hsl(355deg 25% 15% / 10%);
+    padding: 15px;
+    border-radius: 0.5rem;
+
+}
+.post-box:hover{
+    box-shadow: 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.post-img{
+    width: 100%;
+    height: 275px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.5rem;
+}
+
+.category{
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--second-color);
+}
+
+.post-title{
+    font-size: 2.0rem;
+    font-weight: 600;
+    color: var(--text-color);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.post-date{
+    display: flex;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-top: 4px;
+}
+
+.post-description{
+    font-size: 1.5rem;
+    line-height: 2.0rem;
+    margin: 5px 0 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.website-profile{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+.profile-name{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.website-profile-img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: contain;
+    object-position: center;
+    border: 2px solid var(--second-color);
+}
+/* Post styles end */
+
+
+#search-form{
+    border: 2px solid var(--light-green);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    
+}
+
+#search-form:hover{
+    border-color: var(--second-color);
+    #search-button{
+        color: var(--second-color);
+    }
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input{
+    font-size: 1.8rem;
+}
+#search-button{
+    background-color: transparent;
+}
+
+.filter-group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.larger-icon{
+    font-size: 20px;
+}
+
+/* #search-button:hover{
+    color: var(--second-color);
+} */
+
+@media(max-width: 960px){
+    .post{
+        
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 830px) {
+    .post-filter {
+        flex-direction: column;
+    }
+    .child .home-title{
+        font-size: 3rem;
+    }
+
+    #search-form {
+        margin-top: 10px;
+    }
+    .banner-slider{
+        height: 50rem;
+        width: 80rem;
+    }
+}
+
+@media(max-width: 450px){
+    .post-box{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .post-img{
+        height: 200px;
+    }
+    .banner-slider{
+        height: 30rem;
+        width: 50rem;
+    }
+    .child .home-title{
+        font-size: 1.8rem;
+    }
+}

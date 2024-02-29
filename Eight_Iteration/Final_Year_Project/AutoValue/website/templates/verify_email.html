@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% block link %}
+<link rel="stylesheet" href="{{url_for('static',filename='verify_email_styles.css')}}">{% endblock %}
+{% block title %}Verify Email - AutoValue{% endblock %}
+{% block content %}
+
+<div class="header" style="text-align: center;">
+    <a href="/" class="logo"><span>Auto</span>Value</a>
+</div>
+
+{% block handle_flash %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+{% if category == "success" %}
+
+
+<div id="myFlash" class="flash-container">
+    <div class="flash-message success">
+        {{ message }} <span><button onclick="closeFlash()" class="flash-btn-success">X</button></span>
+    </div>
+
+</div>
+{% elif category == "expire-error" %}
+<div class="flash-container" id="myFlash">
+
+    <div class="flash-message error">
+        {{ message }} Go to <a href="/sign-up" style="color: white;">Sign up</a> again. <span><button onclick="closeFlash()" class="flash-btn-error">X</button></span>
+    </div>
+
+</div>
+{% elif category == "invalid-error" %}
+<div class="flash-container" id="myFlash">
+
+    <div class="flash-message error">
+        {{ message }} <span><button onclick="closeFlash()" class="flash-btn-error">X</button></span>
+    </div>
+
+</div>
+
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endwith %}
+{% endblock %}
+
+
+
+<div class="verify-email-form-container">
+
+
+    <form method="POST" onsubmit="return validate()" name="form">
+        <h3>Verify Email</h3>
+        <input class="box" type="number" placeholder="Enter OTP" name="otp" id="otp">
+        <div id="otp_error">Enter 6 digit OTP.</div>
+        
+        <button class="btn" type="submit">Submit</button>
+    </form>
+</div>
+<!-- <div id="flash-messages" style="display: none;">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+    {% if category == 'error' %}
+    <div class="error-message">
+        <script>
+            // Call your JavaScript function here
+            function handleFlashError(category, message) {
+                // Your JavaScript function logic to handle the flash error
+                // Update the corresponding error div based on the category
+                if (category === 'error' && message.toLowerCase().includes('otp')) {
+                    document.getElementById('otp_error').innerText = message;
+                    document.getElementById('otp').style.border = "1px solid red"
+
+                    document.getElementById('otp_error').style.display = "block"
+                    return false
+                } 
+            }
+            handleFlashError("{{ category }}", "{{ message }}");
+        </script>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endwith %}
+</div> -->
+<div class="footer">
+    AutoValue | All Rights Reserved © 2024
+</div>
+
+<script>
+    function closeFlash() {
+        flash = document.getElementById('myFlash')
+        flash.style.display = 'none'
+    }
+    
+    var otp = document.forms['form']['otp']
+
+    
+    var otp_error = document.getElementById('otp_error');
+
+    
+    otp.addEventListener('input', otp_verify)
+
+    
+    
+
+    
+    function otp_verify() {
+        if (otp.value.length >= 6) {
+            otp_error.style.display = "none"
+            otp_error.style.border = '1px solid silver'
+            return true
+        }
+    }
+
+    function validate() {
+        
+        function validateOTP() {
+
+            if (otp.value.length < 6) {
+                otp.style.border = '1px solid red'
+                otp_error.innerText = 'Enter 6 digit OTP.'
+                otp_error.style.display = "block"
+                return false
+            }
+            
+        }
+
+        if (validateOTP() === false) {
+            return false
+        }
+        return true;
+    }
+</script>
+{% endblock %}

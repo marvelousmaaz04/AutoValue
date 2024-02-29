@@ -1,0 +1,546 @@
+CarName,Price,Year,KilometersDriven,Fuel Type,Location
+Maruti Ertiga,"6,51,000",2016,"98,246 KM",CNG,"Rupa Renaissance, Navi Mumbai"
+Hyundai i10,"1,86,000",2010,"92,421 KM",PETROL,"Goregaon, Mumbai"
+Toyota Corolla Altis,"4,90,000",2012,"60,438 KM",PETROL,Mulund
+Honda City,"4,88,000",2014,"72,419 KM",PETROL,"Goregaon, Mumbai"
+Maruti Alto 800,"1,83,000",2012,"55,876 KM",PETROL,"Goregaon, Mumbai"
+Honda City,"4,13,000",2014,"81,007 KM",PETROL,Mulund
+Hyundai Verna,"4,95,000",2014,"76,611 KM",PETROL,"Goregaon, Mumbai"
+Mahindra XUV500,"5,51,000",2014,"87,495 KM",DIESEL,"Rupa Renaissance, Navi Mumbai"
+Renault Duster,"6,31,000",2017,"68,741 KM",PETROL,"Goregaon, Mumbai"
+Maruti Dzire,"5,39,000",2017,"47,097 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Volkswagen Jetta,"5,06,000",2011,"1,08,471 KM",DIESEL,"Goregaon, Mumbai"
+Maruti Alto 800,"2,25,000",2014,"25,765 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Honda City,"4,10,000",2013,"45,778 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Dzire,"5,93,000",2017,"15,118 KM",PETROL,Mulund
+Maruti Dzire,"7,02,000",2018,"60,461 KM",DIESEL,"Rupa Renaissance, Navi Mumbai"
+Hyundai Elite i20,"4,28,000",2014,"44,771 KM",PETROL,Mulund
+Volkswagen Polo,"5,52,000",2015,"73,681 KM",PETROL,"Goregaon, Mumbai"
+Maruti Swift,"3,56,000",2012,"1,02,466 KM",DIESEL,"Goregaon, Mumbai"
+Honda City,"4,76,000",2015,"84,131 KM",DIESEL,"Rupa Renaissance, Navi Mumbai"
+Renault Kwid,"3,33,000",2017,"42,530 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Honda BR-V,"5,72,000",2016,"43,660 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Grand i10,"3,76,000",2014,"53,428 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Ertiga,"7,18,000",2016,"98,401 KM",CNG,Mulund
+Maruti Alto K10,"3,55,000",2018,"35,741 KM",PETROL,Mulund
+Maruti Alto 800,"3,61,000",2019,"12,290 KM",CNG,"Goregaon, Mumbai"
+Hyundai Xcent,"4,31,000",2016,"37,571 KM",PETROL,"Goregaon, Mumbai"
+Volkswagen Polo,"3,72,000",2013,"74,371 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Grand i10,"4,31,000",2014,"23,305 KM",PETROL,"Goregaon, Mumbai"
+Toyota Innova,"6,28,000",2013,"67,810 KM",DIESEL,Mulund
+Hyundai NEW SANTRO,"4,83,000",2019,"17,381 KM",PETROL,"Goregaon, Mumbai"
+Maruti Vitara Brezza,"7,16,000",2020,"41,594 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai NEW SANTRO,"4,43,000",2018,"23,157 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Eon,"1,96,000",2012,"16,978 KM",PETROL,"Goregaon, Mumbai"
+Maruti Wagon R 1.0,"2,80,000",2014,"1,06,040 KM",CNG,"Goregaon, Mumbai"
+Maruti Swift Dzire,"2,50,000",2011,"28,970 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Honda Amaze,"3,83,000",2016,"30,050 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Creta,"9,41,000",2017,"86,021 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai Grand i10,"5,66,000",2016,"27,625 KM",PETROL,"Goregaon, Mumbai"
+Maruti Ertiga,"6,41,000",2016,"93,277 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Renault Kwid,"4,65,000",2021,"27,960 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai i10,"2,68,000",2013,"80,058 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Ertiga,"7,60,000",2017,"1,10,106 KM",CNG,"Rupa Renaissance, Navi Mumbai"
+Toyota Etios Liva,"2,97,000",2015,"36,339 KM",CNG,Mulund
+Renault Kwid,"3,74,000",2019,"15,175 KM",PETROL,Mulund
+Maruti Baleno,"7,29,000",2020,"23,666 KM",PETROL,Mulund
+Honda City,"3,16,000",2013,"34,510 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Zen Estilo,"1,89,000",2012,"69,120 KM",CNG,Mulund
+Maruti Swift,"3,82,000",2013,"47,735 KM",PETROL,"Goregaon, Mumbai"
+Maruti Alto K10,"1,60,000",2011,"33,923 KM",PETROL,Mulund
+Hyundai i10,"1,85,000",2011,"28,163 KM",PETROL,Mulund
+Maruti Baleno,"5,53,000",2017,"29,939 KM",PETROL,"Goregaon, Mumbai"
+Maruti Baleno,"7,39,000",2018,"25,577 KM",PETROL,Mulund
+Hyundai Verna,"4,05,000",2013,"87,172 KM",DIESEL,"Goregaon, Mumbai"
+Maruti Baleno,"6,43,000",2018,"19,499 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Alto K10,"1,49,000",2010,"59,327 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti XL6,"12,69,000",2022,"15,027 KM",PETROL,Mulund
+Datsun Redi Go,"2,25,000",2018,"37,892 KM",PETROL,"Goregaon, Mumbai"
+Hyundai NEW SANTRO,"5,35,000",2019,"66,471 KM",CNG,"Goregaon, Mumbai"
+Toyota Innova,"9,10,000",2014,"82,310 KM",DIESEL,Mulund
+Renault Kwid,"2,79,000",2016,"20,314 KM",PETROL,Mulund
+Maruti Swift,"2,08,000",2010,"85,547 KM",PETROL,Mulund
+Tata PUNCH,"8,41,000",2022,"2,155 KM",PETROL,"Goregaon, Mumbai"
+Maruti Alto K10,"3,30,000",2017,"12,275 KM",CNG,"Goregaon, Mumbai"
+Hyundai VENUE,"9,80,000",2020,"24,934 KM",PETROL,Mulund
+Honda Amaze,"2,90,000",2013,"80,332 KM",PETROL,"Goregaon, Mumbai"
+Jeep Compass,"10,87,200",2018,"44,754 KM",DIESEL,"Rupa Renaissance, Navi Mumbai"
+KIA SELTOS,"10,93,000",2019,"27,245 KM",PETROL,Mulund
+Maruti Celerio,"3,11,000",2014,"94,004 KM",CNG,Mulund
+Hyundai Grand i10,"5,21,000",2019,"38,860 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai i20,"2,19,000",2010,"41,940 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Alto 800,"2,32,000",2014,"79,188 KM",CNG,"Goregaon, Mumbai"
+Maruti Swift,"7,27,000",2021,"30,277 KM",PETROL,"Goregaon, Mumbai"
+Maruti Ritz,"1,97,000",2011,"37,245 KM",PETROL,Mulund
+Hyundai Creta,"9,64,000",2019,"38,166 KM",PETROL,"Goregaon, Mumbai"
+Maruti Swift Dzire,"5,47,000",2015,"30,526 KM",DIESEL,Mulund
+Maruti Swift Dzire,"4,11,000",2015,"73,324 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Ertiga,"5,43,000",2013,"1,23,403 KM",CNG,Mulund
+Maruti Ertiga,"8,01,000",2017,"1,04,754 KM",DIESEL,Mulund
+Hyundai Verna,"7,56,000",2018,"61,661 KM",PETROL,Mulund
+Maruti Baleno,"4,95,000",2017,"55,982 KM",PETROL,Mulund
+Maruti Alto 800,"2,03,000",2014,"33,148 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Skoda Rapid,"7,15,000",2017,"57,759 KM",DIESEL,"Goregaon, Mumbai"
+Hyundai Xcent,"4,31,000",2015,"60,208 KM",CNG,Mulund
+Maruti Wagon R 1.0,"3,00,000",2014,"76,560 KM",CNG,"Rupa Renaissance, Navi Mumbai"
+Maruti Celerio,"3,61,000",2014,"16,358 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Volkswagen Ameo,"3,90,000",2016,"42,048 KM",PETROL,"Goregaon, Mumbai"
+Toyota Corolla Altis,"4,01,000",2013,"70,574 KM",PETROL,"Goregaon, Mumbai"
+Maruti Celerio,"3,09,000",2016,"85,307 KM",PETROL,Mulund
+Ford Ecosport,"4,88,000",2015,"54,872 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Honda City,"2,96,000",2011,"97,888 KM",PETROL,Mulund
+Maruti Swift,"3,79,000",2014,"32,135 KM",PETROL,Mulund
+Nissan Terrano,"4,44,000",2015,"1,22,107 KM",DIESEL,"Goregaon, Mumbai"
+Maruti Swift,"6,35,000",2020,"17,025 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Dzire,"5,04,000",2017,"53,384 KM",PETROL,Mulund
+Hyundai Elite i20,"5,93,000",2019,"47,575 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Creta,"6,82,000",2016,"53,124 KM",PETROL,Mulund
+Maruti Baleno,"5,08,000",2015,"48,130 KM",DIESEL,Mulund
+Maruti Swift,"2,64,000",2011,"1,17,834 KM",PETROL,Mulund
+Honda Amaze,"6,79,000",2019,"26,129 KM",PETROL,"Goregaon, Mumbai"
+Maruti Swift Dzire,"3,28,000",2012,"45,788 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Swift,"2,44,000",2010,"85,544 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai Elite i20,"6,67,000",2018,"62,469 KM",PETROL,Mulund
+Hyundai Eon,"2,96,000",2018,"77,370 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Honda City,"5,52,000",2016,"91,750 KM",PETROL,Mulund
+Hyundai Xcent,"3,56,000",2015,"27,591 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Mahindra Thar,"15,69,000",2022,"9,814 KM",DIESEL,Mulund
+Maruti Alto 800,"1,87,000",2012,"27,275 KM",PETROL,Mulund
+Hyundai Elite i20,"4,71,000",2015,"50,117 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Honda City,"2,94,000",2011,"91,937 KM",PETROL,"Goregaon, Mumbai"
+Honda City,"3,06,000",2012,"1,00,760 KM",PETROL,Mulund
+Nissan Micra,"3,30,000",2014,"31,091 KM",PETROL,"Goregaon, Mumbai"
+Maruti Ertiga,"5,58,000",2015,"70,995 KM",PETROL,Mulund
+Hyundai VENUE,"7,82,000",2021,"71,635 KM",PETROL,"Goregaon, Mumbai"
+Maruti Swift Dzire,"2,81,000",2011,"59,566 KM",PETROL,Mulund
+Maruti Dzire,"5,97,000",2017,"25,482 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai Creta,"6,99,000",2016,"99,304 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+KIA SONET,"10,50,200",2020,"48,383 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Ertiga,"6,44,000",2015,"24,957 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Renault Kwid,"3,38,000",2017,"26,954 KM",PETROL,Mulund
+Tata Tiago,"3,95,000",2016,"46,765 KM",PETROL,Mulund
+Hyundai Verna,"4,97,000",2014,"82,289 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Ertiga,"5,67,000",2012,"94,671 KM",DIESEL,"Rupa Renaissance, Navi Mumbai"
+Maruti Wagon R 1.0,"2,28,000",2012,"64,173 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai Verna,"9,88,000",2021,"15,862 KM",PETROL,"Goregaon, Mumbai"
+Hyundai i20,"2,83,000",2012,"47,740 KM",PETROL,Mulund
+Maruti Vitara Brezza,"6,86,000",2016,"77,943 KM",DIESEL,"Goregaon, Mumbai"
+Maruti Dzire,"5,72,000",2018,"66,879 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai Elite i20,"5,78,000",2018,"21,423 KM",PETROL,Mulund
+Skoda Rapid,"9,13,000",2020,"34,880 KM",DIESEL,Mulund
+Hyundai i10,"2,34,000",2013,"84,622 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Volkswagen Polo,"5,21,000",2016,"44,124 KM",PETROL,Mulund
+Renault Kwid,"3,10,000",2017,"47,446 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Ciaz,"9,68,000",2019,"55,169 KM",DIESEL,"Rupa Renaissance, Navi Mumbai"
+Maruti Celerio,"3,66,000",2014,"53,740 KM",CNG,Mulund
+Maruti Wagon R 1.0,"2,72,000",2012,"58,318 KM",CNG,"Rupa Renaissance, Navi Mumbai"
+Hyundai i10,"1,91,000",2010,"40,322 KM",PETROL,"Goregaon, Mumbai"
+Maruti Alto,"3,58,000",2021,"16,858 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Elite i20,"5,12,000",2014,"1,06,910 KM",DIESEL,"Rupa Renaissance, Navi Mumbai"
+Mahindra XUV500,"7,37,000",2017,"57,570 KM",DIESEL,Mulund
+Honda City,"5,26,000",2015,"43,070 KM",PETROL,"Goregaon, Mumbai"
+Maruti Celerio X,"4,36,000",2017,"24,275 KM",PETROL,Mulund
+Skoda Rapid,"3,51,000",2012,"61,347 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Swift Dzire,"4,37,000",2013,"72,359 KM",DIESEL,"Goregaon, Mumbai"
+Maruti Wagon R 1.0,"2,64,000",2012,"1,12,591 KM",CNG,"Rupa Renaissance, Navi Mumbai"
+Maruti Swift,"4,94,000",2017,"9,675 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Ertiga,"8,72,000",2017,"44,556 KM",DIESEL,"Rupa Renaissance, Navi Mumbai"
+Volkswagen Vento,"3,42,000",2013,"94,922 KM",DIESEL,"Goregaon, Mumbai"
+Ford Ecosport,"8,13,000",2019,"22,004 KM",PETROL,Mulund
+Hyundai Verna,"5,02,000",2016,"80,413 KM",PETROL,Mulund
+Maruti Wagon R 1.0,"3,93,000",2017,"74,706 KM",CNG,"Goregaon, Mumbai"
+Maruti Baleno,"4,83,000",2016,"51,002 KM",PETROL,"Goregaon, Mumbai"
+Maruti Baleno,"6,72,000",2019,"52,152 KM",DIESEL,"Rupa Renaissance, Navi Mumbai"
+Toyota URBAN CRUISER,"9,69,000",2022,"12,970 KM",PETROL,Mulund
+Honda Amaze,"3,33,000",2013,"94,746 KM",DIESEL,Mulund
+Maruti Ciaz,"5,86,000",2016,"38,381 KM",PETROL,Mulund
+Hyundai Grand i10,"3,67,000",2015,"41,378 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Creta,"9,25,000",2019,"56,549 KM",PETROL,Mulund
+Honda Amaze,"3,51,000",2013,"36,685 KM",PETROL,"Goregaon, Mumbai"
+Maruti Dzire,"6,42,000",2021,"78,582 KM",PETROL,"Goregaon, Mumbai"
+Tata Harrier,"13,19,000",2019,"77,757 KM",DIESEL,Mulund
+Maruti Vitara Brezza,"8,82,000",2018,"48,642 KM",DIESEL,"Rupa Renaissance, Navi Mumbai"
+Maruti Swift Dzire,"4,58,000",2014,"51,532 KM",PETROL,Mulund
+Maruti Ciaz,"5,04,000",2015,"1,16,138 KM",DIESEL,"Goregaon, Mumbai"
+Honda Amaze,"3,72,000",2016,"1,11,247 KM",PETROL,Mulund
+Hyundai Elite i20,"5,22,000",2016,"33,339 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai i20 Active,"5,70,000",2017,"25,690 KM",PETROL,Mulund
+Hyundai AURA,"7,47,000",2021,"14,305 KM",CNG,"Rupa Renaissance, Navi Mumbai"
+Maruti Wagon R 1.0,"3,48,000",2015,"21,598 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Grand i10,"5,03,000",2018,"58,922 KM",DIESEL,"Rupa Renaissance, Navi Mumbai"
+Maruti Celerio,"3,75,000",2016,"63,983 KM",PETROL,Mulund
+Honda Amaze,"3,49,000",2013,"92,195 KM",DIESEL,"Rupa Renaissance, Navi Mumbai"
+Hyundai Verna,"7,06,000",2016,"61,875 KM",DIESEL,Mulund
+Honda CRV,"6,99,000",2013,"74,039 KM",PETROL,"Goregaon, Mumbai"
+Maruti Swift Dzire,"4,67,000",2015,"61,960 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Volkswagen Polo,"4,89,000",2015,"97,403 KM",PETROL,Mulund
+Maruti Wagon R 1.0,"2,81,000",2013,"50,244 KM",PETROL,"Goregaon, Mumbai"
+Maruti Wagon R Stingray,"3,07,000",2013,"80,001 KM",PETROL,"Goregaon, Mumbai"
+Maruti Swift,"3,28,000",2013,"60,424 KM",PETROL,Mulund
+Honda Jazz,"2,81,000",2012,"37,938 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Swift Dzire,"4,79,000",2016,"77,984 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai i10,"3,25,000",2015,"45,879 KM",PETROL,"Goregaon, Mumbai"
+Maruti Alto 800,"2,12,000",2013,"28,725 KM",PETROL,Mulund
+Hyundai Elite i20,"5,25,000",2015,"14,498 KM",PETROL,Mulund
+Maruti Wagon R 1.0,"3,69,000",2016,"36,056 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Alto 800,"2,42,000",2016,"34,721 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Creta,"16,85,000",2021,"43,673 KM",PETROL,Mulund
+Maruti Swift,"4,58,000",2013,"91,718 KM",DIESEL,Mulund
+Hyundai i10,"2,83,000",2014,"22,330 KM",PETROL,"Goregaon, Mumbai"
+Maruti Ritz,"2,44,000",2012,"19,471 KM",PETROL,Mulund
+Tata NEXON,"6,16,000",2018,"28,931 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti New Wagon-R,"4,95,000",2019,"25,032 KM",PETROL,Mulund
+Nissan Micra,"3,35,600",2014,"35,345 KM",PETROL,Mulund
+Maruti Baleno,"5,37,000",2018,"27,163 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Wagon R 1.0,"3,39,000",2014,"18,501 KM",PETROL,"Goregaon, Mumbai"
+Volkswagen Polo,"6,56,000",2020,"26,754 KM",PETROL,Mulund
+Hyundai Creta,"7,15,000",2017,"81,347 KM",PETROL,Mulund
+Maruti Alto 800,"2,95,000",2015,"70,411 KM",CNG,Mulund
+Hyundai AURA,"7,09,000",2021,"66,479 KM",CNG,Mulund
+Datsun Go,"2,36,000",2014,"18,499 KM",PETROL,"Goregaon, Mumbai"
+Skoda Rapid,"5,47,000",2015,"93,954 KM",DIESEL,"Goregaon, Mumbai"
+Tata Tiago,"4,79,000",2018,"11,606 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai Grand i10,"5,46,000",2018,"23,976 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Mahindra XUV500,"12,08,000",2018,"70,203 KM",DIESEL,"Goregaon, Mumbai"
+Hyundai Creta,"11,29,000",2019,"86,553 KM",CNG,Mulund
+Hyundai Grand i10,"4,86,000",2017,"79,192 KM",DIESEL,Mulund
+Mahindra TUV300,"7,35,000",2018,"69,726 KM",DIESEL,"Goregaon, Mumbai"
+Hyundai Elite i20,"5,70,000",2017,"12,662 KM",PETROL,Mulund
+Maruti Swift,"5,80,000",2017,"78,195 KM",DIESEL,Mulund
+Honda City,"5,37,000",2015,"81,459 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Celerio,"4,43,000",2017,"48,726 KM",CNG,Mulund
+Hyundai Grand i10,"3,71,000",2015,"33,716 KM",PETROL,"Goregaon, Mumbai"
+Maruti Celerio,"3,67,000",2015,"29,535 KM",PETROL,Mulund
+Maruti Ciaz,"6,28,000",2018,"70,467 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai i20 Active,"5,25,000",2015,"64,315 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Creta,"9,11,000",2017,"59,964 KM",DIESEL,"Goregaon, Mumbai"
+Honda City,"7,17,000",2017,"42,503 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Swift,"4,58,000",2017,"74,478 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Grand i10,"3,30,000",2013,"53,886 KM",PETROL,"Goregaon, Mumbai"
+Hyundai i10,"2,26,000",2011,"43,300 KM",PETROL,"Goregaon, Mumbai"
+Honda City,"5,06,000",2014,"39,773 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai GRAND I10 NIOS,"5,92,000",2019,"46,573 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai Verna,"6,71,000",2016,"41,188 KM",PETROL,Mulund
+Maruti Dzire,"5,83,000",2017,"34,963 KM",PETROL,Mulund
+Maruti Ertiga,"5,25,800",2013,"55,834 KM",PETROL,Mulund
+Maruti New Wagon-R,"4,84,000",2019,"12,485 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Renault TRIBER,"6,39,000",2023,"17,978 KM",PETROL,"Goregaon, Mumbai"
+Honda WR-V,"5,64,000",2017,"44,303 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Elite i20,"7,19,000",2019,"81,099 KM",DIESEL,"Goregaon, Mumbai"
+Ford Ecosport,"5,75,000",2016,"1,22,112 KM",DIESEL,Mulund
+Hyundai Verna,"9,81,000",2019,"23,205 KM",PETROL,Mulund
+Honda Jazz,"5,50,000",2017,"31,030 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Renault Kwid,"3,80,000",2019,"33,923 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Swift Dzire,"3,34,000",2012,"72,831 KM",PETROL,"Goregaon, Mumbai"
+Renault Duster,"7,36,000",2019,"31,372 KM",PETROL,Mulund
+Maruti Celerio,"4,63,000",2019,"25,442 KM",PETROL,"Goregaon, Mumbai"
+Maruti Ciaz,"5,60,000",2015,"87,624 KM",PETROL,"Goregaon, Mumbai"
+Honda Brio,"2,45,400",2012,"66,723 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Honda Jazz,"6,95,000",2019,"15,114 KM",PETROL,Mulund
+Honda Jazz,"5,74,000",2017,"26,031 KM",PETROL,"Goregaon, Mumbai"
+Maruti Dzire,"6,38,000",2017,"60,399 KM",CNG,"Rupa Renaissance, Navi Mumbai"
+Hyundai Creta,"7,59,000",2016,"19,296 KM",PETROL,"Goregaon, Mumbai"
+Jeep Compass,"10,93,000",2018,"49,171 KM",PETROL,"Goregaon, Mumbai"
+Honda WR-V,"7,14,000",2017,"10,281 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Swift,"4,97,000",2017,"45,176 KM",PETROL,Mulund
+Maruti Celerio,"3,54,000",2014,"74,993 KM",PETROL,"Goregaon, Mumbai"
+Honda City,"5,57,000",2015,"23,518 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai Grand i10,"4,32,000",2017,"49,834 KM",PETROL,Mulund
+Hyundai Elite i20,"4,68,000",2014,"38,479 KM",PETROL,"Goregaon, Mumbai"
+Maruti New Wagon-R,"5,97,000",2021,"32,678 KM",CNG,"Rupa Renaissance, Navi Mumbai"
+Hyundai Verna,"7,20,000",2017,"45,645 KM",PETROL,"Goregaon, Mumbai"
+Maruti Celerio,"4,06,000",2015,"28,264 KM",PETROL,"Goregaon, Mumbai"
+Honda Amaze,"7,86,000",2019,"28,832 KM",DIESEL,Mulund
+Honda City,"5,11,300",2015,"62,499 KM",CNG,"Goregaon, Mumbai"
+Hyundai Grand i10,"2,97,000",2014,"64,561 KM",PETROL,Mulund
+Maruti Ertiga,"5,31,000",2012,"1,19,482 KM",DIESEL,"Goregaon, Mumbai"
+Hyundai i20,"3,99,000",2014,"34,978 KM",PETROL,"Goregaon, Mumbai"
+Maruti Swift Dzire,"3,91,000",2013,"58,047 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Swift Dzire,"3,78,000",2013,"50,544 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Elite i20,"5,74,000",2016,"73,055 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Verna,"8,91,000",2017,"56,667 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai i20,"2,49,000",2011,"29,838 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Celerio X,"4,53,000",2018,"28,978 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Baleno,"7,55,000",2019,"17,348 KM",PETROL,Mulund
+Hyundai i20,"3,29,000",2013,"40,445 KM",PETROL,"Goregaon, Mumbai"
+Honda Brio,"2,97,000",2014,"35,177 KM",PETROL,"Goregaon, Mumbai"
+Hyundai i20,"3,22,000",2013,"44,961 KM",PETROL,Mulund
+Hyundai Elite i20,"4,69,000",2015,"67,007 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai Elite i20,"4,76,000",2015,"94,232 KM",PETROL,Mulund
+Toyota Etios,"2,83,000",2011,"40,881 KM",PETROL,"Goregaon, Mumbai"
+Hyundai i20 Active,"5,18,000",2015,"41,510 KM",PETROL,Mulund
+Maruti IGNIS,"4,12,000",2017,"1,02,374 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Honda City,"7,47,000",2017,"18,069 KM",PETROL,Mulund
+Honda City,"8,27,000",2017,"29,131 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Ciaz,"5,08,000",2015,"1,14,513 KM",DIESEL,"Rupa Renaissance, Navi Mumbai"
+Datsun Redi Go,"3,33,000",2018,"45,954 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai i20,"3,17,000",2012,"42,919 KM",PETROL,"Goregaon, Mumbai"
+Maruti IGNIS,"5,04,000",2017,"26,465 KM",PETROL,Mulund
+Maruti Wagon R 1.0,"2,74,000",2013,"1,14,540 KM",CNG,"Rupa Renaissance, Navi Mumbai"
+Hyundai i20,"3,00,000",2011,"80,600 KM",PETROL,"Goregaon, Mumbai"
+Honda City,"9,45,000",2019,"24,122 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Elite i20,"5,44,000",2017,"36,831 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai New Elantra,"12,62,000",2019,"43,333 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Verna,"7,50,000",2019,"54,732 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai Elite i20,"4,74,000",2014,"16,869 KM",PETROL,"Goregaon, Mumbai"
+Maruti Celerio,"3,48,000",2014,"1,03,434 KM",CNG,"Rupa Renaissance, Navi Mumbai"
+Honda Amaze,"3,81,000",2014,"57,483 KM",PETROL,Mulund
+Maruti Baleno,"5,85,000",2016,"35,961 KM",PETROL,"Goregaon, Mumbai"
+Hyundai VENUE,"8,61,000",2019,"1,13,270 KM",PETROL,"Goregaon, Mumbai"
+Honda CRV,"5,86,000",2013,"1,01,404 KM",PETROL,Mulund
+Maruti Celerio,"3,68,000",2015,"58,728 KM",PETROL,Mulund
+Ford Ecosport,"9,29,000",2020,"39,352 KM",DIESEL,"Rupa Renaissance, Navi Mumbai"
+Tata TIGOR,"4,37,000",2018,"1,16,384 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti New Wagon-R,"6,87,000",2021,"8,817 KM",PETROL,"Goregaon, Mumbai"
+Tata TIGOR,"5,65,000",2021,"42,329 KM",PETROL,Mulund
+Hyundai Creta,"9,67,000",2017,"42,736 KM",DIESEL,Mulund
+Honda CRV,"9,59,000",2015,"56,171 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Renault Kwid,"4,59,000",2020,"19,481 KM",PETROL,Mulund
+Toyota Glanza,"8,99,000",2022,"6,612 KM",CNG,Mulund
+Honda WR-V,"6,63,000",2018,"44,113 KM",PETROL,"Goregaon, Mumbai"
+Mahindra XUV 3OO,"8,62,000",2019,"69,347 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai Grand i10,"3,96,000",2015,"55,211 KM",PETROL,Mulund
+Honda City,"6,04,000",2016,"1,04,023 KM",PETROL,Mulund
+Hyundai i20 Active,"5,44,000",2015,"49,905 KM",PETROL,"Goregaon, Mumbai"
+Honda Amaze,"7,71,000",2019,"55,103 KM",DIESEL,"Goregaon, Mumbai"
+Hyundai i20,"2,40,000",2011,"41,930 KM",PETROL,Mulund
+Hyundai Verna,"6,98,000",2016,"54,525 KM",DIESEL,Mulund
+Maruti Swift,"4,49,000",2015,"43,563 KM",PETROL,"Goregaon, Mumbai"
+Honda Jazz,"4,26,000",2015,"79,999 KM",PETROL,Mulund
+Volkswagen Ameo,"5,43,000",2019,"25,172 KM",PETROL,"Goregaon, Mumbai"
+Mahindra XUV 3OO,"12,15,000",2021,"9,759 KM",PETROL,"Goregaon, Mumbai"
+Maruti Swift Dzire,"4,81,000",2016,"55,632 KM",PETROL,Mulund
+Maruti Ciaz,"5,47,000",2016,"1,20,582 KM",DIESEL,Mulund
+Hyundai Verna,"6,45,000",2016,"24,495 KM",PETROL,Mulund
+Maruti Swift,"3,05,000",2012,"35,605 KM",PETROL,Mulund
+Maruti S PRESSO,"3,80,000",2020,"59,204 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai New Elantra,"9,49,000",2017,"98,039 KM",PETROL,Mulund
+Hyundai VENUE,"11,27,000",2022,"42,492 KM",DIESEL,Mulund
+Hyundai Grand i10,"4,17,000",2016,"17,726 KM",PETROL,"Goregaon, Mumbai"
+Maruti Swift,"4,00,000",2012,"63,847 KM",DIESEL,"Goregaon, Mumbai"
+Hyundai Elite i20,"4,82,000",2014,"43,791 KM",PETROL,Mulund
+Honda Jazz,"4,66,000",2017,"77,625 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Tata NEXON,"6,45,000",2019,"42,959 KM",PETROL,"Goregaon, Mumbai"
+Maruti Dzire,"6,82,000",2017,"1,04,768 KM",DIESEL,"Rupa Renaissance, Navi Mumbai"
+Honda City,"5,88,000",2014,"28,419 KM",PETROL,"Goregaon, Mumbai"
+Hyundai i10,"2,30,000",2011,"50,394 KM",PETROL,Mulund
+Hyundai Elite i20,"5,18,000",2016,"46,177 KM",PETROL,Mulund
+Maruti Celerio,"3,71,000",2014,"43,347 KM",PETROL,Mulund
+Hyundai GRAND I10 NIOS,"7,21,000",2021,"8,890 KM",PETROL,Mulund
+Hyundai i20 Active,"5,51,000",2016,"1,17,092 KM",DIESEL,"Rupa Renaissance, Navi Mumbai"
+Volkswagen Polo,"7,46,000",2019,"15,966 KM",PETROL,"Goregaon, Mumbai"
+Maruti Wagon R 1.0,"3,32,000",2014,"55,648 KM",CNG,"Rupa Renaissance, Navi Mumbai"
+Hyundai Elite i20,"5,31,000",2016,"57,212 KM",PETROL,Mulund
+Hyundai i10,"3,81,000",2013,"10,368 KM",PETROL,Mulund
+Honda Amaze,"7,84,000",2022,"8,007 KM",PETROL,Mulund
+Hyundai Elite i20,"5,00,000",2015,"65,135 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Baleno,"5,20,000",2016,"87,416 KM",PETROL,"Goregaon, Mumbai"
+Maruti Celerio,"4,20,000",2018,"75,370 KM",PETROL,"Goregaon, Mumbai"
+Maruti Ciaz,"8,84,000",2020,"42,385 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Alto 800,"2,20,000",2012,"9,808 KM",PETROL,Mulund
+Maruti Alto 800,"2,09,000",2012,"21,677 KM",PETROL,Mulund
+Renault Kwid,"5,47,000",2022,"6,754 KM",PETROL,Mulund
+Mahindra XUV500,"9,38,000",2016,"68,053 KM",DIESEL,Mulund
+Hyundai Eon,"3,40,000",2017,"25,727 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti S Cross,"10,33,000",2020,"52,521 KM",PETROL,Mulund
+Honda City,"6,66,000",2017,"59,913 KM",PETROL,"Goregaon, Mumbai"
+Honda CRV,"8,49,000",2014,"61,741 KM",PETROL,Mulund
+Hyundai Elite i20,"5,64,000",2016,"43,507 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Swift Dzire,"6,36,000",2016,"15,642 KM",DIESEL,Mulund
+Maruti Baleno,"6,72,600",2021,"10,972 KM",PETROL,"Goregaon, Mumbai"
+Maruti Baleno,"5,94,000",2018,"78,510 KM",PETROL,Mulund
+Maruti Ciaz,"6,92,000",2019,"49,281 KM",PETROL,Mulund
+Maruti Swift,"3,27,000",2012,"29,360 KM",PETROL,Mulund
+Maruti Baleno,"5,97,000",2017,"28,063 KM",PETROL,"Goregaon, Mumbai"
+Tata ALTROZ,"8,02,000",2021,"40,923 KM",DIESEL,"Goregaon, Mumbai"
+Honda City,"6,29,000",2017,"88,319 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Vitara Brezza,"7,78,000",2016,"6,82,998 KM",DIESEL,Mulund
+Hyundai Creta,"9,50,000",2016,"91,554 KM",DIESEL,"Rupa Renaissance, Navi Mumbai"
+Maruti Baleno,"5,30,000",2017,"87,044 KM",PETROL,"Goregaon, Mumbai"
+Maruti Ciaz,"7,83,000",2018,"16,093 KM",PETROL,Mulund
+Maruti Ertiga,"6,63,000",2016,"80,868 KM",PETROL,Mulund
+Hyundai Creta,"9,79,200",2016,"18,863 KM",PETROL,"Goregaon, Mumbai"
+Maruti Ciaz,"7,71,000",2018,"62,649 KM",PETROL,Mulund
+Toyota Etios,"3,97,000",2015,"62,741 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Elite i20,"4,79,000",2015,"26,432 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Celerio,"5,52,000",2021,"58,536 KM",CNG,"Goregaon, Mumbai"
+Hyundai Elite i20,"4,60,000",2014,"70,779 KM",PETROL,Mulund
+Maruti Ertiga,"8,83,000",2017,"1,09,950 KM",DIESEL,"Rupa Renaissance, Navi Mumbai"
+Tata Harrier,"13,87,000",2019,"88,938 KM",DIESEL,Mulund
+Tata NEXON,"10,42,000",2021,"4,039 KM",PETROL,Mulund
+Hyundai Grand i10,"4,23,000",2015,"8,612 KM",PETROL,Mulund
+Tata Harrier,"21,29,000",2022,"15,757 KM",DIESEL,"Goregaon, Mumbai"
+Maruti Wagon R 1.0,"2,81,000",2013,"77,981 KM",PETROL,Mulund
+Tata Tiago,"4,05,000",2017,"59,288 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai Grand i10,"4,68,000",2017,"14,867 KM",PETROL,Mulund
+Honda Brio,"2,62,000",2012,"61,365 KM",PETROL,"Goregaon, Mumbai"
+Tata Tiago,"4,83,000",2019,"57,508 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai Verna,"6,87,000",2016,"69,093 KM",DIESEL,Mulund
+Hyundai Creta,"7,79,000",2017,"47,755 KM",PETROL,"Goregaon, Mumbai"
+Maruti Celerio,"3,51,000",2014,"87,970 KM",CNG,"Rupa Renaissance, Navi Mumbai"
+MG HECTOR,"18,41,000",2022,"23,144 KM",DIESEL,Mulund
+Honda Jazz,"5,47,000",2018,"24,575 KM",PETROL,Mulund
+Hyundai NEW I20,"9,14,000",2020,"13,235 KM",PETROL,Mulund
+Maruti New Wagon-R,"5,78,000",2021,"42,753 KM",CNG,"Goregaon, Mumbai"
+Tata NEXON,"9,68,000",2022,"74,282 KM",DIESEL,"Rupa Renaissance, Navi Mumbai"
+Honda Amaze,"3,84,000",2014,"40,366 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Wagon R 1.0,"3,68,000",2014,"31,414 KM",PETROL,Mulund
+Maruti Swift Dzire,"3,55,000",2012,"70,912 KM",PETROL,Mulund
+Hyundai Verna,"8,97,700",2019,"80,047 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Honda Amaze,"3,34,000",2013,"56,922 KM",PETROL,Mulund
+Hyundai Verna,"9,69,000",2018,"55,220 KM",DIESEL,Mulund
+Maruti BREZZA,"12,38,000",2022,"11,537 KM",PETROL,"Goregaon, Mumbai"
+Maruti Celerio,"4,08,000",2015,"26,330 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Xcent,"4,03,000",2014,"23,827 KM",PETROL,Mulund
+Hyundai Creta,"8,99,000",2016,"79,812 KM",PETROL,Mulund
+Honda City,"5,71,000",2016,"71,665 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Honda City,"9,65,000",2019,"31,854 KM",PETROL,"Goregaon, Mumbai"
+Jeep Compass,"10,37,000",2017,"95,540 KM",PETROL,Mulund
+Hyundai New Elantra,"12,66,000",2018,"48,054 KM",DIESEL,"Goregaon, Mumbai"
+Maruti Swift Dzire,"5,70,000",2017,"51,019 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Renault Kwid,"4,98,000",2020,"13,865 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai Elite i20,"7,15,000",2019,"20,381 KM",PETROL,"Goregaon, Mumbai"
+Honda Amaze,"3,76,000",2015,"83,159 KM",PETROL,"Goregaon, Mumbai"
+Renault Kwid,"4,96,000",2020,"31,150 KM",PETROL,"Goregaon, Mumbai"
+Maruti New Wagon-R,"6,42,000",2022,"8,996 KM",CNG,"Rupa Renaissance, Navi Mumbai"
+Honda City,"5,29,000",2016,"87,241 KM",PETROL,Mulund
+Maruti Wagon R 1.0,"3,82,500",2016,"33,705 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Honda Jazz,"5,52,000",2018,"26,068 KM",PETROL,"Goregaon, Mumbai"
+Maruti Wagon R 1.0,"2,36,000",2011,"38,592 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Baleno,"6,35,000",2017,"78,830 KM",PETROL,"Goregaon, Mumbai"
+Honda WR-V,"7,13,000",2018,"70,888 KM",PETROL,Mulund
+Hyundai Elite i20,"7,81,000",2019,"51,895 KM",PETROL,"Goregaon, Mumbai"
+Maruti Alto,"3,79,000",2019,"88,667 KM",CNG,Mulund
+Ford Ecosport,"5,79,000",2016,"20,137 KM",PETROL,"Goregaon, Mumbai"
+Hyundai New Elantra,"16,37,000",2020,"47,604 KM",DIESEL,"Goregaon, Mumbai"
+Maruti Alto 800,"2,64,000",2016,"42,453 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Ciaz,"5,17,000",2016,"1,05,300 KM",CNG,"Goregaon, Mumbai"
+Ford Ecosport,"6,08,000",2017,"1,09,609 KM",DIESEL,Mulund
+Renault TRIBER,"6,45,400",2019,"19,719 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Creta,"7,07,000",2016,"65,166 KM",PETROL,Mulund
+Toyota YARIS,"9,75,000",2021,"17,063 KM",PETROL,"Goregaon, Mumbai"
+Volkswagen Polo,"5,21,000",2014,"66,663 KM",PETROL,Mulund
+Maruti Swift,"3,52,000",2013,"69,622 KM",PETROL,Mulund
+Maruti S Cross,"11,39,000",2020,"29,110 KM",PETROL,Mulund
+Hyundai Elite i20,"4,89,000",2017,"77,121 KM",PETROL,Mulund
+Hyundai Grand i10,"4,59,000",2016,"19,168 KM",PETROL,"Goregaon, Mumbai"
+Maruti New Wagon-R,"4,84,000",2019,"66,451 KM",CNG,Mulund
+Honda CRV,"8,82,000",2015,"57,092 KM",PETROL,Mulund
+Hyundai New Elantra,"14,50,000",2017,"47,598 KM",DIESEL,Mulund
+Jeep Compass,"12,77,000",2018,"32,634 KM",DIESEL,"Goregaon, Mumbai"
+Hyundai Creta,"7,11,000",2017,"96,059 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Honda Jazz,"5,38,000",2016,"35,717 KM",PETROL,"Goregaon, Mumbai"
+Maruti Alto,"4,63,000",2020,"15,135 KM",CNG,Mulund
+Maruti S PRESSO,"4,03,000",2020,"71,274 KM",CNG,"Goregaon, Mumbai"
+Hyundai GRAND I10 NIOS,"6,77,000",2021,"32,423 KM",CNG,Mulund
+Maruti New Wagon-R,"5,12,000",2019,"66,245 KM",CNG,"Goregaon, Mumbai"
+Hyundai Verna,"6,59,000",2016,"65,701 KM",PETROL,Mulund
+Maruti Baleno,"5,63,000",2017,"1,00,098 KM",PETROL,Mulund
+Maruti S PRESSO,"4,60,000",2022,"5,632 KM",PETROL,"Goregaon, Mumbai"
+Maruti Alto K10,"3,08,000",2017,"1,21,635 KM",PETROL,Mulund
+Ford Ecosport,"7,37,000",2019,"46,519 KM",PETROL,"Goregaon, Mumbai"
+Mahindra XUV500,"9,61,000",2016,"49,893 KM",DIESEL,"Goregaon, Mumbai"
+Toyota YARIS,"8,03,000",2018,"79,380 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Honda City,"7,76,000",2019,"45,089 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Celerio,"6,26,000",2022,"9,649 KM",PETROL,"Goregaon, Mumbai"
+Maruti Baleno,"6,34,000",2017,"23,528 KM",PETROL,"Goregaon, Mumbai"
+Maruti Wagon R 1.0,"4,03,000",2016,"23,524 KM",PETROL,"Goregaon, Mumbai"
+Hyundai i10,"2,04,000",2011,"80,042 KM",PETROL,"Goregaon, Mumbai"
+Maruti Wagon R 1.0,"3,77,000",2015,"64,448 KM",CNG,Mulund
+Maruti Alto K10,"3,83,000",2018,"10,483 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Honda Jazz,"4,54,000",2015,"72,596 KM",PETROL,Mulund
+Maruti Alto 800,"2,96,000",2016,"22,625 KM",PETROL,Mulund
+Maruti Dzire,"6,68,000",2017,"43,440 KM",DIESEL,"Rupa Renaissance, Navi Mumbai"
+Renault Duster,"8,57,000",2019,"51,146 KM",DIESEL,"Goregaon, Mumbai"
+Renault Kwid,"4,14,000",2020,"17,652 KM",PETROL,Mulund
+Maruti Celerio,"4,03,000",2017,"29,175 KM",PETROL,Mulund
+Hyundai Elite i20,"5,80,000",2016,"43,741 KM",PETROL,"Goregaon, Mumbai"
+Maruti Ciaz,"5,42,000",2016,"1,03,028 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Tata TIGOR,"6,48,000",2021,"33,712 KM",PETROL,Mulund
+Maruti Ciaz,"5,91,000",2017,"47,766 KM",PETROL,"Goregaon, Mumbai"
+Maruti IGNIS,"6,53,000",2020,"13,795 KM",PETROL,"Goregaon, Mumbai"
+Honda City,"13,43,000",2022,"13,105 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Grand i10,"4,34,000",2017,"53,924 KM",PETROL,"Goregaon, Mumbai"
+Ford Ecosport,"7,60,000",2019,"22,571 KM",PETROL,Mulund
+Maruti Wagon R 1.0,"2,47,000",2012,"44,574 KM",PETROL,Mulund
+Maruti Ciaz,"5,87,000",2015,"49,657 KM",CNG,"Goregaon, Mumbai"
+Honda City,"8,00,000",2017,"29,305 KM",PETROL,Mulund
+Hyundai Verna,"8,41,000",2017,"43,550 KM",PETROL,Mulund
+Maruti Baleno,"7,69,000",2021,"26,018 KM",PETROL,Mulund
+Datsun Redi Go,"3,41,000",2018,"16,345 KM",PETROL,"Goregaon, Mumbai"
+Maruti IGNIS,"4,82,000",2017,"18,403 KM",PETROL,Mulund
+Honda City,"8,11,000",2019,"27,976 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai GRAND I10 NIOS,"6,78,000",2019,"15,742 KM",PETROL,Mulund
+Jeep Compass,"16,05,000",2019,"36,844 KM",PETROL,"Goregaon, Mumbai"
+Toyota Etios,"3,14,000",2013,"78,010 KM",PETROL,Mulund
+Hyundai Elite i20,"5,18,000",2016,"24,592 KM",PETROL,Mulund
+Honda Brio,"2,75,000",2012,"62,948 KM",PETROL,"Goregaon, Mumbai"
+Maruti Baleno,"5,54,000",2017,"84,514 KM",PETROL,Mulund
+Tata Tiago,"4,59,000",2018,"41,977 KM",PETROL,Mulund
+Maruti Wagon R 1.0,"2,86,000",2013,"26,644 KM",PETROL,"Goregaon, Mumbai"
+Tata Zest,"3,89,000",2016,"62,490 KM",PETROL,"Goregaon, Mumbai"
+Maruti S PRESSO,"3,93,000",2019,"24,009 KM",PETROL,Mulund
+Maruti Alto 800,"2,52,000",2016,"47,233 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti Wagon R 1.0,"2,28,000",2011,"45,160 KM",PETROL,Mulund
+Hyundai Creta,"7,94,000",2017,"31,385 KM",PETROL,Mulund
+Maruti Ciaz,"9,56,000",2021,"8,740 KM",PETROL,"Goregaon, Mumbai"
+Maruti Baleno,"5,55,000",2017,"1,17,814 KM",PETROL,Mulund
+Maruti Swift,"4,32,000",2014,"60,379 KM",PETROL,Mulund
+Maruti Wagon R 1.0,"4,63,000",2017,"29,712 KM",PETROL,Mulund
+Maruti Wagon R 1.0,"3,84,000",2015,"38,429 KM",PETROL,"Goregaon, Mumbai"
+Hyundai NEW I20,"9,37,000",2022,"17,575 KM",PETROL,Mulund
+Hyundai Creta,"10,95,000",2018,"31,942 KM",PETROL,"Goregaon, Mumbai"
+Maruti Swift,"3,13,000",2012,"1,23,951 KM",PETROL,Mulund
+Honda Brio,"2,61,000",2012,"62,806 KM",PETROL,Mulund
+Maruti Baleno,"6,95,000",2019,"16,524 KM",PETROL,Mulund
+Ford Figo Aspire,"7,11,000",2020,"36,802 KM",DIESEL,"Goregaon, Mumbai"
+Maruti Wagon R 1.0,"3,04,000",2013,"64,909 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai VENUE,"11,13,000",2022,"33,484 KM",DIESEL,"Goregaon, Mumbai"
+Hyundai i20,"2,58,000",2010,"67,196 KM",PETROL,"Goregaon, Mumbai"
+Maruti IGNIS,"6,00,000",2018,"38,619 KM",PETROL,"Goregaon, Mumbai"
+Tata NEXON,"10,05,000",2022,"6,378 KM",PETROL,"Goregaon, Mumbai"
+Jeep Compass,"11,76,000",2017,"99,724 KM",DIESEL,Mulund
+Hyundai NEW SANTRO,"4,54,000",2019,"16,657 KM",PETROL,Mulund
+Tata Tiago,"6,44,000",2021,"13,934 KM",PETROL,"Goregaon, Mumbai"
+Ford Ecosport,"7,90,000",2018,"19,854 KM",PETROL,"Goregaon, Mumbai"
+Maruti Ciaz,"8,11,000",2019,"67,127 KM",PETROL,"Goregaon, Mumbai"
+Maruti Wagon R 1.0,"4,35,000",2017,"59,722 KM",CNG,"Rupa Renaissance, Navi Mumbai"
+Maruti Alto 800,"2,58,000",2016,"38,292 KM",PETROL,Mulund
+Maruti Ciaz,"9,12,000",2021,"4,756 KM",PETROL,"Goregaon, Mumbai"
+Honda Amaze,"8,20,000",2022,"8,211 KM",PETROL,"Goregaon, Mumbai"
+Honda City,"7,96,000",2018,"63,253 KM",PETROL,Mulund
+Hyundai NEW SANTRO,"4,76,000",2019,"36,643 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Honda City,"13,08,000",2021,"22,171 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Grand i10,"6,04,000",2017,"13,546 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Tata Tiago,"4,69,000",2018,"59,607 KM",PETROL,"Goregaon, Mumbai"
+Maruti Baleno,"6,15,000",2017,"19,539 KM",PETROL,Mulund
+Hyundai i20 Active,"5,89,000",2016,"1,19,312 KM",DIESEL,"Rupa Renaissance, Navi Mumbai"
+Hyundai Grand i10,"4,28,000",2015,"12,530 KM",PETROL,Mulund
+Hyundai Grand i10,"5,32,000",2017,"27,230 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Creta,"9,17,000",2016,"68,353 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Creta,"7,38,000",2016,"70,109 KM",PETROL,Mulund
+Datsun Go Plus,"4,35,000",2018,"35,188 KM",PETROL,"Goregaon, Mumbai"
+Honda WR-V,"6,89,000",2017,"65,765 KM",PETROL,"Goregaon, Mumbai"
+Maruti Baleno,"5,15,000",2017,"30,303 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai Creta,"7,72,000",2017,"85,391 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Elite i20,"6,02,000",2017,"22,430 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai GRAND I10 NIOS,"6,47,000",2022,"4,183 KM",PETROL,"Goregaon, Mumbai"
+Tata NEXON,"9,18,000",2021,"3,723 KM",PETROL,"Goregaon, Mumbai"
+Honda City,"6,18,000",2014,"37,535 KM",PETROL,Mulund
+Hyundai Creta,"9,72,000",2017,"32,086 KM",PETROL,"Goregaon, Mumbai"
+Tata NEXON,"9,36,000",2021,"17,657 KM",PETROL,"Goregaon, Mumbai"
+Hyundai Grand i10,"6,00,000",2018,"23,524 KM",PETROL,Mulund
+Maruti Wagon R 1.0,"2,50,000",2012,"99,964 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai Creta,"7,86,000",2017,"62,559 KM",PETROL,Mulund
+Honda City,"7,77,000",2017,"76,238 KM",PETROL,"Goregaon, Mumbai"
+Honda City,"7,18,000",2017,"1,19,183 KM",PETROL,Mulund
+Maruti Celerio,"4,95,000",2018,"16,223 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Honda City,"7,50,000",2016,"34,619 KM",PETROL,Mulund
+Hyundai Creta,"7,07,000",2016,"1,18,684 KM",PETROL,"Goregaon, Mumbai"
+Honda City,"5,69,000",2014,"52,332 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Honda City,"5,80,000",2016,"50,488 KM",PETROL,Mulund
+Maruti Wagon R 1.0,"4,65,000",2017,"15,076 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Hyundai Elite i20,"5,08,000",2015,"38,559 KM",PETROL,"Goregaon, Mumbai"
+Maruti Wagon R 1.0,"2,92,000",2012,"10,443 KM",PETROL,"Goregaon, Mumbai"
+Maruti Celerio,"4,77,000",2019,"9,282 KM",PETROL,"Rupa Renaissance, Navi Mumbai"
+Maruti S PRESSO,"4,68,000",2020,"44,113 KM",CNG,Mulund

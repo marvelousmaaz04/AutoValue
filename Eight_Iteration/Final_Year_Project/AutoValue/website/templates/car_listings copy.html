@@ -1,0 +1,337 @@
+{% extends "landing_page.html" %}
+{% block title %}AutoValue - Car Search{% endblock %}
+{% block link %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="{{url_for('static',filename='car_listings_styles.css')}}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha384-rBq73b1fFWEK9E3JxIsSYl6UojmKofdL/4rMx8+83FF5KpqTTFg9B7MR3Zm9Ibb3" crossorigin="anonymous">
+
+{% endblock %}
+{% block content %}
+
+<div class="container" style="text-align: center; margin-top: 100px;">
+
+    <!-- <span style="margin-right: 3.5rem;">
+            <h2 style="font-size: 4rem;">Cars24</h2>
+        </span> -->
+    <span><img src="../static/cars24-logo.webp" alt="Cars24" width="90rem"></span>
+
+    <hr>
+
+
+    {% set listings_per_row = 3 %}
+
+    <div class="row justify-content-center">
+
+        {% for car in cars24_data %}
+        {% if loop.index % listings_per_row == 1 %}
+    </div>
+    <div class="row justify-content-center">
+        {% endif %}
+
+
+        <div class="col-12 col-md-4 mb-4 car-container">
+            <a href="{{ car.listingurl }}" class="card-link" style="text-decoration: none;" target="_blank">
+                <div class="card" style="width: 100%;">
+                    <img src="{{ car.imageurl }}" class="card-img-top" alt="Car Image">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center">
+
+                            <h5 class="card-title" style="font-size: 2.2rem;">{{ car.carname }}</h5>
+
+                        </div>
+                        <div style="font-size: 2.1rem; margin:1rem 0;">
+                            <ul style="display: flex; flex-direction: row;justify-content: space-evenly;
+                            font-size: 1.9rem; padding: 0;">
+                                <li style="display: flex; flex-direction: column; font-size: 1.9rem;"><span><i
+                                            class="fa-solid fa-gas-pump"></i></span>
+                                    <span>{{ car.fueltype|capitalize }}</span>
+                                </li>
+                                <li style="display: flex; flex-direction: column; justify-content: space-evenly;">
+
+                                    <span><i class="fa-solid fa-gauge-simple-high"></i></span>
+                                    <span>{{ car.kilometersdriven }} km </span>
+                                </li>
+
+
+                                <li style="display: flex; flex-direction: column; font-size: 1.9rem;"><span><i
+                                            class="fa-solid fa-calendar-days"></i></span>
+                                    <span>{{ car.year }}</span>
+                                </li>
+                            </ul>
+                            <ul class="d-flex flex-row justify-content-center m-0 p-0">
+                                <li>
+                                    <h5 class="m-0" style="font-size: 2.2rem;"><span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i></span> {{
+                                        car.price|format_price }}</h5>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="card-footer" style="font-size: 1.8rem;">
+                        <i class="fa-solid fa-location-dot"></i><span> {{ car.location }}</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        {% if loop.index == cars24_data|length %}
+    </div>
+    {% endif %}
+    {% endfor %}
+
+</div>
+
+</div>
+<div class="container" style="text-align: center; margin-top: 80px;">
+    <!-- <h2>Spinny</h2> -->
+    <span><img src="../static/spinny-logo.png" alt="Spinny" width="130rem"></span>
+    <hr>
+    <div class="row justify-content-center">
+
+        {% for car in spinny_data %}
+        {% if loop.index % listings_per_row == 1 %}
+    </div>
+    <div class="row justify-content-center">
+        {% endif %}
+
+        <!-- <div class="col-12 col-md-4 mb-4 car-container mb-4">
+            <a href="{{ car.listingurl }}" class="card-link" style="text-decoration: none;" target="_blank">
+                <div class="card" style="width: 100%;">
+                    <img src="{{ car.imageurl }}" class="card-img-top" alt="Car Image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ car.carname }}</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Location: {{ car.location }}</li>
+                        <li class="list-group-item">Price: {{ car.price }}</li>
+                        <li class="list-group-item">Type: {{ car.fueltype }}</li>
+                        <li class="list-group-item">Kms: {{ car.kilometersdriven }}</li>
+                        <li class="list-group-item">Year: {{ car.year}}</li>
+                    </ul>
+                </div>
+            </a>
+        </div> -->
+
+        <!-- <div class="col-12 col-md-4 mb-4 car-container">
+            <a href="{{ car.listingurl }}" class="card-link" style="text-decoration: none;" target="_blank">
+                <div class="card" style="width: 100%;">
+                    <img src="{{ car.imageurl }}" class="card-img-top" alt="Car Image">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center">
+
+                            <h5 class="card-title"><span>{{ car.year }}&nbsp;</span>{{ car.carname }}</h5>
+
+                        </div>
+                        <div>
+                            <ul class="d-flex flex-row justify-content-center p-0 mb-2">
+                                <li>
+                                    {{ car.kilometersdriven }} km </li>
+                                <li style="margin-left: 18px;">{{ car.fueltype }}</li>
+                            </ul>
+                            <ul class="d-flex flex-row justify-content-center m-0 p-0">
+                                <li>
+                                    <h5 class="m-0">{{ car.price }}</h5>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="card-footer">
+                        <i class="fa-solid fa-location-dot"></i><span> {{ car.location }}</span>
+                    </div>
+                </div>
+            </a>
+        </div> -->
+
+        <div class="col-12 col-md-4 mb-4 car-container">
+            <a href="{{ car.listingurl }}" class="card-link" style="text-decoration: none;" target="_blank">
+                <div class="card" style="width: 100%;">
+                    <img src="{{ car.imageurl }}" class="card-img-top" alt="Car Image">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center">
+
+                            <h5 class="card-title" style="font-size: 2.2rem;">{{ car.carname }}</h5>
+
+                        </div>
+                        <div style="font-size: 2.1rem; margin:1rem 0; ">
+                            <ul style="display: flex; flex-direction: row;justify-content: space-evenly;
+                            font-size: 1.9rem; padding: 0;">
+                                <li style="display: flex; flex-direction: column; font-size: 1.9rem;"><span><i
+                                            class="fa-solid fa-gas-pump"></i></span>
+                                    <span>{{ car.fueltype|capitalize }}</span>
+                                </li>
+                                <li style="display: flex; flex-direction: column; justify-content: space-evenly;">
+
+                                    <span><i class="fa-solid fa-gauge-simple-high"></i></span>
+                                    <span>{{ car.kilometersdriven }} km </span>
+                                </li>
+
+
+                                <li style="display: flex; flex-direction: column; font-size: 1.9rem;"><span><i
+                                            class="fa-solid fa-calendar-days"></i></span>
+                                    <span>{{ car.year }}</span>
+                                </li>
+                            </ul>
+                            <ul class="d-flex flex-row justify-content-center m-0 p-0">
+                                <li>
+                                    <h5 class="m-0" style="font-size: 2.2rem;"><span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i></span> {{
+                                        car.price|format_price }}</h5>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="card-footer" style="font-size: 1.8rem; ">
+                        <i class="fa-solid fa-location-dot"></i><span> {{ car.location }}</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        {% if loop.index == spinny_data|length %}
+    </div>
+    {% endif %}
+    {% endfor %}
+
+</div>
+</div>
+<div class="container" style="text-align: center; margin-top: 80px;">
+    <!-- <h2>OLX</h2> -->
+    <span><img src="../static/olx-logo.png" alt="OLX" width="100rem"></span>
+    <hr>
+    {% set listings_per_row = 3 %}
+    <div class="row justify-content-center">
+
+        {% for car in olx_data %}
+        {% if loop.index % listings_per_row == 1 %}
+    </div>
+    <div class="row justify-content-center">
+        {% endif %}
+
+        <!-- <div class="col-12 col-md-4 mb-4 car-container mb-4">
+            <a href="{{ car.listingurl }}" class="card-link" style="text-decoration: none;" target="_blank">
+                <div class="card" style="width: 100%;">
+                    <img src="{{ car.imageurl }}" class="card-img-top" alt="Car Image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ car.carname }}</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Location: {{ car.location }}</li>
+                        <li class="list-group-item">Price: {{ car.price }}</li>
+                        <li class="list-group-item">Type: {{ car.fueltype }}</li>
+                        <li class="list-group-item">Kms: {{ car.kilometersdriven }}</li>
+                        <li class="list-group-item">Year: {{ car.year}}</li>
+                    </ul>
+                </div>
+            </a>
+        </div> -->
+
+        <!-- <div class="col-12 col-md-4 mb-4 car-container">
+            <a href="{{ car.listingurl }}" class="card-link" style="text-decoration: none;" target="_blank">
+                <div class="card" style="width: 100%;">
+                    <img src="{{ car.imageurl }}" class="card-img-top" alt="Car Image">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center">
+
+                            <h5 class="card-title"><span>{{ car.year }}&nbsp;</span>{{ car.carname }}</h5>
+
+                        </div>
+                        <div>
+                            <ul class="d-flex flex-row justify-content-center p-0 mb-2">
+                                <li>
+                                    {{ car.kilometersdriven }} km </li>
+                                <li style="margin-left: 18px;">{{ car.fueltype|capitalize }}</li>
+                            </ul>
+                            <ul class="d-flex flex-row justify-content-center m-0 p-0">
+                                <li>
+                                    <h5 class="m-0">{{ car.price|format_price }}</h5>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="card-footer">
+                        <i class="fa-solid fa-location-dot"></i><span> {{ car.location }}</span>
+                    </div>
+                </div>
+            </a>
+        </div> -->
+
+        <div class="col-12 col-md-4 mb-4 car-container">
+            <a href="{{ car.listingurl }}" class="card-link" style="text-decoration: none;" target="_blank">
+                <div class="card" style="width: 100%;">
+                    <img src="{{ car.imageurl }}" class="card-img-top" alt="Car Image">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center">
+
+                            <h5 class="card-title" style="font-size: 2.2rem;">{{ car.carname }}</h5>
+
+                        </div>
+                        <div style="font-size: 2.1rem; margin:1rem 0;">
+                            <ul style="display: flex; flex-direction: row;justify-content: space-evenly;
+                            font-size: 1.9rem; padding: 0;">
+                                <li style="display: flex; flex-direction: column; font-size: 1.9rem;"><span><i
+                                            class="fa-solid fa-gas-pump"></i></span>
+                                    <span>{{ car.fueltype|capitalize }}</span>
+                                </li>
+                                <li style="display: flex; flex-direction: column; justify-content: space-evenly;">
+
+                                    <span><i class="fa-solid fa-gauge-simple-high"></i></span>
+                                    <span>{{ car.kilometersdriven }} km </span>
+                                </li>
+
+
+                                <li style="display: flex; flex-direction: column; font-size: 1.9rem;"><span><i
+                                            class="fa-solid fa-calendar-days"></i></span>
+                                    <span>{{ car.year }}</span>
+                                </li>
+                            </ul>
+                            <ul class="d-flex flex-row justify-content-center m-0 p-0">
+                                <li>
+                                    <h5 class="m-0" style="font-size: 2.2rem;"><span><i
+                                                class="fa-solid fa-indian-rupee-sign"></i></span> {{
+                                        car.price|format_price }}</h5>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="card-footer" style="font-size: 1.8rem;">
+                        <i class="fa-solid fa-location-dot"></i><span> {{ car.location }}</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% if loop.index == olx_data|length %}
+    </div>
+    {% endif %}
+    {% endfor %}
+
+</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+
+{% endblock %}
+<!-- {% block footer %}
+<footer class="bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">AutoValue | All Rights Reserved &copy; 2024</p>
+    </div>
+
+</footer>
+{% endblock %} -->

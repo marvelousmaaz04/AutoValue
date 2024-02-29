@@ -1,0 +1,154 @@
+{% extends 'landing_page.html' %}
+{% block title %}AutoValue - Blogs{% endblock %}
+{% block link %}
+
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+<link rel="stylesheet" href="../static/car_blogs_styles.css">
+{% endblock %}
+{% block content %}
+
+<!-- <section class="child home" id="child-home">
+    <div class="home-text container">
+        <h2 class="home-title">AutoValue Blogs</h2>
+        <span class="home-subtitle">Your source of great content.</span>
+    </div>
+</section> -->
+<!-- Implementing slider -->
+<!-- <section class="child home" id="child-home" >
+    <div class="swiper banner-slider">
+        <div class="swiper-wrapper" style="width: 100%;">
+            <div class="swiper-slide banner-slide">
+                <div class="home-text container">
+                    <img src="https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20240207033836_Nexon%20EV%20Offers.001.jpeg&w=800&h=533&q=70&c=1" alt="" srcset="" class="slide-image">
+                    <div class="slide-content">
+                        <h2 class="home-title">AutoValue Blogs</h2>
+                        <span class="home-subtitle">Your source of great content.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide banner-slide">
+                <div class="home-text container">
+                    <img src="https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20240207033836_Nexon%20EV%20Offers.001.jpeg&w=800&h=533&q=70&c=1" alt="" srcset="">
+                    <div class="slide-content">
+                        <h2 class="home-title">AutoValue Blogs</h2>
+                        <span class="home-subtitle">Your source of great content.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide banner-slide">
+                <div class="home-text container">
+                    <img src="https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20240207033836_Nexon%20EV%20Offers.001.jpeg&w=800&h=533&q=70&c=1" alt="" srcset="">
+                    <div class="slide-content">
+                        <h2 class="home-title">AutoValue Blogs</h2>
+                        <span class="home-subtitle">Your source of great content.</span>
+                    </div>
+                </div>
+            </div>
+         
+        </div>
+        
+        
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</section> -->
+<section class="child home" id="child-home">
+    <div class="swiper banner-slider" style="border-radius: 20px;">
+        <div class="swiper-wrapper" style="width: 100%; height: 100%;">
+            <!-- <div class="swiper-slide banner-slide" style="height: 100%; width: 100%;" >
+                <div class="home-text container">
+                    
+                    <div class="slide-content">
+                        <h2 class="home-title">AutoValue Blogs</h2>
+                        <span class="home-subtitle">Your source of great content.</span>
+                    </div>
+                </div>
+            </div>
+             -->
+            {% for blog in last_10_blogs %}
+
+            <div class="swiper-slide banner-slide" style="height: 100%; width: 100%;"
+                style="background-image: url({{blog.image_url}}); border-radius: 20px;">
+                <a href="{{ blog.blog_url }}" style="text-decoration: none;" target="_blank">
+                <div class="home-text container" style="background-image: url({{blog.image_url}});">
+
+                    <div class="slide-content">
+                        <h2 class="home-title">{{ blog.title }}</h2>
+
+                    </div>
+                </div>
+                </a>
+            </div>
+
+            {% endfor %}
+
+            <!-- Add more slides here if needed -->
+        </div>
+
+        <!-- Navigation arrows -->
+        <div class="swiper-button-prev swiper-btn-blogs"></div>
+        <div class="swiper-button-next swiper-btn-blogs"></div>
+    </div>
+</section>
+
+
+
+<div class="post-filter container">
+
+
+    <span class="filter-item active-filter" data-filter="all">All</span>
+    <span class="filter-item" data-filter="RushLane">RushLane</span>
+    <span class="filter-item" data-filter="AutoX">AutoX</span>
+    <span class="filter-item" data-filter="Autocar">Autocar</span>
+    <span class="filter-item" data-filter="IndianAutosBlog">IndianAutosBlog</span>
+
+
+
+
+    <form action="/car-blogs" method="POST" id="search-form" onsubmit="return validateSearchForm();">
+        <input type="search" id="search-input" name="search-input" placeholder="Search">
+        <button class="btn-outline-dark" type="submit" id="search-button">
+            <i class="fa-solid fa-magnifying-glass larger-icon" class="input-icon"></i>
+        </button>
+    </form>
+</div>
+<!-- Posts -->
+<section class="post container">
+    
+    {% for blog in all_blogs %}
+    <div class="post-box {{ blog.blog_website }}">
+        <a href="{{ blog.blog_url }}" target="_blank" style="text-decoration: none; color: black;">
+            <img src="{{ blog.image_url }}" class="post-img" alt="">
+
+            <p class="post-title">
+                {{ blog.title }}
+            </p>
+            <span class="post-date">{{ blog.published_date }}</span>
+            <p class="post-description">{{ blog.description }}</p>
+            <div class="website-profile">
+                {% if blog.blog_website=="RushLane" %}
+                <img src="../static/images/rushlane-logo.png" alt="" class="website-profile-img">
+                {% elif blog.blog_website=="Autocar" %}
+                <img src="../static/images/autocar-logo.png" alt="" class="website-profile-img">
+                {% elif blog.blog_website=="IndianAutosBlog" %}
+                <img src="../static/images/indian-autos-blogs-logo.png" alt="" class="website-profile-img">
+                {% else %}
+                <img src="https://static.autox.com/assets/images/autoX-logo-white.svg" alt=""
+                    class="website-profile-img" style="background-color: black;">
+                {% endif %}
+                <h2 class="category">{{ blog.blog_website }}</h2>
+                <!-- <span class="profile-name">Marques Brown</span> -->
+            </div>
+
+        </a>
+    </div>
+    {% endfor %}
+
+
+</section>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script src="../static/js/blogs.js"></script>
+{% endblock %}
