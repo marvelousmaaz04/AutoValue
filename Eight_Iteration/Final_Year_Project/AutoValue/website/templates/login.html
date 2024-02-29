@@ -114,6 +114,23 @@
     }
 
     function validate() {
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                if (email.value.length < 1) {
+                    email.style.border = "1px solid red";
+                    email_error.innerHTML = "Email Address cannot be empty."
+                    email_error.style.display = "block";
+
+                    return false;
+                }
+                else if (!emailRegex.test(email.value)) {
+                    // Invalid email format
+                    email.style.border = "1px solid red";
+                    email_error.innerHTML = "Invalid Email Address."
+                    email_error.style.display = "block";
+                    return false;
+                }
+            }
         if (email.value.length < 4) {
 
 

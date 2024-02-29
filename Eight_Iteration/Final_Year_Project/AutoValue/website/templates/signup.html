@@ -100,7 +100,7 @@
     cpassword.addEventListener('input', cpassword_verify)
 
     function fullname_verify(event) {
-        if (event.target.value.length >= 5) {
+        if (event.target.value.length > 6) {
             full_name_error.style.display = 'none'
             fullName.style.border = '1px solid silver'
             return true

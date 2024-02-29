@@ -18,11 +18,11 @@
     <span><img src="../static/cars24-logo.webp" alt="Cars24" width="90rem"></span>
    
     <hr>
-
+    {% set listings_per_row = 3 %}
     {% if cars24_data|length <= 0 %}
         <h3 style="font-size: 2.5rem; margin-top: 20px; color: #130f40;">Sorry, We could not find any cars on Cars24 matching your criteria.</h3>
     {% else %}
-        {% set listings_per_row = 3 %}
+        
 
         <div class="row justify-content-center">
 
@@ -90,7 +90,7 @@
     <span><img src="../static/spinny-logo.png" alt="Spinny" width="130rem"></span>
     <hr>
     <div class="row justify-content-center">
-
+        {% set listings_per_row = 3 %}
         {% if spinny_data|length <= 0 %}
         <h3 style="font-size: 2.5rem; margin-top: 20px; color: #130f40;">Sorry, We could not find any cars on Spinny matching your criteria.</h3>
         {% else %}

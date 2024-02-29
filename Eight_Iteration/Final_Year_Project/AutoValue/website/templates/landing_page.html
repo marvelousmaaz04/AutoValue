@@ -452,7 +452,7 @@
             <label for="select-company-price">Company</label>
 
             <select name="select-company-price" id="select-company-price"
-                onchange="loadCarModelsPredictionPage(this.id,'select-model-price'); selectCompany('#select-model-error-price')">
+                onchange="loadCarModels(this.id,'select-model-price'); selectCompany('#select-model-error-price')">
                 <option>Select Car Company</option>
                 {% for company in companies %}
                 <option value="{{ company }}">{{ company }}</option>

@@ -211,15 +211,20 @@ def get_car_models():
         return jsonify({"models": ["Select Car Model"]})
 
 def keep_one_word(model):
+    
     words = model.split()
    
     if len(words) > 1:
+        
         last_word = words[-1]
         if "1." in last_word:
             last_word = last_word.replace("1.", "")
             words[-1] = last_word  # Remove "1."
+        
         if len(last_word) <= 2:
             return words[0]
+    
+
         
     return ' '.join(words)
 

@@ -34,6 +34,7 @@ def login():
         else:
             login_user(user, remember=True)
             session['user_id'] = user.id
+           
             return redirect(url_for("views.landing_page")) # var name.func name
     return render_template("login.html")
 
@@ -197,6 +198,7 @@ def forgot_password():
         
 
         user = Users.query.filter_by(email=email).first()
+        
         if not user:
             flash("Email Address is not Registered.",category="error")
         else:
